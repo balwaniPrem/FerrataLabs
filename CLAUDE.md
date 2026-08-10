@@ -111,7 +111,14 @@ numbers, rule accents, the scroll rail.
 - **Almost no shadows.** One soft shadow on the console component only.
 - **The rail** — 1px fixed vertical line at `left:64px`, fills with accent as you scroll.
   This is the via ferrata cable. Hidden below 1040px.
-- **The bolt** — 9px square rotated 45°, accent-filled. Used as the logo mark.
+- **The mark — "Ascent."** A monotone step function with an anchor bolt at the summit,
+  rendered by `components/Mark.tsx`. It reads as a plot and as rungs cut into rock; the
+  four risers are the four engagement steps. The path uses `currentColor` so it reverses
+  on ink; the bolt stays accent unless `mono` is set. Default 21px at stroke weight 2.6 —
+  lighter reads timid beside the 800-weight wordmark. Favicon is `app/icon.svg` (heavier
+  strokes, hand-tuned for 16px); `app/apple-icon.png` is 180×180.
+- **The bolt** — square rotated 45°, accent-filled. No longer a standalone logo; it is the
+  summit anchor of the mark, and still marks agent names (`.agent .nm i`).
 - **Contrast.** `--steel` on white measures 4.63:1 and passes AA. Don't lighten body text
   below it.
 
@@ -240,8 +247,6 @@ These are written into the site. Confirm each is defensible under a second-meeti
 - **Founder credibility** — currently anonymous numbers, no name, no bio. A prospect can't
   verify anything. Decide: named `/team` page, or a one-line attribution under the metrics.
 - **Entity** — not formed. Florida LLC w/ S-corp election likely; confirm with CPA.
-- **Logo** — currently a rotated square. A real mark built from the cable-and-anchor idea
-  would help more than further colour work.
 - **Entry offer** — positioning is bespoke, which is right, but "bring us one workflow" asks
   the buyer to self-diagnose. Consider one named entry offer for outbound only (e.g. a
   fixed-scope receivables assessment) without narrowing the brand.

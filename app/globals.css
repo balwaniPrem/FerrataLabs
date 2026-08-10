@@ -184,13 +184,11 @@ h4 {
   text-transform: uppercase;
   color: var(--ink);
 }
-.bolt {
-  width: 9px;
-  height: 9px;
-  background: var(--accent);
-  transform: rotate(45deg);
+/* The "Ascent" mark. Rendered by components/Mark.tsx — see §4. */
+.mark svg {
   flex: none;
   display: block;
+  color: var(--ink);
 }
 .nav-links {
   margin-left: auto;

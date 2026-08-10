@@ -2,6 +2,7 @@ import Link from "next/link";
 import { site } from "@/content/site";
 import { agents } from "@/content/agents";
 import { industries } from "@/content/industries";
+import Mark from "./Mark";
 
 export default function Footer() {
   return (
@@ -10,7 +11,7 @@ export default function Footer() {
         <div className="foot-grid">
           <div>
             <Link href="/" className="mark">
-              <i className="bolt" />
+              <Mark size={20} />
               Ferrata Labs
             </Link>
             <p className="foot-blurb">{site.blurb}</p>

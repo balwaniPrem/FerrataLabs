@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { agents } from "@/content/agents";
 import { industries } from "@/content/industries";
+import Mark from "./Mark";
 
 const pages = [
   { href: "/work", label: "The work" },
@@ -96,7 +97,7 @@ export default function Nav() {
     <nav className="nav">
       <div className="nav-in">
         <Link href="/" className="mark">
-          <i className="bolt" />
+          <Mark size={20} />
           Ferrata Labs
         </Link>
 
