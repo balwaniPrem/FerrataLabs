@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book a discovery call — Ferrata Labs</title>
+<meta name="description" content="Thirty minutes, no deck. Bring one workflow and we'll pressure-test whether an agent is the right answer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<a href="#main" class="skip">Skip to content</a>
+<div class="rail" aria-hidden="true"><div class="rail-run" id="railRun"></div></div>
+
+<nav class="nav">
+  <div class="nav-in">
+    <a href="index.html" class="mark"><i class="bolt"></i>Ferrata Labs</a>
+    <div class="nav-links">
+      <a href="work.html" class="hide-sm">The work</a>
+      <a href="how-it-works.html" class="hide-sm">How it runs</a>
+      <a href="about.html" class="hide-sm">Who we are</a>
+      <a href="contact.html" aria-current="page" class="btn">Book a discovery call</a>
+    </div>
+  </div>
+</nav>
+<main id="main">
+
+<header class="phead">
+  <div class="wrap">
+    <p class="eyebrow">Next step</p>
+    <h1>Bring us one workflow.</h1>
+    <p>Thirty minutes, no deck. Pick the process that costs you most in people, errors or delay, and we'll pressure-test whether an agent is genuinely the right answer for it.</p>
+  </div>
+</header>
+
+<section class="sec">
+  <div class="wrap contact">
+    <div class="prose">
+      <h3 style="margin-top:0">What you'll leave with</h3>
+      <p>An honest read on whether that workflow is a good agent candidate &mdash; some aren't, and the ones that aren't usually have a data or process problem underneath that no model will fix.</p>
+      <p>A sense of what the first deployment would involve in your environment, and roughly what it costs. Not a proposal, a range.</p>
+      <p>An honest answer if the sequencing is wrong and you should fix something else first. That happens often enough that we'd rather say it on the first call than the third.</p>
+
+      <h3>What to bring</h3>
+      <p>Nothing prepared. It helps if you can describe roughly how many transactions the workflow handles a month, how many people touch it, and what happens today when it goes wrong. If you don't know those numbers, that's itself a useful thing to discover.</p>
+
+      <h3>Who should be on it</h3>
+      <p>Whoever owns the process, and ideally someone who knows what your security and data residency constraints actually are. Those two people together can settle in half an hour what a procurement process takes six weeks to establish.</p>
+    </div>
+
+    <div class="card">
+      <h3>Book directly</h3>
+      <p style="font-size:15px;color:var(--steel);margin-bottom:18px">Pick a time that suits you. Thirty minutes, video or phone.</p>
+      <a href="#" class="btn btn-lg" style="width:100%;text-align:center" id="bookBtn">Choose a time</a>
+      <ul style="margin-top:22px">
+        <li>No deck, no discovery questionnaire</li>
+        <li>Straight to the workflow</li>
+        <li>Range on cost before you leave the call</li>
+      </ul>
+      <p class="meta">Or email <a href="mailto:hello@ferratalabs.ai" style="color:var(--accent)">hello@ferratalabs.ai</a></p>
+    </div>
+  </div>
+</section>
+</main>
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="index.html" class="mark"><i class="bolt"></i>Ferrata Labs</a>
+        <p class="foot-blurb">Enterprise AI agents that do the actual work &mdash; built around how your business already runs.</p>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="work.html">The work</a></li>
+          <li><a href="how-it-works.html">How it runs</a></li>
+          <li><a href="about.html">Who we are</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <ul>
+          <li><a href="contact.html">Book a discovery call</a></li>
+          <li><a href="mailto:hello@ferratalabs.ai">hello@ferratalabs.ai</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot">
+      <span>FERRATA LABS</span>
+      <span class="sp">&copy; 2026</span>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var run=document.getElementById('railRun');
+  if(!run||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  var tick=function(){
+    var h=document.documentElement.scrollHeight-window.innerHeight;
+    var p=h>0?window.scrollY/h:0;
+    run.style.height=Math.min(100,p*100)+'vh';
+  };
+  window.addEventListener('scroll',tick,{passive:true});
+  window.addEventListener('resize',tick);tick();
+})();
+</script>
+</body>
+</html>

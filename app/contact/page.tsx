@@ -1,0 +1,65 @@
+import type { Metadata } from "next";
+import ContactForm from "./ContactForm";
+
+export const metadata: Metadata = {
+  title: "Book a discovery call",
+  description:
+    "Thirty minutes, no deck. Bring one workflow and we'll pressure-test whether an agent is the right answer.",
+};
+
+export default function Contact() {
+  return (
+    <>
+      <header className="phead">
+        <div className="wrap">
+          <p className="eyebrow">Next step</p>
+          <h1>Bring us one workflow.</h1>
+          <p>
+            Thirty minutes, no deck. Pick the process that costs you most in people, errors
+            or delay, and we&rsquo;ll pressure-test whether an agent is genuinely the right
+            answer for it.
+          </p>
+        </div>
+      </header>
+
+      <section className="sec">
+        <div className="wrap contact">
+          <div className="prose">
+            <h3 style={{ marginTop: 0 }}>What you&rsquo;ll leave with</h3>
+            <p>
+              An honest read on whether that workflow is a good agent candidate — some
+              aren&rsquo;t, and the ones that aren&rsquo;t usually have a data or process
+              problem underneath that no model will fix.
+            </p>
+            <p>
+              A sense of what the first deployment would involve in your environment, and
+              roughly what it costs. Not a proposal, a range.
+            </p>
+            <p>
+              An honest answer if the sequencing is wrong and you should fix something else
+              first. That happens often enough that we&rsquo;d rather say it on the first call
+              than the third.
+            </p>
+
+            <h3>What to bring</h3>
+            <p>
+              Nothing prepared. It helps if you can describe roughly how many transactions the
+              workflow handles a month, how many people touch it, and what happens today when
+              it goes wrong. If you don&rsquo;t know those numbers, that&rsquo;s itself a
+              useful thing to discover.
+            </p>
+
+            <h3>Who should be on it</h3>
+            <p>
+              Whoever owns the process, and ideally someone who knows what your security and
+              data residency constraints actually are. Those two people together can settle in
+              half an hour what a procurement process takes six weeks to establish.
+            </p>
+          </div>
+
+          <ContactForm />
+        </div>
+      </section>
+    </>
+  );
+}
