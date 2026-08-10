@@ -1,31 +1,10 @@
 import type { Metadata } from "next";
-import { Archivo, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
+import { fontVars } from "@/lib/fonts";
 import Rail from "@/components/Rail";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { site } from "@/content/site";
-
-const archivo = Archivo({
-  variable: "--font-archivo",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "800"],
-  display: "swap",
-});
-
-const plexSans = IBM_Plex_Sans({
-  variable: "--font-plex-sans",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  display: "swap",
-});
-
-const plexMono = IBM_Plex_Mono({
-  variable: "--font-plex-mono",
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -45,12 +24,9 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function MarketingLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={`${archivo.variable} ${plexSans.variable} ${plexMono.variable} h-full`}
-    >
+    <html lang="en" className={`${fontVars} h-full`}>
       <body className="min-h-full flex flex-col">
         <a href="#main" className="skip">
           Skip to content

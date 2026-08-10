@@ -314,3 +314,67 @@ When the brief is ambiguous, **ask rather than infer**. The failure mode in this
 been making a larger change than the one requested — deleting when asked to deprioritise,
 preserving-and-promoting when asked to cut, adding structure that wasn't requested. **Change
 exactly what is asked.** If something removed should come back, say so and wait.
+
+---
+
+## 12. Pledge — unlisted product
+
+**Pledge** is end-to-end receivables follow-up: it connects to the customer's ERP and runs
+the whole chase — email and outbound voice, sequenced by rule. A promise to pay suppresses
+**both** channels until the promised date; if the money doesn't arrive, follow-up resumes
+the next morning.
+
+**It is deliberately unlisted.** It appears nowhere on the marketing site — not in the nav,
+footer, mega-menu, agent grid or sitemap — and the `(product)` route group carries
+`noindex, nofollow, nocache`. Reached only by direct link at **pledge.ferratalabs.ai**.
+
+> ⚠️ **Unlisted is not private.** Anyone with the URL sees everything. The moment the link
+> lands in an email signature or a deck it can spread. If it ever needs to be genuinely
+> restricted that is authentication, not routing — and it must happen before any real
+> customer data is loaded.
+
+### Why it lives off-site
+
+It contradicts two things the marketing site says, and separating them is the resolution
+rather than a workaround:
+
+1. **§7's approval gate** — *"nothing … touches a customer without a person saying so."*
+   Pledge sends email and places calls autonomously. On-site, that gate would have to be
+   rewritten from per-message to per-sequence approval, on every page.
+2. **§2's pricing differentiator** — */about* says *"we price against outcomes rather than
+   duration."* Pledge bills 30 credits per 15 seconds of call time, which is duration
+   pricing. Both claims cannot sit on the same domain.
+
+### Metering
+
+| Activity | Credits |
+|---|---|
+| Email | 20 each |
+| Voice | 120 / minute, billed in 15-second increments of 30 |
+
+Rules currently **assumed**, pending confirmation — they decide whether a displayed balance
+is honest: partial increments round **up**; connected calls bill a **one-increment
+minimum**; unanswered calls, voicemail drops and bounced email consume **nothing**.
+
+Once these records determine an invoice, the audit log is a billing ledger. A logging bug
+stops being a correctness issue and becomes a customer billing dispute — that implies
+append-only storage and activity-to-charge reconciliation before this is sold.
+
+> ⚠️ **Voice compliance is unresolved and does not go away because the page is unlisted.**
+> State two-party call-recording consent (CA, FL and ~10 others), TCPA rules on autodialed
+> calls to mobile numbers, and emerging state law requiring disclosure that a caller is AI.
+> Commercial debt escapes the FDCPA; it does not escape these.
+
+### Files
+
+```
+app/(product)/layout.tsx        product root layout — no marketing chrome, noindex
+app/(product)/pledge/page.tsx   the dashboard
+content/pledge.ts               metering rules + illustrative mock data
+proxy.ts                        rewrites pledge.* → /pledge
+```
+
+All dashboard figures are **illustrative**, labeled as such in the UI, and must never be
+presented as measured results. `/pledge` also resolves on the apex so it is testable
+locally; that is intentional.
+
