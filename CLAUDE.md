@@ -328,10 +328,9 @@ the next morning.
 footer, mega-menu, agent grid or sitemap — and the `(product)` route group carries
 `noindex, nofollow, nocache`. Reached only by direct link at **pledge.ferratalabs.ai**.
 
-> ⚠️ **Unlisted is not private.** Anyone with the URL sees everything. The moment the link
-> lands in an email signature or a deck it can spread. If it ever needs to be genuinely
-> restricted that is authentication, not routing — and it must happen before any real
-> customer data is loaded.
+> ⚠️ **Unlisted is not private.** Anyone with the URL sees everything. If it ever needs to
+> be genuinely restricted that is authentication, not routing — and it must happen before
+> any real customer data is loaded.
 
 ### Why it lives off-site
 
@@ -339,42 +338,114 @@ It contradicts two things the marketing site says, and separating them is the re
 rather than a workaround:
 
 1. **§7's approval gate** — *"nothing … touches a customer without a person saying so."*
-   Pledge sends email and places calls autonomously. On-site, that gate would have to be
-   rewritten from per-message to per-sequence approval, on every page.
+   Pledge sends and calls autonomously inside an authorized sequence.
 2. **§2's pricing differentiator** — */about* says *"we price against outcomes rather than
-   duration."* Pledge bills 30 credits per 15 seconds of call time, which is duration
-   pricing. Both claims cannot sit on the same domain.
+   duration."* Pledge bills per 15 seconds of call time.
+
+### Brand hierarchy and tenancy
+
+Three levels in the app bar: **Ferrata Labs → Pledge → workspace**. The Ascent mark belongs
+to Ferrata Labs and appears at the first level only — it is not Pledge's logo.
+
+**Vocabulary, kept strict.** `workspace` is the tenant (Acme Industries, the client running
+Pledge). `account` is a customer of that workspace who owes it money. Never use "account"
+for the tenant; the dashboard becomes ambiguous the moment those blur. The tenant is fixed
+rather than switchable, which reads as a real deployment.
+
+Product → marketing links are fine. **Marketing → product links must never exist**, or the
+unlisting is broken.
+
+### Information architecture
+
+```
+/pledge                  Dashboard — queue, live activity, promises, credits
+/pledge/rules            Rules Engine — 62 rules across 14 families
+/pledge/orchestration    Orchestration — pipeline, integration flows, durable workflows
+```
+
+Collapsible left rail, persisted to `localStorage` via `lib/navStore.ts`. Icons are drawn
+in `components/product/Icons.tsx` rather than imported — every off-the-shelf set ships
+round caps and joins, which §4 forbids. Keep new icons to the same primitives: horizontal
+rules, right angles, rotated squares.
 
 ### Metering
 
-| Activity | Credits |
-|---|---|
-| Email | 20 each |
-| Voice | 120 / minute, billed in 15-second increments of 30 |
+| Activity | Credits | Cost |
+|---|---|---|
+| Email | 20 | $0.20 |
+| Voice · per 15s increment | 30 | $0.30 |
+| Voice · per minute | 120 | $1.20 |
 
-Rules currently **assumed**, pending confirmation — they decide whether a displayed balance
-is honest: partial increments round **up**; connected calls bill a **one-increment
-minimum**; unanswered calls, voicemail drops and bounced email consume **nothing**.
+1 credit = $0.01, sold in packs of 1,000 at $10. Purchased credits roll over; the monthly
+allowance does not.
+
+Rules: partial increments **round up**; connected calls bill a **one-increment minimum**;
+**voicemail bills on message duration**; **a bounced email bills as a send** — the work was
+performed; **a call that rings out with no voicemail bills nothing**, since nothing was
+delivered.
+
+> The purchase flow is **deliberately non-transacting** — no card fields, no checkout, and
+> it says so on use. Real commerce needs payment processing, state sales tax, invoices,
+> receipts, failed-payment handling and refunds, none of which exist here.
 
 Once these records determine an invoice, the audit log is a billing ledger. A logging bug
-stops being a correctness issue and becomes a customer billing dispute — that implies
-append-only storage and activity-to-charge reconciliation before this is sold.
+becomes a customer billing dispute — that implies append-only storage and
+activity-to-charge reconciliation before this is sold.
+
+### The value model — exploratory, not settled
+
+Human-time equivalence: **10 min per email, 20 min per call, 3 min per no-answer**, at a
+loaded **$40/hr**. Bounced email is **excluded** — it creates work rather than saving it.
+
+Hours returned is the headline; dollars are secondary and only defensible with the rate
+shown. Shown on completed rows and as a daily rollup — never on in-flight activity, which
+stays operational. It is a **claim**, not a feature: if it ever reaches the marketing site
+it belongs in §8.
+
+### Motion
+
+The marketing site has exactly one moving element (the rail). The product adds a live
+activity feed: values change in place, no fades or slides. Driven by `lib/pledgeSim.ts` —
+**seeded and deterministic**, never random, because a demo that differs on every reload is
+unusable in a sales call and `Math.random()` would desync hydration. Under
+`prefers-reduced-motion` the feed freezes on a representative frame.
+
+State is read through `useSyncExternalStore`, not `useEffect` + `setState`; the lint rule
+`react-hooks/set-state-in-effect` will reject the latter.
 
 > ⚠️ **Voice compliance is unresolved and does not go away because the page is unlisted.**
-> State two-party call-recording consent (CA, FL and ~10 others), TCPA rules on autodialed
-> calls to mobile numbers, and emerging state law requiring disclosure that a caller is AI.
-> Commercial debt escapes the FDCPA; it does not escape these.
+> Two-party call-recording consent (CA, FL and ~10 others), TCPA rules on autodialed calls
+> to mobile numbers, and emerging state law requiring AI-caller disclosure. Commercial debt
+> escapes the FDCPA; it does not escape these. Rules GRD-01 to GRD-05 encode them.
+
+### Rules Engine
+
+62 rules across 14 families, curated from the CollectPilot reference and **fully
+US-localized** — SAP HANA/S4, NetSuite, Dynamics; USD; ACH returns and NSF checks; 8am–9pm
+local calling windows. No GST, no paise, no PSU account types.
+
+**20 rules are locked** and cannot be disabled: the approval gate, compliance guardrails,
+metering and audit. A UI that lets you switch those off implies they are optional. Toggles
+on the rest are illustrative — there is no persistence, and the page says so.
+
+The rule set is the **specification** of what Pledge does. Adding one is a commitment.
 
 ### Files
 
 ```
-app/(product)/layout.tsx        product root layout — no marketing chrome, noindex
-app/(product)/pledge/page.tsx   the dashboard
-content/pledge.ts               metering rules + illustrative mock data
-proxy.ts                        rewrites pledge.* → /pledge
+app/(product)/layout.tsx                   product root layout — AppShell, noindex
+app/(product)/pledge/page.tsx              dashboard
+app/(product)/pledge/rules/page.tsx        rules engine
+app/(product)/pledge/orchestration/page.tsx orchestration
+components/product/                        AppShell, Icons, LiveActivity, CreditMeter,
+                                           BuyCredits, RuleTable
+content/pledge.ts                          metering, value model, queue, mock data
+content/pledgeRules.ts                     the 62 rules
+content/pledgeOrchestration.ts             flows, workflows, pipeline
+lib/pledgeSim.ts                           deterministic live simulation
+lib/navStore.ts                            rail collapse state
+proxy.ts                                   rewrites pledge.* → /pledge
 ```
 
-All dashboard figures are **illustrative**, labeled as such in the UI, and must never be
-presented as measured results. `/pledge` also resolves on the apex so it is testable
-locally; that is intentional.
-
+All figures are **illustrative**, labeled as such in the UI, and must never be presented as
+measured results. `/pledge` also resolves on the apex so it is testable locally.
