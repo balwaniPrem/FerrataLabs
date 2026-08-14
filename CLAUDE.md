@@ -143,10 +143,14 @@ two, colour appears only as muted status pastels, and only where it carries mean
 - **Text is never pure black.** `--ink` is `#111111`.
 - **The rail** — 1px fixed vertical line at `left:64px`, fills with accent as you scroll.
   The via ferrata cable. Hidden below 1040px.
-- **The mark — "Ascent."** A monotone step function with an anchor bolt at the summit,
-  in `components/Mark.tsx`. Reads as a plot and as rungs cut into rock; the four risers are
-  the four engagement steps. Uses `currentColor` so it reverses on ink. Default 21px at
-  stroke weight 2.6. Favicon `app/icon.svg`, `app/apple-icon.png` at 180×180.
+- **The mark.** A cable and three unequal rungs cut into a solid ink field, in
+  `components/Mark.tsx`. It is the via ferrata itself rather than a metaphor for it, and
+  the rungs are unequal so it does not read as a letter E. The field uses `var(--ink)`
+  rather than a literal, so the tile always matches the wordmark beside it. Default 26px;
+  20px in the nav and footer, 19px in the product app bar. Favicon `app/icon.svg` with the
+  stroke widened to 3 so the rungs survive 16px; `app/apple-icon.png` at 180×180.
+  **It does not reverse.** A dark field with white strokes needs a light background. Every
+  surface it sits on today is light; putting it on ink would need a separate variant.
 - **Macro whitespace.** Sections are `116px` vertical. Let it breathe.
 - **Emphasis without colour.** The hero's emphasised phrase carries a thick offset underline
   rather than a colour change — there is no second colour to reach for.
