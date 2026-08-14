@@ -42,3 +42,7 @@ next-env.d.ts
 
 # contact form dev fallback
 .submissions.jsonl
+
+# third-party skills — reinstall with: npx skills add Leonxlnx/taste-skill
+.agents/
+.claude/skills/

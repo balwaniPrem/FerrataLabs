@@ -83,55 +83,72 @@ as one, on the site or in conversation.
 
 ## 4. Design system — DO NOT CHANGE WITHOUT ASKING
 
+Redesigned to warm monochrome with a black accent, at the owner's direction. The previous
+steel-blue accent is retired — there is no blue anywhere in the system.
+
 ### Tokens
 
 ```css
---ink:#14181D;   --slate:#3A444F;  --steel:#6A7683;  --mist:#9DA7B2;
---line:#DFE4EA;  --line-2:#EEF1F4;
---surface:#FFFFFF; --canvas:#F6F8FA;
---accent:#2A72AE; --accent-lit:#3A87C9; --accent-wash:#F0F6FC; --accent-line:#CBDFF0;
+--ink:#111111;   --slate:#37352F;  --steel:#6B6862;  --mist:#8A867E;
+--line:#E8E6E1;  --line-2:#F1EFEB;
+--surface:#FFFFFF; --canvas:#F7F6F3;
+--accent:#111111; --accent-lit:#333333; --accent-wash:#F1EFEB; --accent-line:#D8D5CF;
+
+/* the only colour in the system, semantic status only */
+--pos-bg:#EDF3EC; --pos-line:#CFE0CD; --pos-ink:#346538;
+--neg-bg:#FBECEC; --neg-line:#E7CFCF; --neg-ink:#8F2F2D;
+--warn-bg:#FBF6E9; --warn-line:#E6DCC0; --warn-ink:#7A5C14;
 ```
 
-Light theme only. White and pale-grey sections alternate. No dark sections. Accent blue is
-deliberately muted/steel — not a bright SaaS blue. Used sparingly: logo mark, buttons, step
-numbers, rule accents, the scroll rail.
+Light theme only. White and warm off-white alternate — **one grey family, warm throughout.**
+Never mix warm and cool greys. **Black is the accent**, used for CTAs, the mark, step numbers
+and rule accents. Colour appears only as muted status pastels, and only where it carries
+meaning.
 
 ### Type
 
-- **Display:** Archivo — 800 for headings, 600 for sub-heads. Tight tracking (−0.02 to −0.03em).
-- **Body:** IBM Plex Sans — 17px base, 1.62 line-height.
-- **Utility:** IBM Plex Mono — eyebrows, labels, durations, step numbers. Uppercase,
-  0.13–0.16em tracking.
+- **Display:** Archivo — 800 headings, 600 sub-heads. Tracking −0.03 to −0.038em at display sizes.
+- **Body:** IBM Plex Sans — 17px, 1.65 line-height.
+- **Utility:** IBM Plex Mono — eyebrows, labels, durations, figures. Uppercase, 0.13–0.2em tracking.
+- Numbers use `font-variant-numeric: tabular-nums` so columns align.
+- Headings use `text-wrap: balance`, body copy `text-wrap: pretty`.
 
 ### Non-negotiable visual rules
 
-- **Zero border-radius anywhere.** Sharp corners are the identity.
+- **Zero border-radius anywhere.** Sharp corners are the identity. This survived the
+  redesign deliberately: black-on-white with hairline rules and sharp corners is what keeps
+  the site from looking like every other AI-generated SaaS page.
 - **Hairline grids.** Card groups are 1px gaps over a `--line` background, not floating
   boxes with shadows.
-- **Almost no shadows.** One soft shadow on the console component only.
+- **No shadows, no gradients, no glassmorphism** beyond the nav's subtle blur.
+- **Text is never pure black.** `--ink` is `#111111`.
 - **The rail** — 1px fixed vertical line at `left:64px`, fills with accent as you scroll.
-  This is the via ferrata cable. Hidden below 1040px.
+  The via ferrata cable. Hidden below 1040px.
 - **The mark — "Ascent."** A monotone step function with an anchor bolt at the summit,
-  rendered by `components/Mark.tsx`. It reads as a plot and as rungs cut into rock; the
-  four risers are the four engagement steps. The path uses `currentColor` so it reverses
-  on ink; the bolt stays accent unless `mono` is set. Default 21px at stroke weight 2.6 —
-  lighter reads timid beside the 800-weight wordmark. Favicon is `app/icon.svg` (heavier
-  strokes, hand-tuned for 16px); `app/apple-icon.png` is 180×180.
-- **The bolt** — square rotated 45°, accent-filled. No longer a standalone logo; it is the
-  summit anchor of the mark, and still marks agent names (`.agent .nm i`).
-- **Contrast.** `--steel` on white measures 4.63:1 and passes AA. Don't lighten body text
-  below it.
+  in `components/Mark.tsx`. Reads as a plot and as rungs cut into rock; the four risers are
+  the four engagement steps. Uses `currentColor` so it reverses on ink. Default 21px at
+  stroke weight 2.6. Favicon `app/icon.svg`, `app/apple-icon.png` at 180×180.
+- **Macro whitespace.** Sections are `116px` vertical. Let it breathe.
+- **Emphasis without colour.** The hero's emphasised phrase carries a thick offset underline
+  rather than a colour change — there is no second colour to reach for.
 
-> ⚠️ **`--mist` fails AA.** Measured 2.44:1 on white — below the 4.5:1 needed for normal
-> text and the 3:1 for large. It is currently used for small mono labels: `.world .tag`,
-> `.agent .role`, `.step .dur`, `.dstep .dur`, `.card .meta`, `.foot-grid h4`, `.foot`.
-> New components were built with `--steel` instead. Fixing the rest means either darkening
-> the `--mist` token (a §4 change — ask first) or swapping those seven rules to `--steel`.
+### Contrast
 
-If this ever drifts toward rounded cards, drop shadows, gradient buttons or Inter, it has
-failed. Those are the template defaults this is deliberately avoiding.
+`--steel` on white measures **5.55:1** — passes AA for normal text. `--mist` measures 3.63:1
+and is therefore **retired as a text colour**; it is decorative only. Every small mono label
+that previously used it now uses `--steel`. This fixed a real AA failure carried by the
+previous palette.
 
----
+### Design skills
+
+Third-party skills are installed at `.agents/skills/` (symlinked into `.claude/skills/`) via
+`npx skills add Leonxlnx/taste-skill`. They are **not committed** — reinstall with that one
+command.
+
+Apply **`minimalist-ui`** and **`redesign-existing-projects`**. Do **not** apply
+`high-end-visual-design` or `gpt-taste`: they mandate OLED-black backgrounds, mesh gradients,
+glassmorphism, GSAP scroll-pinning, rotated cards and images inside headings. That is an
+awwwards-portfolio aesthetic and it is wrong for a firm selling agents to a CFO.
 
 ## 5. Site structure
 
