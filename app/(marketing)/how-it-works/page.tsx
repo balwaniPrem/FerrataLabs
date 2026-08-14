@@ -17,7 +17,9 @@ export default function HowItWorks() {
       <header className="phead">
         <div className="wrap">
           <p className="eyebrow">How it works</p>
-          <h1>Unlock your organizational intelligence.</h1>
+          <h1>
+            Unlock your <span className="hl">organizational intelligence</span>.
+          </h1>
           <p>
             A via ferrata is a fixed steel line bolted into rock so that people who
             aren&rsquo;t technical climbers can cross terrain they otherwise couldn&rsquo;t.

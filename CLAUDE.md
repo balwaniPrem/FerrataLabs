@@ -109,8 +109,12 @@ Never mix warm and cool greys. **Black is the primary accent**, used for CTAs, t
 **Iron oxide (`--accent-2`, `#A34A32`) is the second accent, and it is rationed to one
 element: the eyebrow label.** Rust is what iron does, so it belongs to a company named for
 the iron way, and it is warm enough to sit inside the existing warm-grey family without
-mixing temperatures. It measures 5.86:1 on white. Permitted on the eyebrow badge and on the hero's
-"AI agents". Nothing else.
+mixing temperatures. It measures 5.86:1 on white. Permitted in exactly two places: the eyebrow badge, and a
+single `.hl` span inside a page headline. Nothing else, and **one `.hl` per page** — a
+second would mean neither is emphasised.
+
+Current usage: "AI agents" on `/`, "organizational intelligence" on `/how-it-works`. Both
+are the subject of the sentence, which is the test for what earns it.
 
 The eyebrow renders as a **pill badge** — iron-oxide text on a faint wash with a hairline
 border. See the radius rule below.

@@ -553,8 +553,9 @@ h4 {
 /* With a monochrome palette the emphasis can no longer be carried by colour.
    A thick, offset rule reads as deliberate editorial emphasis and keeps the
    headline in one ink. */
-/* The subject of the sentence, carried in the second accent. */
-.hero h1 .hl {
+/* Headline emphasis. One phrase per page, in the second accent, on the words that
+   carry the argument. Applies to the hero and to page headers alike. */
+h1 .hl {
   color: var(--accent-2);
 }
 .hero h1 em {
