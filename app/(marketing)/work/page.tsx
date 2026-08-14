@@ -14,7 +14,6 @@ export default function Work() {
     <>
       <header className="phead">
         <div className="wrap">
-          <p className="eyebrow">The work</p>
           <h1>Agents we&rsquo;ve shipped.</h1>
           <p>
             These are examples, not a catalogue. They show the shape of what an agent can own

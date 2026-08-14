@@ -159,9 +159,22 @@ h4 {
   top: 0;
   left: -1px;
   width: 3px;
-  height: 0;
+  height: 100vh;
   background: var(--accent);
-  transition: height 0.25s linear;
+  transform: scaleY(0);
+  transform-origin: top;
+}
+/* Scroll-driven animation rather than a scroll event listener: no JS, no
+   main-thread work, and it degrades to a static hairline where unsupported. */
+@supports (animation-timeline: scroll()) {
+  .rail-run {
+    animation: rail-fill linear both;
+    animation-timeline: scroll(root block);
+  }
+}
+@keyframes rail-fill {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
 }
 @media (max-width: 1040px) {
   .rail {
@@ -181,7 +194,8 @@ h4 {
 .nav-in {
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 15px 30px;
+  /* 4.7: desktop nav height capped at 80px. */
+  padding: 13px 30px;
   display: flex;
   align-items: center;
   gap: 28px;
@@ -436,11 +450,22 @@ h4 {
   color: var(--steel);
   max-width: 60ch;
 }
+.h1-sub {
+  display: block;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--steel);
+  margin-top: 14px;
+  font-weight: 400;
+}
+.phead h1 { margin-bottom: 22px; }
 
 /* ---------- home hero ---------- */
 .hero {
   background: linear-gradient(180deg, var(--canvas), var(--surface) 78%);
-  padding: 132px 0 108px;
+  padding: 92px 0 52px;
   position: relative;
   overflow: hidden;
 }
@@ -460,11 +485,13 @@ h4 {
 .hero h1 {
   font-family: var(--display);
   font-weight: 800;
-  font-size: clamp(40px, 6.4vw, 76px);
-  line-height: 1.0;
-  letter-spacing: -0.038em;
-  margin: 22px 0 26px;
-  max-width: 17ch;
+  /* 4.7: headline must hold 2 lines at desktop. A 3-line hero headline is a
+     font-scale error, not a copy-length error. */
+  font-size: clamp(36px, 5vw, 60px);
+  line-height: 1.04;
+  letter-spacing: -0.032em;
+  margin: 20px 0 24px;
+  max-width: 24ch;
 }
 /* With a monochrome palette the emphasis can no longer be carried by colour.
    A thick, offset rule reads as deliberate editorial emphasis and keeps the
@@ -825,14 +852,7 @@ a.agent:hover {
 .marq-item.primary {
   color: var(--accent);
 }
-.marq-item .dot {
-  width: 5px;
-  height: 5px;
-  background: currentColor;
-  transform: rotate(45deg);
-  flex: none;
-  opacity: 0.55;
-}
+/* Decorative dots removed: they carried no state and read as ornament. */
 @keyframes marq {
   from {
     transform: translateX(0);

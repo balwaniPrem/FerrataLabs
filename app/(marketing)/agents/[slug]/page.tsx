@@ -34,8 +34,10 @@ export default async function AgentPage({ params }: PageProps<"/agents/[slug]">)
     <>
       <header className="phead">
         <div className="wrap">
-          <p className="eyebrow">{agent.role}</p>
-          <h1>{agent.name}</h1>
+          <h1>
+            {agent.name}
+            <span className="h1-sub">{agent.role}</span>
+          </h1>
           <p>{agent.lede}</p>
         </div>
       </header>

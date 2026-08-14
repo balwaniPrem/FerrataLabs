@@ -13,7 +13,6 @@ export default function Marquee() {
         key={`${dupe ? "b" : "a"}-${i.name}`}
         className={`marq-item${i.primary ? " primary" : ""}`}
       >
-        <span className="dot" aria-hidden="true" />
         {i.name}
       </span>
     ));

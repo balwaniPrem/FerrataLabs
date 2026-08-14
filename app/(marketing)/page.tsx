@@ -17,10 +17,7 @@ export default function Home() {
           </h1>
           <p className="lede">
             Most enterprise AI summarizes the work. We build agents that do it, wired into
-            your systems of record, acting on live transactions, stopping where the judgment
-            belongs to a person. Every deployment is designed around how your business
-            already runs, because no two enterprises operate the same way and there&rsquo;s no
-            reason their agents should.
+            your systems of record.
           </p>
           <div className="hero-cta">
             <Link href="/contact" className="btn btn-lg">
@@ -30,6 +27,11 @@ export default function Home() {
               See the work
             </Link>
           </div>
+        </div>
+      </header>
+
+      <section className="topo-band">
+        <div className="wrap">
           <dl className="topo">
             <div>
               <dt>First agent live</dt>
@@ -45,17 +47,16 @@ export default function Home() {
             </div>
           </dl>
         </div>
-      </header>
+      </section>
 
       <section className="sec">
         <div className="wrap">
           <h2>The difference is execution.</h2>
           <p className="intro">
-            Plenty of tools will now summarize a report or draft an email about a problem. An
-            agent goes and resolves it. Receivables makes the clearest illustration because
-            every business runs it, on the left, how it works in most companies today; on the
-            right, the same sequence run by an agent. Both end in the same place, with a
-            person releasing the money.
+            Plenty of tools will summarize a report or draft an email about a problem. An
+            agent goes and resolves it. Receivables shows the difference clearly, because
+            every business runs it. Both columns below end in the same place, with a person
+            releasing the money.
           </p>
           <Worlds />
         </div>
@@ -66,7 +67,7 @@ export default function Home() {
           <h2>Work we&rsquo;ve shipped.</h2>
           <p className="intro">
             Six agents, each owning a workflow end to end. These are examples of what we
-            build, not a shelf you pick from, every one is rebuilt around how your business
+            build, not a shelf you pick from. Every one is rebuilt around how your business
             actually operates.
           </p>
           <AgentGrid />
@@ -115,7 +116,7 @@ export default function Home() {
         <div className="wrap">
           <h2>Operators, not an agency.</h2>
           <p className="intro">
-            We&rsquo;ve done this from the inside, running the technology organization
+            We&rsquo;ve done this from the inside. We ran the technology organization
             through exactly this kind of transformation, with a P&amp;L attached and a board
             asking about the number. Everything below came out of operating, not advising.
           </p>

@@ -9,7 +9,6 @@ export default function Cta() {
   return (
     <section className="cta">
       <div className="wrap">
-        <p className="eyebrow">{cta.eyebrow}</p>
         <h2>{cta.heading}</h2>
         <p>{cta.body}</p>
         <ul className="cta-list">

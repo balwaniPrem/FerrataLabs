@@ -39,8 +39,10 @@ export default async function IndustryPage({
     <>
       <header className="phead">
         <div className="wrap">
-          <p className="eyebrow">{industry.tags.join(" · ")}</p>
-          <h1>{industry.name}</h1>
+          <h1>
+            {industry.name}
+            <span className="h1-sub">{industry.tags.join(" · ")}</span>
+          </h1>
           <p>{industry.lede}</p>
         </div>
       </header>

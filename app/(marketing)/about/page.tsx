@@ -13,10 +13,9 @@ export default function About() {
     <>
       <header className="phead">
         <div className="wrap">
-          <p className="eyebrow">Who we are</p>
           <h1>Operators, not an agency.</h1>
           <p>
-            We&rsquo;ve done this from the inside, running the technology organization
+            We&rsquo;ve done this from the inside. We ran the technology organization
             through exactly this kind of transformation, with a P&amp;L attached and a board
             asking about the number. Everything here came out of operating, not advising.
           </p>

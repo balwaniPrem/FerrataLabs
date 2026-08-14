@@ -12,7 +12,6 @@ export default function Contact() {
     <>
       <header className="phead">
         <div className="wrap">
-          <p className="eyebrow">Next step</p>
           <h1>Bring us one workflow.</h1>
           <p>
             Thirty minutes, no deck. Pick the process that costs you most in people, errors
