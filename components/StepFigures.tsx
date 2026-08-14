@@ -25,33 +25,74 @@ const mono = {
 const label = { fontFamily: "var(--display)", fontSize: 11, fontWeight: 600 };
 const small = { fontFamily: "var(--body)", fontSize: 9.5 };
 
-/** 01 — Assess: workflows measured, then ranked by what they cost. */
+/** 01 — Assess: one business function, its workflows, and what it costs today. */
 export function FigAssess() {
-  const rows = [
-    { name: "Invoice intake", vol: "14,200 / mo", w: 232, cost: "$418k" },
-    { name: "Reconciliation", vol: "3,900 / mo", w: 176, cost: "$310k" },
-    { name: "Order intake", vol: "2,150 / mo", w: 118, cost: "$196k" },
-    { name: "Quote drafting", vol: "880 / mo", w: 64, cost: "$74k" },
+  const flows = [
+    { name: "Invoice intake and coding", vol: "14,200 / mo" },
+    { name: "Three-way match exceptions", vol: "2,900 / mo" },
+    { name: "Vendor query handling", vol: "1,450 / mo" },
+    { name: "Payment run preparation", vol: "4 / mo" },
   ];
+  // 418 + 96 = 514. Bars are drawn to that proportion, not eyeballed.
+  const BAR = 196;
+  const fteW = Math.round(BAR * (418 / 514));
+  const swW = Math.round(BAR * (96 / 514));
+
   return (
-    <svg viewBox="0 0 620 210" role="img" aria-label="Workflows measured by volume and exception rate, then ranked by annual cost">
-      <text x="0" y="10" style={mono} fill={MIST}>Observed</text>
-      <text x="300" y="10" style={mono} fill={A}>Ranked by cost</text>
-      <line x1="0" y1="18" x2="280" y2="18" stroke={L} />
-      <line x1="300" y1="18" x2="620" y2="18" stroke={AL} />
-      {rows.map((r, i) => {
-        const y = 40 + i * 40;
+    <svg
+      viewBox="0 0 620 268"
+      role="img"
+      aria-label="One business function, accounts payable, with its four workflows measured by volume and its annual cost split into 418,000 dollars of people and 96,000 dollars of software, totalling 514,000 dollars"
+    >
+      {/* left: the workflows they will actually see */}
+      <text x="0" y="10" style={mono} fill={STEEL}>Your workflows, mapped</text>
+      <line x1="0" y1="18" x2="286" y2="18" stroke={L} />
+      <text x="0" y="42" style={{ ...label, fontSize: 15 }} fill={INK}>Accounts payable</text>
+
+      {flows.map((f, i) => {
+        const y = 68 + i * 30;
         return (
-          <g key={r.name}>
-            <text x="0" y={y} style={label} fill={INK}>{r.name}</text>
-            <text x="0" y={y + 13} style={small} fill={STEEL}>{r.vol}</text>
-            <line x1="272" y1={y - 4} x2="292" y2={y - 4} stroke={MIST} strokeDasharray="2 2" />
-            <rect x="300" y={y - 12} width={r.w} height="16" fill={i === 0 ? AW : CANVAS} stroke={i === 0 ? A : L} />
-            <text x={306} y={y - 1} style={small} fill={i === 0 ? A : STEEL}>{r.cost}</text>
+          <g key={f.name}>
+            <rect x="0" y={y - 11} width="3" height="14" fill={i === 0 ? A : L} />
+            <text x="12" y={y} style={{ ...small, fontSize: 11 }} fill={INK}>{f.name}</text>
+            <text x="286" y={y} style={{ ...small, fontSize: 10 }} fill={STEEL} textAnchor="end">{f.vol}</text>
           </g>
         );
       })}
-      <text x="300" y="196" style={small} fill={MIST}>Yours whether or not you continue</text>
+
+      <line x1="0" y1="196" x2="286" y2="196" stroke={L} />
+      <text x="0" y="214" style={{ ...small, fontSize: 10 }} fill={STEEL}>
+        Measured in your systems, not benchmarked
+      </text>
+
+      {/* divider between what is observed and what it costs */}
+      <line x1="318" y1="0" x2="318" y2="240" stroke={L} />
+
+      {/* right: the cost of running it, split */}
+      <text x="350" y="10" style={mono} fill={STEEL}>What it costs today</text>
+      <line x1="350" y1="18" x2="620" y2="18" stroke={L} />
+
+      <text x="350" y="48" style={{ ...small, fontSize: 11 }} fill={INK}>People</text>
+      <text x="350" y="62" style={{ ...small, fontSize: 9.5 }} fill={STEEL}>6.4 FTE, fully loaded</text>
+      <rect x="350" y="70" width={fteW} height="10" fill={INK} />
+      <text x="620" y="62" style={{ ...label, fontSize: 14 }} fill={INK} textAnchor="end">$418,000</text>
+
+      <text x="350" y="110" style={{ ...small, fontSize: 11 }} fill={INK}>Software</text>
+      <text x="350" y="124" style={{ ...small, fontSize: 9.5 }} fill={STEEL}>3 subscriptions, annual</text>
+      <rect x="350" y="132" width={swW} height="10" fill={CANVAS} stroke={MIST} />
+      <text x="620" y="124" style={{ ...label, fontSize: 14 }} fill={INK} textAnchor="end">$96,000</text>
+
+      <line x1="350" y1="164" x2="620" y2="164" stroke={INK} />
+      <text x="350" y="192" style={mono} fill={STEEL}>Cost of the function</text>
+      <text x="620" y="200" style={{ fontFamily: "var(--display)", fontSize: 30, fontWeight: 800, letterSpacing: "-0.03em" }} fill={INK} textAnchor="end">
+        $514,000
+      </text>
+      <text x="620" y="216" style={{ ...small, fontSize: 9.5 }} fill={STEEL} textAnchor="end">a year, before errors</text>
+
+      <rect x="350" y="232" width="270" height="1" fill={L} />
+      <text x="350" y="250" style={{ ...small, fontSize: 10 }} fill={STEEL}>
+        Figures illustrative. Every candidate workflow gets this treatment
+      </text>
     </svg>
   );
 }

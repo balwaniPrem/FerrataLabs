@@ -285,6 +285,7 @@ These are written into the site. Confirm each is defensible under a second-meeti
 | FAQ: "we don't train on your data" | Is this the actual policy? It's now written down. |
 | FAQ: "you're not locked in" | Ditto. |
 | Console numbers (412 invoices, Kessler PO, $2.3M) | Illustrative. Be ready to say so. |
+| Assess figure ($418k people, $96k software, $514k total) | Illustrative, and labelled as such in the figure. Do not quote as a benchmark or a typical result. The point of the diagram is the *method* — function, workflows, split cost — not the numbers. |
 
 ---
 
