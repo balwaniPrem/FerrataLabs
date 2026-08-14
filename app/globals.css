@@ -63,8 +63,8 @@
      existing warm-grey family without mixing temperatures.
      Rationed to the eyebrow label only. Measures 5.86:1 on white. */
   --accent-2: #a34a32;
-  --accent-2-wash: #fbf2ed;
-  --accent-2-line: #e6c4b3;
+  --accent-2-wash: #fbf3f0;
+  --accent-2-line: #e6cfc7;
 
   /* THE ONE RADIUS EXCEPTION. Tags and status badges are full-pill; every
      other surface stays sharp. The shape lock allows a mixed system only
@@ -138,33 +138,18 @@ h4 {
 
 /* Bordered label. Sharp-cornered: a pill here would break the shape lock,
    which both §4 and the design-taste pre-flight treat as a hard rule. */
-/* Status pill, the pattern used across agentic dev sites: a filled accent dot,
-   then the label in body type. The label sits in --slate rather than ink, so the
-   dot stays the only strong mark in the badge. Dot is deliberately large
-   relative to the text (10px against 15px). */
 .eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-family: var(--body);
-  font-size: 15px;
-  font-weight: 400;
-  letter-spacing: 0;
-  text-transform: none;
-  color: var(--slate);
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-2);
   background: var(--accent-2-wash);
   border: 1px solid var(--accent-2-line);
   border-radius: var(--radius-badge);
-  padding: 8px 18px 8px 14px;
-  line-height: 1.4;
-}
-.eyebrow::before {
-  content: "";
-  width: 10px;
-  height: 10px;
-  border-radius: var(--radius-badge);
-  background: var(--accent-2);
-  flex: none;
+  padding: 5px 13px 4px;
+  line-height: 1.2;
 }
 
 .skip {
