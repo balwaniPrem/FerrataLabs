@@ -500,6 +500,10 @@ measured results. `/pledge` also resolves on the apex so it is testable locally.
 
 ## 13. Agent console recordings
 
+> **The full pattern, panel by panel, plus content rules and sketches for the remaining
+> five agents, is in [`docs/agent-console-pattern.md`](docs/agent-console-pattern.md).
+> Read that before building another console.**
+
 Each agent page can carry a recording of that agent's console. **Sterling is the only one
 built.** The other five wait for explicit sign-off before rollout.
 
