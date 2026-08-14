@@ -66,6 +66,12 @@
   --accent-2-wash: #fbf3f0;
   --accent-2-line: #e6cfc7;
 
+  /* THE ONE RADIUS EXCEPTION. Tags and status badges are full-pill; every
+     other surface stays sharp. The shape lock allows a mixed system only
+     when the rule is documented and applied everywhere, so this token is
+     the rule and every badge below uses it. Nothing else may. */
+  --radius-badge: 9999px;
+
   /* muted status pastels — the only colour in the system, used semantically */
   --pos-bg: #edf3ec; --pos-line: #cfe0cd; --pos-ink: #346538;
   --neg-bg: #fbecec; --neg-line: #e7cfcf; --neg-ink: #8f2f2d;
@@ -141,7 +147,8 @@ h4 {
   color: var(--accent-2);
   background: var(--accent-2-wash);
   border: 1px solid var(--accent-2-line);
-  padding: 5px 10px 4px;
+  border-radius: var(--radius-badge);
+  padding: 5px 13px 4px;
   line-height: 1.2;
 }
 
@@ -1672,7 +1679,8 @@ footer {
   color: var(--accent);
   border: 1px solid var(--accent-line);
   background: var(--accent-wash);
-  padding: 3px 8px;
+  border-radius: var(--radius-badge);
+  padding: 3px 10px;
 }
 .appbar .bal {
   margin-left: auto;
@@ -1861,7 +1869,8 @@ table.grid2 .muted {
   font-size: 9.5px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  padding: 3px 8px;
+  padding: 3px 10px;
+  border-radius: var(--radius-badge);
   border: 1px solid var(--line);
   color: var(--steel);
   white-space: nowrap;
@@ -2105,7 +2114,8 @@ table.grid2 .muted {
   color: var(--neg-ink);
   border: 1px solid var(--neg-line);
   background: var(--neg-bg);
-  padding: 1px 5px;
+  border-radius: var(--radius-badge);
+  padding: 1px 7px;
   vertical-align: middle;
 }
 td .typ {
@@ -2310,7 +2320,8 @@ td .typ {
   color: var(--accent);
   border: 1px solid var(--accent-line);
   background: var(--accent-wash);
-  padding: 2px 6px;
+  border-radius: var(--radius-badge);
+  padding: 2px 9px;
 }
 table.grid2.rules td { vertical-align: top; padding: 12px 20px; }
 .rid { font-family: var(--mono); font-size: 11px; color: var(--mist); white-space: nowrap; width: 78px; }

@@ -110,9 +110,8 @@ the iron way, and it is warm enough to sit inside the existing warm-grey family 
 mixing temperatures. It measures 5.86:1 on white. Two instances per page at most, since
 eyebrows are already capped at `ceil(sections / 3)`.
 
-The eyebrow renders as a **sharp-cornered bordered chip** — iron-oxide text on a faint wash
-with a hairline border. Not a pill: a rounded chip on an all-sharp page breaks the shape
-lock, which both this section and the design-taste pre-flight treat as a hard rule.
+The eyebrow renders as a **pill badge** — iron-oxide text on a faint wash with a hairline
+border. See the radius rule below.
 
 **Do not extend it.** Not to links, not to buttons, not to borders, not to status. A second
 accent without a written boundary becomes a primary accent within a month. Beyond these
@@ -128,9 +127,16 @@ two, colour appears only as muted status pastels, and only where it carries mean
 
 ### Non-negotiable visual rules
 
-- **Zero border-radius anywhere.** Sharp corners are the identity. This survived the
-  redesign deliberately: black-on-white with hairline rules and sharp corners is what keeps
-  the site from looking like every other AI-generated SaaS page.
+- **Radius: sharp everywhere, with exactly one documented exception.**
+  Every surface — cards, buttons, inputs, panels, containers — is radius 0. Sharp corners
+  are the identity, and they are what keep the site from looking like every other
+  AI-generated SaaS page.
+
+  **The single exception: tags and status badges are full-pill** (`--radius-badge`). That
+  covers `.eyebrow`, `.state`, `.chip`, `.offpat` and `.fam-key`, and nothing else. The
+  shape lock permits a mixed system only when the rule is written down and applied
+  everywhere, which is what this token is for. A new rounded element that is not a badge
+  is a bug.
 - **Hairline grids.** Card groups are 1px gaps over a `--line` background, not floating
   boxes with shadows.
 - **No shadows, no gradients, no glassmorphism** beyond the nav's subtle blur.
