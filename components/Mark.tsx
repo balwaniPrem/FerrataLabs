@@ -1,51 +1,38 @@
 /**
- * The Ferrata Labs mark — "Ascent". CLAUDE.md §4.
+ * The Ferrata Labs mark. CLAUDE.md §4.
  *
- * A monotone step function with an anchor bolt at the summit. Reads as a plot and
- * as rungs cut into rock; the four risers are the four engagement steps. The bolt
- * (a square rotated 45°) is retained from the previous mark and becomes the summit
- * anchor rather than a standalone glyph.
+ * A cable and three rungs cut into a solid field: the via ferrata itself. The rungs
+ * are deliberately unequal so it reads as a climbing line rather than as a letter E.
  *
- * The path uses currentColor so the mark reverses cleanly on ink. The bolt stays
- * accent unless `mono` is set.
+ * The field uses `var(--ink)` rather than a literal, so the mark always matches the
+ * wordmark beside it. Note this mark does not reverse — it is a dark field with white
+ * strokes, so it needs a light background. Every surface it currently sits on (nav,
+ * footer, product app bar) is light.
  */
-export default function Mark({
-  size = 21,
-  /** 2.6 holds its own beside the 800-weight wordmark; lighter reads timid. */
-  weight = 2.6,
-  mono = false,
-  className,
-}: {
-  size?: number;
-  /** Stroke width in viewBox units. Increase for small renderings. */
-  weight?: number;
-  /** Drop the accent bolt and draw everything in currentColor. */
-  mono?: boolean;
-  className?: string;
-}) {
+export function Mark({ size = 26 }: { size?: number }) {
   return (
     <svg
       width={size}
       height={size}
-      viewBox="0 0 40 40"
-      fill="none"
-      aria-hidden="true"
-      focusable="false"
-      className={className}
+      viewBox="0 0 48 48"
+      role="img"
+      aria-label="Ferrata Labs"
     >
-      <path
-        d="M3 35 H12 V26 H21 V17 H30 V8"
-        stroke="currentColor"
-        strokeWidth={weight}
-      />
-      <rect
-        x={30 - weight * 1.35}
-        y={8 - weight * 1.35}
-        width={weight * 2.7}
-        height={weight * 2.7}
-        transform="rotate(45 30 8)"
-        fill={mono ? "currentColor" : "var(--accent)"}
-      />
+      <rect width="48" height="48" fill="var(--ink)" />
+      <g
+        transform="translate(8,8)"
+        stroke="#FFFFFF"
+        strokeWidth="2.4"
+        strokeLinecap="square"
+        fill="none"
+      >
+        <path d="M4 27 V5" />
+        <path d="M4 23 H20" />
+        <path d="M4 16 H26" />
+        <path d="M4 9 H16" />
+      </g>
     </svg>
   );
 }
+
+export default Mark;
