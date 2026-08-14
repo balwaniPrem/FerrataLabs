@@ -58,7 +58,7 @@ export default function About() {
             <h3>The POD operating model</h3>
             <p>
               The delivery structure we install is the one that produced the numbers above: a
-              self-contained unit of one lead, five engineers and one QA, owning a domain end
+              self-contained unit of one lead, one product owner and two full-stack AI developers, owning a domain end
               to end with its own runbooks and evaluation harness. It is deliberately small
               enough to hold context and large enough to ship without waiting on anyone.
             </p>

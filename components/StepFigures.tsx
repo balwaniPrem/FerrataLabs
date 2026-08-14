@@ -142,8 +142,8 @@ export function FigLive() {
 export function FigHandover() {
   const pod = [
     { l: "Lead", n: 1 },
-    { l: "Engineers", n: 5 },
-    { l: "QA", n: 1 },
+    { l: "Product owner", n: 1 },
+    { l: "AI developers", n: 2 },
   ];
   return (
     <svg viewBox="0 0 620 200" role="img" aria-label="Agents added over time while ownership transfers from Ferrata Labs to your own POD">

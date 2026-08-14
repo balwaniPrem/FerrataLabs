@@ -81,7 +81,7 @@ export const steps: Step[] = [
     short:
       "Add agents as trust builds. When you want it in-house, we install the POD operating model with runbooks and evaluation harnesses documented.",
     body: [
-      "Add agents as trust builds. When you want it in-house we install the POD operating model, one lead, five engineers, one QA per unit, with runbooks and evaluation harnesses documented.",
+      "Add agents as trust builds. When you want it in-house we install the POD operating model, one lead, one product owner and two full-stack AI developers per unit, with runbooks and evaluation harnesses documented.",
       "Your engineers build the next agents themselves, on infrastructure designed from day one to be handed over. You should never need us to change a prompt.",
     ],
     duration: "Ongoing",

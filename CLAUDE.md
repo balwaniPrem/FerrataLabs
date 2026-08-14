@@ -31,7 +31,9 @@ which is where the funded competition is concentrated.
 3. **First agent live** (under 90 days total) — one agent, one workflow, real transactions,
    human approval gate on every consequential action.
 4. **Expand, then hand over** — more agents as trust builds; then the POD operating model
-   (1 lead + 5 engineers + 1 QA) installed so the client's own team builds the next ones.
+   (1 lead + 1 product owner + 2 full-stack AI developers) installed so the client's own
+   team builds the next ones. Deliberately small: it covers business delivery and product
+   direction in one unit rather than staffing engineers and hoping ownership emerges.
 
 The engagement is designed to end. That's a differentiator, not a concession. Say so.
 
