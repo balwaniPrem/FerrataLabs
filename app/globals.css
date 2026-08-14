@@ -467,7 +467,10 @@ h4 {
   margin: 16px 0 18px;
   max-width: 20ch;
 }
-.phead p {
+/* :not(.eyebrow) for the same reason .nav-links is scoped with :not(.btn):
+   a descendant selector like `.phead p` (0,1,1) outranks a bare class like
+   `.eyebrow` (0,1,0) and silently re-styles it. */
+.phead p:not(.eyebrow) {
   font-size: clamp(16.5px, 1.7vw, 19px);
   color: var(--steel);
   max-width: 60ch;
