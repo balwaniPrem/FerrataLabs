@@ -13,7 +13,8 @@ export default function Home() {
         <div className="wrap">
           <p className="eyebrow">Enterprise AI deployment</p>
           <h1>
-            We build Enterprise AI agents that do the <em>actual work</em>.
+            We build Enterprise <span className="hl">AI agents</span> that do the{" "}
+            <em>actual work</em>.
           </h1>
           <p className="lede">
             Most enterprise AI summarizes the work. We build agents that do it, wired into

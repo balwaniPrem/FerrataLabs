@@ -107,8 +107,8 @@ Never mix warm and cool greys. **Black is the primary accent**, used for CTAs, t
 **Iron oxide (`--accent-2`, `#A34A32`) is the second accent, and it is rationed to one
 element: the eyebrow label.** Rust is what iron does, so it belongs to a company named for
 the iron way, and it is warm enough to sit inside the existing warm-grey family without
-mixing temperatures. It measures 5.86:1 on white. Two instances per page at most, since
-eyebrows are already capped at `ceil(sections / 3)`.
+mixing temperatures. It measures 5.86:1 on white. Permitted on the eyebrow badge and on the hero's
+"AI agents". Nothing else.
 
 The eyebrow renders as a **pill badge** — iron-oxide text on a faint wash with a hairline
 border. See the radius rule below.
@@ -153,8 +153,10 @@ two, colour appears only as muted status pastels, and only where it carries mean
   **It does not reverse.** A dark field with white strokes needs a light background. Every
   surface it sits on today is light; putting it on ink would need a separate variant.
 - **Macro whitespace.** Sections are `116px` vertical. Let it breathe.
-- **Emphasis without colour.** The hero's emphasised phrase carries a thick offset underline
-  rather than a colour change — there is no second colour to reach for.
+- **Hero emphasis.** Two devices, on two different words. "AI agents" carries the second
+  accent, because it is the subject of the sentence and what the company sells. "Actual
+  work" carries a thick offset underline in neutral. Both at once is the most emphasis this
+  headline can hold; a third would flatten all three.
 
 ### Contrast
 
