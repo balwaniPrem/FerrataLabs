@@ -58,6 +58,12 @@
   --accent-wash: #f1efeb;
   --accent-line: #d8d5cf;
 
+  /* SECOND ACCENT — iron oxide. Rust is what iron does, so it belongs to a
+     company named for the iron way, and it is warm enough to sit inside the
+     existing warm-grey family without mixing temperatures.
+     Rationed to the eyebrow label only. Measures 5.86:1 on white. */
+  --accent-2: #a34a32;
+
   /* muted status pastels — the only colour in the system, used semantically */
   --pos-bg: #edf3ec; --pos-line: #cfe0cd; --pos-ink: #346538;
   --neg-bg: #fbecec; --neg-line: #e7cfcf; --neg-ink: #8f2f2d;
@@ -127,7 +133,7 @@ h4 {
   font-size: 10.5px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--steel);
+  color: var(--accent-2);
 }
 
 .skip {

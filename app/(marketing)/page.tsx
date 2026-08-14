@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <header className="hero">
         <div className="wrap">
-          <p className="eyebrow">Enterprise AI deployment &middot; United States</p>
+          <p className="eyebrow">Enterprise AI deployment</p>
           <h1>
             We build Enterprise AI agents that do the <em>actual work</em>.
           </h1>

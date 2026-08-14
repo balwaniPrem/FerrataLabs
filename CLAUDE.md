@@ -93,6 +93,7 @@ steel-blue accent is retired — there is no blue anywhere in the system.
 --line:#E8E6E1;  --line-2:#F1EFEB;
 --surface:#FFFFFF; --canvas:#F7F6F3;
 --accent:#111111; --accent-lit:#333333; --accent-wash:#F1EFEB; --accent-line:#D8D5CF;
+--accent-2:#A34A32;  /* iron oxide — eyebrow labels only */
 
 /* the only colour in the system, semantic status only */
 --pos-bg:#EDF3EC; --pos-line:#CFE0CD; --pos-ink:#346538;
@@ -101,9 +102,17 @@ steel-blue accent is retired — there is no blue anywhere in the system.
 ```
 
 Light theme only. White and warm off-white alternate — **one grey family, warm throughout.**
-Never mix warm and cool greys. **Black is the accent**, used for CTAs, the mark, step numbers
-and rule accents. Colour appears only as muted status pastels, and only where it carries
-meaning.
+Never mix warm and cool greys. **Black is the primary accent**, used for CTAs, the mark, step numbers and rule accents.
+
+**Iron oxide (`--accent-2`, `#A34A32`) is the second accent, and it is rationed to one
+element: the eyebrow label.** Rust is what iron does, so it belongs to a company named for
+the iron way, and it is warm enough to sit inside the existing warm-grey family without
+mixing temperatures. It measures 5.86:1 on white. Two instances per page at most, since
+eyebrows are already capped at `ceil(sections / 3)`.
+
+**Do not extend it.** Not to links, not to buttons, not to borders, not to status. A second
+accent without a written boundary becomes a primary accent within a month. Beyond these
+two, colour appears only as muted status pastels, and only where it carries meaning.
 
 ### Type
 
