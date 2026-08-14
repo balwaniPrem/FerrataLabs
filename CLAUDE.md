@@ -542,6 +542,26 @@ welcome, so a reduced-motion visitor never downloads the video at all. Verified:
 
 ### Rolling out to the other five
 
-Add a `console` field to that agent in `content/agents.ts` and drop the three assets into
-`public/media/`. Nothing else changes. Each console must show what makes *that* agent
-distinct rather than restaging Sterling's queue with new account names.
+**Status: Sterling is built and awaiting feedback. Nothing has been applied to Clark,
+Tally, Chandler, Swift or Quill.** Do not roll out without an explicit instruction.
+
+Per agent, when the time comes:
+
+1. Add `content/<agent>.ts` and an unlisted `app/(product)/<agent>/page.tsx`. It must show
+   what makes *that* agent distinct, not Sterling's queue with new account names. Clark is
+   a three-way match and a duplicate check; Tally is an aged break list; Chandler is a
+   normalised quote comparison. If two consoles could swap their data and still make
+   sense, one of them is wrong.
+2. Extend `AgentRail` so that agent is the expanded one and the rest collapse.
+3. Serve the build, then:
+   ```
+   npm i -D playwright && npx playwright install chromium
+   node scripts/record-console.mjs <slug>
+   ```
+   Playwright is deliberately not a project dependency; it is ~200MB and only needed to
+   record. Remove it afterwards.
+4. Add the `console` field to that agent in `content/agents.ts`. Nothing else changes.
+
+The capture script lives at `scripts/record-console.mjs` and is the record of how the
+Sterling asset was made. It hovers only what it finds, so it tolerates consoles whose
+rails differ.
