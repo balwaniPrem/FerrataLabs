@@ -17,7 +17,7 @@ performs operational work end to end rather than summarising it.
 
 > We build Enterprise AI agents that do the actual work.
 
-**Ideal customer:** $50M–$1B revenue enterprises running SAP, NetSuite or Dynamics. Buyers
+**Ideal customer:** $20M+ revenue enterprises running SAP, NetSuite or Dynamics. Buyers
 are CFO, Controller, VP Finance, CIO/VP IT. Mid-market — deliberately *not* Fortune 50,
 which is where the funded competition is concentrated.
 
@@ -248,7 +248,7 @@ a product you can buy off a page.
 - Plain, specific, unhyped. No "revolutionise," "supercharge," "seamless."
 - **No em dashes.** Use a colon, comma, parentheses or a full stop, whichever the sentence
   actually calls for. Heavy em dash use reads as machine-written, which is corrosive for a
-  firm selling AI services. En dashes stay for ranges (`$50M–$1B`, `8:00am–9:00pm`).
+  firm selling AI services. En dashes stay for ranges (`10–95`, `8:00am–9:00pm`).
 - Concrete over abstract. "412 invoices posted, 9 unmatched" beats "improved accuracy."
 - British-ish spelling is used in the current copy (*summarise, prioritised, organisation*)
   — inconsistent with a US-market brand. **Normalise to US spelling on the next pass.**

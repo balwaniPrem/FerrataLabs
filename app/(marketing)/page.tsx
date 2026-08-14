@@ -40,7 +40,7 @@ export default function Home() {
             </div>
             <div>
               <dt>Built for</dt>
-              <dd>$50M&ndash;$1B revenue</dd>
+              <dd>$20M+ revenue</dd>
             </div>
             <div>
               <dt>Runs on</dt>
