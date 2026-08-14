@@ -30,6 +30,17 @@ export type Agent = {
   outputs: string[];
   /** Where the agent stops — the approval gate for this specific agent. */
   gate: string;
+  /**
+   * Optional recording of the agent's console, captured from the real unlisted
+   * route. Only Sterling has one so far; the rest follow once it is signed off.
+   */
+  console?: {
+    mp4: string;
+    webm: string;
+    poster: string;
+    label: string;
+    caption: string;
+  };
 };
 
 export const agents: Agent[] = [
@@ -84,6 +95,15 @@ export const agents: Agent[] = [
     ],
     gate:
       "Sterling drafts collection messages; it does not send them until a person releases the sequence. Nothing is written back to the customer master.",
+    console: {
+      mp4: "/media/sterling-console.mp4",
+      webm: "/media/sterling-console.webm",
+      poster: "/media/sterling-console.png",
+      label:
+        "The Sterling console: an account queue scored against each customer's own payment pattern, and three drafted actions waiting for a person to release them.",
+      caption:
+        "Sterling's console. Every account scored against its own settlement pattern, every action drafted and held until someone releases it. Illustrative data.",
+    },
   },
   {
     slug: "clark",

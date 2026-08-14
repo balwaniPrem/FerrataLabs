@@ -495,3 +495,48 @@ proxy.ts                                   rewrites pledge.* → /pledge
 
 All figures are **illustrative**, labeled as such in the UI, and must never be presented as
 measured results. `/pledge` also resolves on the apex so it is testable locally.
+
+---
+
+## 13. Agent console recordings
+
+Each agent page can carry a recording of that agent's console. **Sterling is the only one
+built.** The other five wait for explicit sign-off before rollout.
+
+### How it works
+
+1. A real unlisted route renders the console (`app/(product)/sterling/page.tsx`), sharing
+   `AppShell` with Pledge so the pilled chrome stays consistent.
+2. Playwright records a scripted interaction against that route.
+3. ffmpeg encodes MP4 (h264, yuv420p, faststart) plus VP9 WebM, and pulls a poster frame.
+4. `content/agents.ts` carries an optional `console` field; `ConsolePreview` renders it.
+
+**It is a recording of the real thing, not a mock-up.** Div-based fake screenshots are a
+tell and are banned; capturing the actual route is the sanctioned alternative.
+
+### Sterling is not Pledge, deliberately
+
+Both show a scored receivables queue, so the difference has to be visible or they read as
+one product twice:
+
+| | Pledge | Sterling |
+|---|---|---|
+| Verb | Executes inside an authorized sequence | Drafts and stops |
+| Centrepiece | Live activity, credits accruing | **Awaiting release** queue |
+| Metering | Credit balance and rate card | None |
+
+Do not add credits, autonomous sending or a rate card to the Sterling console. The
+approval gate is what §7 promises on every page of the marketing site, and this console is
+where it is shown working.
+
+### Motion
+
+The server renders the still frame and the browser upgrades to video only when motion is
+welcome, so a reduced-motion visitor never downloads the video at all. Verified: zero
+`<video>` elements under `prefers-reduced-motion: reduce`.
+
+### Rolling out to the other five
+
+Add a `console` field to that agent in `content/agents.ts` and drop the three assets into
+`public/media/`. Nothing else changes. Each console must show what makes *that* agent
+distinct rather than restaging Sterling's queue with new account names.

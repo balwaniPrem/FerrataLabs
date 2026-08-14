@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Cta from "@/components/Cta";
+import ConsolePreview from "@/components/ConsolePreview";
 import { Personalization } from "@/components/Blocks";
 import { agents, agentBySlug } from "@/content/agents";
 import { industries } from "@/content/industries";
@@ -41,6 +42,14 @@ export default async function AgentPage({ params }: PageProps<"/agents/[slug]">)
           <p>{agent.lede}</p>
         </div>
       </header>
+
+      {agent.console && (
+        <section className="sec console-sec">
+          <div className="wrap-wide">
+            <ConsolePreview {...agent.console} />
+          </div>
+        </section>
+      )}
 
       <section className="sec">
         <div className="wrap">
