@@ -8,6 +8,7 @@ import { IconQueue, IconRules, IconFlow, IconCollapse } from "./Icons";
 import { pledge, workspace, credits, dollars } from "@/content/pledge";
 import { sterling } from "@/content/sterling";
 import CreditMeter from "./CreditMeter";
+import AgentRail from "./AgentRail";
 import {
   subscribeNav,
   getNavSnapshot,
@@ -28,12 +29,6 @@ const PLEDGE_NAV: NavItem[] = [
   { href: "/pledge/orchestration", label: "Orchestration", Icon: IconFlow },
 ];
 
-const STERLING_NAV: NavItem[] = [
-  { href: "/sterling", label: "Cash position", Icon: IconQueue, exact: true },
-  { href: "/sterling", label: "Approval queue", Icon: IconRules },
-  { href: "/sterling", label: "Ledger", Icon: IconFlow },
-];
-
 /**
  * Shared product chrome. Both consoles use it, so the pill treatment stays
  * consistent between them and with the marketing nav.
@@ -50,7 +45,7 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
   );
 
   const isSterling = pathname.startsWith("/sterling");
-  const nav = isSterling ? STERLING_NAV : PLEDGE_NAV;
+  const nav = PLEDGE_NAV;
   const product = isSterling
     ? { name: sterling.name, home: "/sterling", ws: sterling.workspace, erp: sterling.erp }
     : { name: pledge.name, home: "/pledge", ws: workspace.name, erp: workspace.erp };
@@ -68,10 +63,16 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
             <Mark size={19} />
             <span>{pledge.brand}</span>
           </a>
-          <span className="lvl-sep" aria-hidden="true" />
-          <Link className="lvl product" href={product.home}>
-            {product.name}
-          </Link>
+          {/* Sterling's product name lives in the rail, not here, so the bar
+              carries brand and workspace only. */}
+          {!isSterling && (
+            <>
+              <span className="lvl-sep" aria-hidden="true" />
+              <Link className="lvl product" href={product.home}>
+                {product.name}
+              </Link>
+            </>
+          )}
           <span className="lvl-sep" aria-hidden="true" />
           <span className="lvl ws">
             <span className="ws-name">{product.ws}</span>
@@ -92,36 +93,40 @@ export default function AppShell({ children }: { children: React.ReactNode }) {
       </header>
 
       <div className="shell-body">
-        <nav className="rail-nav" aria-label={`${product.name} sections`}>
-          <ul>
-            {nav.map(({ href, label, Icon, exact }, i) => {
-              const active = exact ? pathname === href : i === 0 && pathname === href;
-              return (
-                <li key={label}>
-                  <Link
-                    href={href}
-                    aria-current={active ? "page" : undefined}
-                    title={collapsed ? label : undefined}
-                  >
-                    <Icon />
-                    <span className="lbl">{label}</span>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
+        {isSterling ? (
+          <AgentRail />
+        ) : (
+          <nav className="rail-nav" aria-label={`${product.name} sections`}>
+            <ul>
+              {nav.map(({ href, label, Icon, exact }, i) => {
+                const active = exact ? pathname === href : i === 0 && pathname === href;
+                return (
+                  <li key={label}>
+                    <Link
+                      href={href}
+                      aria-current={active ? "page" : undefined}
+                      title={collapsed ? label : undefined}
+                    >
+                      <Icon />
+                      <span className="lbl">{label}</span>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
 
-          <button
-            type="button"
-            className="rail-toggle"
-            onClick={toggleNav}
-            aria-expanded={!collapsed}
-            aria-label={collapsed ? "Expand navigation" : "Collapse navigation"}
-          >
-            <IconCollapse collapsed={collapsed} />
-            <span className="lbl">Collapse</span>
-          </button>
-        </nav>
+            <button
+              type="button"
+              className="rail-toggle"
+              onClick={toggleNav}
+              aria-expanded={!collapsed}
+              aria-label={collapsed ? "Expand navigation" : "Collapse navigation"}
+            >
+              <IconCollapse collapsed={collapsed} />
+              <span className="lbl">Collapse</span>
+            </button>
+          </nav>
+        )}
 
         <main className="shell-main">{children}</main>
       </div>

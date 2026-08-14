@@ -506,7 +506,12 @@ built.** The other five wait for explicit sign-off before rollout.
 ### How it works
 
 1. A real unlisted route renders the console (`app/(product)/sterling/page.tsx`), sharing
-   `AppShell` with Pledge so the pilled chrome stays consistent.
+   `AppShell` with Pledge so the pilled chrome stays consistent. Sterling uses
+   `AgentRail`: the product name sits in the rail rather than the app bar, its sections
+   are children of it, and the other five agents are listed collapsed beneath, with
+   Settings and Data below them. The point is that this reads as a platform with many
+   agents, not a single dashboard. The collapsed rows are inert — those consoles do not
+   exist, and a row that expands into nothing is worse than one that does not move.
 2. Playwright records a scripted interaction against that route.
 3. ffmpeg encodes MP4 (h264, yuv420p, faststart) plus VP9 WebM, and pulls a poster frame.
 4. `content/agents.ts` carries an optional `console` field; `ConsolePreview` renders it.

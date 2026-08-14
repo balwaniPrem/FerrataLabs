@@ -2559,3 +2559,72 @@ tr.is-off { opacity: 0.5; }
   color: var(--steel);
   max-width: 74ch;
 }
+
+/* ---------- agent rail (Sterling) ---------- */
+.agent-rail { width: 236px; padding: 12px 10px 10px; }
+.shell[data-collapsed="true"] .agent-rail { width: 60px; }
+.rail-scroll { display: flex; flex-direction: column; gap: 1px; }
+.rail-agent {
+  display: grid;
+  grid-template-columns: 14px 20px 1fr auto;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 11px;
+  border-radius: var(--radius-badge);
+  font-family: var(--body);
+  font-size: 14px;
+  color: var(--steel);
+}
+.rail-agent svg { color: var(--mist); }
+.rail-agent .nm { font-weight: 500; color: var(--slate); }
+.rail-agent .role {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mist);
+  white-space: nowrap;
+}
+.rail-agent.is-open {
+  background: var(--canvas);
+  color: var(--ink);
+}
+.rail-agent.is-open .nm {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.rail-agent.is-open svg { color: var(--ink); }
+.rail-agent[data-inert="true"]:hover { background: var(--line-2); }
+.rail-sub { list-style: none; margin: 2px 0 10px; padding-left: 12px; border-left: 1px solid var(--line); }
+.rail-sub a { padding: 8px 11px; font-size: 13.5px; }
+.rail-h {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mist);
+  padding: 10px 11px 6px;
+}
+.rail-foot { margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--line-2); }
+.rail-util {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 9px 11px;
+  border-radius: var(--radius-badge);
+  font-size: 13.5px;
+  color: var(--slate);
+  font-family: var(--body);
+  white-space: nowrap;
+}
+.rail-util svg { color: var(--steel); flex: none; }
+.rail-util:hover { background: var(--canvas); color: var(--ink); }
+.agent-rail .rail-toggle { margin-top: 4px; border-top: 0; padding-top: 9px; }
+@media (max-width: 900px) {
+  .agent-rail { width: 60px; }
+  .agent-rail .lbl { display: none; }
+  .rail-sub { padding-left: 0; border-left: 0; }
+}

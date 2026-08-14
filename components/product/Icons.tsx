@@ -79,3 +79,46 @@ export const navIcons = {
   rules: IconRules,
   flow: IconFlow,
 };
+
+/** Collapsed/expanded disclosure for the agent tree. */
+export function IconChevron({ open = false }: { open?: boolean }) {
+  return (
+    <svg {...base} width={14} height={14} viewBox="0 0 20 20"
+      style={{ transform: open ? "rotate(90deg)" : undefined, transition: "transform .14s ease" }}>
+      <path d="M7.5 4.5 L13 10 L7.5 15.5" />
+    </svg>
+  );
+}
+
+/** An agent in the tree. The rotated square is the bolt from the mark. */
+export function IconAgent() {
+  return (
+    <svg {...base} viewBox="0 0 20 20">
+      <rect x="6.6" y="6.6" width="6.8" height="6.8" transform="rotate(45 10 10)" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+/** Settings: vertical sliders, so it does not collide with the horizontal Rules glyph. */
+export function IconSettings() {
+  return (
+    <svg {...base}>
+      <path d="M5.5 2.5 V17.5" />
+      <path d="M10 2.5 V17.5" />
+      <path d="M14.5 2.5 V17.5" />
+      <rect x="3.9" y="5.4" width="3.2" height="3.2" transform="rotate(45 5.5 7)" fill="currentColor" stroke="none" />
+      <rect x="8.4" y="11.4" width="3.2" height="3.2" transform="rotate(45 10 13)" fill="currentColor" stroke="none" />
+      <rect x="12.9" y="7.4" width="3.2" height="3.2" transform="rotate(45 14.5 9)" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+/** Data: stacked layers. */
+export function IconData() {
+  return (
+    <svg {...base}>
+      <path d="M2.5 5.5 H17.5 V8.5 H2.5 Z" />
+      <path d="M2.5 11.5 H17.5 V14.5 H2.5 Z" />
+    </svg>
+  );
+}
