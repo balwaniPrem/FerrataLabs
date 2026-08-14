@@ -102,11 +102,8 @@ export default function Nav() {
         </Link>
 
         <div className="nav-links">
-          {/* Zone 2, the UI layer. Nav links live in their own container,
-              visually separate from the brand mark. */}
-          <div className="nav-layer">
           <div
-            className="mega-wrap"
+            className="mega-wrap hide-sm"
             ref={megaWrap}
             data-open={openMega}
             onMouseEnter={openByHover}
@@ -137,7 +134,7 @@ export default function Nav() {
                       onClick={closeAll}
                     >
                       <span className="t">
-                        {a.role} · {a.name}
+                        {a.role} — {a.name}
                       </span>
                       <span className="d">{a.menuLine}</span>
                     </Link>
@@ -165,12 +162,12 @@ export default function Nav() {
             <Link
               key={p.href}
               href={p.href}
+              className="hide-sm"
               aria-current={pathname === p.href ? "page" : undefined}
             >
               {p.label}
             </Link>
           ))}
-          </div>
 
           <button
             type="button"
@@ -202,7 +199,7 @@ export default function Nav() {
           <p className="grp">By function</p>
           {agents.map((a) => (
             <Link key={a.slug} href={`/agents/${a.slug}`} onClick={closeAll}>
-              {a.role} · {a.name}
+              {a.role} — {a.name}
             </Link>
           ))}
           <p className="grp">By industry</p>

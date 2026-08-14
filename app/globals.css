@@ -6,63 +6,59 @@
    ============================================================ */
 
 @theme {
-  /* ink — cool stone, never pure black for text */
-  --color-ink: #14161b;
-  --color-slate: #383d45;
-  --color-steel: #676d78;
-  --color-mist: #8b919c;
+  /* ink — warm charcoal, never pure black for text */
+  --color-ink: #111111;
+  --color-slate: #37352f;
+  --color-steel: #6b6862;
+  --color-mist: #8a867e;
 
-  /* one cool grey family. never mix warm and cool. */
-  --color-line: #e4e6ea;
-  --color-line-2: #eff1f4;
+  /* lines + surfaces — one warm grey family, no cool/warm mixing */
+  --color-line: #e8e6e1;
+  --color-line-2: #f1efeb;
   --color-surface: #ffffff;
-  --color-canvas: #f6f7f9;
+  --color-canvas: #f7f6f3;
 
-  /* black is the primary accent */
-  --color-accent: #14161b;
-  --color-accent-lit: #2e323a;
-  --color-accent-wash: #edf0f3;
-  --color-accent-line: #d6dbe1;
+  /* accent is black. one accent, no second colour. */
+  --color-accent: #111111;
+  --color-accent-lit: #333333;
+  --color-accent-wash: #f1efeb;
+  --color-accent-line: #d8d5cf;
 
-  /* iron — the one secondary accent. "via ferrata" is the iron way. */
-  --color-iron: #4a5563;
-  --color-iron-wash: #edf0f3;
-  --color-iron-line: #d6dbe1;
-
+  /* type */
   --font-display: var(--font-archivo), system-ui, sans-serif;
   --font-body: var(--font-plex-sans), system-ui, sans-serif;
   --font-mono: var(--font-plex-mono), ui-monospace, monospace;
 
-  --radius-none: 0; --radius-xs: 0; --radius-sm: 0; --radius-md: 0;
-  --radius-lg: 0; --radius-xl: 0; --radius-2xl: 0; --radius-3xl: 0;
-  --radius-4xl: 0; --radius-full: 0;
+  /* §4: zero border-radius anywhere. Sharp corners are the identity. */
+  --radius-none: 0;
+  --radius-xs: 0;
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+  --radius-2xl: 0;
+  --radius-3xl: 0;
+  --radius-4xl: 0;
+  --radius-full: 0;
 
   --container-wrap: 1180px;
 }
 
 :root {
-  --ink: #14161b;
-  --slate: #383d45;
-  --steel: #676d78;
-  --mist: #8b919c;
-  --line: #e4e6ea;
-  --line-2: #eff1f4;
+  --ink: #111111;
+  --slate: #37352f;
+  --steel: #6b6862;
+  --mist: #8a867e;
+  --line: #e8e6e1;
+  --line-2: #f1efeb;
   --surface: #ffffff;
-  --canvas: #f6f7f9;
-  --accent: #14161b;
-  --accent-lit: #2e323a;
-  --accent-wash: #edf0f3;
-  --accent-line: #d6dbe1;
+  --canvas: #f7f6f3;
+  --accent: #111111;
+  --accent-lit: #333333;
+  --accent-wash: #f1efeb;
+  --accent-line: #d8d5cf;
 
-  /* IRON — secondary accent, strictly rationed. See CLAUDE.md §4.
-     Permitted: the nav UI layer, the hero emphasis rule, eyebrow labels,
-     and hairline marks. Never for body text, never for fills larger than
-     a nav container, never as a second brand colour. */
-  --iron: #4a5563;
-  --iron-wash: #edf0f3;
-  --iron-line: #d6dbe1;
-
-  /* muted status pastels — semantic only */
+  /* muted status pastels — the only colour in the system, used semantically */
   --pos-bg: #edf3ec; --pos-line: #cfe0cd; --pos-ink: #346538;
   --neg-bg: #fbecec; --neg-line: #e7cfcf; --neg-ink: #8f2f2d;
   --warn-bg: #fbf6e9; --warn-line: #e6dcc0; --warn-ink: #7a5c14;
@@ -131,7 +127,7 @@ h4 {
   font-size: 10.5px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--iron);
+  color: var(--steel);
 }
 
 .skip {
@@ -210,48 +206,11 @@ h4 {
 .nav-links {
   margin-left: auto;
   display: flex;
-  gap: 18px;
+  gap: 26px;
   align-items: center;
-}
-
-/* The UI layer: nav links live in their own sharp-cornered container,
-   visually separate from the brand mark on the left. A pill would break
-   §4, so the separation comes from the fill and hairline instead. */
-.nav-layer {
-  display: flex;
-  align-items: center;
-  gap: 22px;
-  background: var(--iron-wash);
-  border: 1px solid var(--iron-line);
-  padding: 7px 18px;
-}
-.nav-layer a,
-.nav-layer button {
-  font-family: var(--body);
-  font-size: 14px;
-  color: var(--slate);
-  font-weight: 500;
-  background: none;
-  border: 0;
-  cursor: pointer;
-  line-height: 1.4;
-  padding: 2px 0;
-  border-bottom: 1.5px solid transparent;
-}
-.nav-layer a:hover,
-.nav-layer button:hover { color: var(--ink); }
-.nav-layer a[aria-current="page"],
-.nav-layer button[data-active="true"] {
-  color: var(--ink);
-  font-weight: 600;
-  border-bottom-color: var(--iron);
-}
-@media (max-width: 980px) {
-  .nav-layer { display: none; }
 }
 /* Scoped with :not(.btn). Without it this rule outranks .btn (0,2,0 beats
-   0,1,0) and strips the CTA's background, colour, border and padding —
-   which is exactly what happened when the mega-menu trigger was added. */
+   0,1,0) and strips the CTA's background, colour, border and padding. */
 .nav-links a:not(.btn),
 .nav-links button:not(.btn) {
   font-family: var(--body);
@@ -402,46 +361,40 @@ h4 {
 
 /* ---------- buttons ---------- */
 .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-block;
   font-family: var(--body);
   font-weight: 600;
-  font-size: 14px;
-  line-height: 1;
+  font-size: 14.5px;
   background: var(--accent);
   color: #fff;
-  padding: 11px 18px;
+  padding: 12px 22px;
   border: 1px solid var(--accent);
-  transition: background 0.16s ease, border-color 0.16s ease;
+  transition: background 0.18s ease, border-color 0.18s ease;
   cursor: pointer;
-  white-space: nowrap;
-}
-/* A black focus ring on a black fill is invisible. Offset it in white. */
-.btn:focus-visible {
-  outline: 2px solid var(--ink);
-  outline-offset: 2px;
-  box-shadow: 0 0 0 2px #fff;
 }
 .btn:hover {
   background: var(--accent-lit);
   border-color: var(--accent-lit);
 }
 .btn:active { transform: translateY(0.5px); }
-.btn-lg {
-  font-size: 15.5px;
-  padding: 16px 28px;
+/* A black focus ring on a black fill is invisible. Offset it in white. */
+.btn:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px #fff;
 }
-/* The outline variant sits beside a solid black button, so its border has to
-   carry comparable weight. --line is too faint to read as a sibling. */
+.btn-lg {
+  font-size: 16px;
+  padding: 15px 30px;
+}
 .btn-line {
   background: transparent;
   color: var(--ink);
-  border-color: var(--iron-line);
+  border-color: var(--line);
 }
 .btn-line:hover {
-  background: var(--iron-wash);
-  border-color: var(--iron);
+  background: var(--canvas);
+  border-color: var(--steel);
 }
 .btn:disabled {
   opacity: 0.55;
@@ -486,7 +439,7 @@ h4 {
 
 /* ---------- home hero ---------- */
 .hero {
-  background: linear-gradient(180deg, var(--iron-wash), var(--surface) 72%);
+  background: linear-gradient(180deg, var(--canvas), var(--surface) 78%);
   padding: 132px 0 108px;
   position: relative;
   overflow: hidden;
@@ -516,15 +469,13 @@ h4 {
 /* With a monochrome palette the emphasis can no longer be carried by colour.
    A thick, offset rule reads as deliberate editorial emphasis and keeps the
    headline in one ink. */
-/* The one point of colour on the page. With everything else in ink, this is
-   what the eye lands on — which is the whole job of the hero. */
 .hero h1 em {
   font-style: normal;
   color: var(--accent);
   text-decoration: underline;
-  text-decoration-thickness: 5px;
-  text-underline-offset: 12px;
-  text-decoration-color: var(--iron);
+  text-decoration-thickness: 4px;
+  text-underline-offset: 10px;
+  text-decoration-color: var(--accent-line);
 }
 .lede {
   font-size: clamp(17px, 2vw, 20px);
@@ -540,8 +491,8 @@ h4 {
 }
 
 .topo {
-  margin-top: 60px;
-  border: 1px solid var(--iron-line);
+  margin-top: 56px;
+  border: 1px solid var(--line);
   background: var(--surface);
   display: grid;
   grid-template-columns: repeat(3, 1fr);

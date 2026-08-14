@@ -89,13 +89,10 @@ steel-blue accent is retired — there is no blue anywhere in the system.
 ### Tokens
 
 ```css
---ink:#14161B;   --slate:#383D45;  --steel:#676D78;  --mist:#8B919C;
---line:#E4E6EA;  --line-2:#EFF1F4;
---surface:#FFFFFF; --canvas:#F6F7F9;
---accent:#14161B; --accent-lit:#2E323A; --accent-wash:#EDF0F3; --accent-line:#D6DBE1;
-
-/* IRON — the one secondary accent */
---iron:#4A5563; --iron-wash:#EDF0F3; --iron-line:#D6DBE1;
+--ink:#111111;   --slate:#37352F;  --steel:#6B6862;  --mist:#8A867E;
+--line:#E8E6E1;  --line-2:#F1EFEB;
+--surface:#FFFFFF; --canvas:#F7F6F3;
+--accent:#111111; --accent-lit:#333333; --accent-wash:#F1EFEB; --accent-line:#D8D5CF;
 
 /* the only colour in the system, semantic status only */
 --pos-bg:#EDF3EC; --pos-line:#CFE0CD; --pos-ink:#346538;
@@ -103,19 +100,9 @@ steel-blue accent is retired — there is no blue anywhere in the system.
 --warn-bg:#FBF6E9; --warn-line:#E6DCC0; --warn-ink:#7A5C14;
 ```
 
-Light theme only. White and cool off-white alternate. **One grey family, cool stone
-throughout.** Never mix warm and cool greys.
-
-**Black is the primary accent** — CTAs, the mark, step numbers, rule accents.
-
-**Iron is the secondary accent, and it is strictly rationed.** *Via ferrata* means "the iron
-way," so it is the most on-brand colour this company could pick. Permitted in exactly four
-places: the nav UI layer fill and hairline, the hero emphasis rule, eyebrow labels, and the
-outline-button border. **Never** for body text, never for a fill larger than the nav
-container, never as a second brand colour. A secondary accent without a written boundary
-becomes a primary accent within a month.
-
-Beyond those two, colour appears only as muted status pastels, and only where it carries
+Light theme only. White and warm off-white alternate — **one grey family, warm throughout.**
+Never mix warm and cool greys. **Black is the accent**, used for CTAs, the mark, step numbers
+and rule accents. Colour appears only as muted status pastels, and only where it carries
 meaning.
 
 ### Type
@@ -142,19 +129,12 @@ meaning.
   the four engagement steps. Uses `currentColor` so it reverses on ink. Default 21px at
   stroke weight 2.6. Favicon `app/icon.svg`, `app/apple-icon.png` at 180×180.
 - **Macro whitespace.** Sections are `116px` vertical. Let it breathe.
-- **The hero needs one focal point.** With everything in ink, nothing is in focus. The
-  emphasised phrase carries a thick offset underline in iron. That rule is the single point
-  of colour above the fold, and it is where the eye is meant to land.
-- **The nav is three zones**, not two: brand mark on the left, nav links inside their own
-  bordered UI layer, then the CTA. A pill would break the zero-radius rule, so the
-  separation comes from the iron fill and hairline instead.
-- **`.btn` must never be re-styled by a parent selector.** Nav resets are scoped with
-  `:not(.btn)`. A bare `.nav-links a` rule outranks `.btn` and silently strips its
-  background, colour, border and padding. This has already happened once.
+- **Emphasis without colour.** The hero's emphasised phrase carries a thick offset underline
+  rather than a colour change — there is no second colour to reach for.
 
 ### Contrast
 
-`--steel` on white measures **5.20:1** — passes AA for normal text. `--mist` measures 3.28:1
+`--steel` on white measures **5.55:1** — passes AA for normal text. `--mist` measures 3.63:1
 and is therefore **retired as a text colour**; it is decorative only. Every small mono label
 that previously used it now uses `--steel`. This fixed a real AA failure carried by the
 previous palette.
@@ -240,10 +220,9 @@ a product you can buy off a page.
 ## 7. Voice and copy rules
 
 - Plain, specific, unhyped. No "revolutionise," "supercharge," "seamless."
-- **No em dashes.** Use a colon, a comma, parentheses or a full stop, whichever the sentence
-  actually calls for. Heavy em dash use is one of the clearest tells of machine-written
-  prose, which is corrosive for a firm selling AI services. En dashes stay for ranges
-  (`$50M–$1B`, `8:00am–9:00pm`).
+- **No em dashes.** Use a colon, comma, parentheses or a full stop, whichever the sentence
+  actually calls for. Heavy em dash use reads as machine-written, which is corrosive for a
+  firm selling AI services. En dashes stay for ranges (`$50M–$1B`, `8:00am–9:00pm`).
 - Concrete over abstract. "412 invoices posted, 9 unmatched" beats "improved accuracy."
 - British-ish spelling is used in the current copy (*summarise, prioritised, organisation*)
   — inconsistent with a US-market brand. **Normalise to US spelling on the next pass.**
