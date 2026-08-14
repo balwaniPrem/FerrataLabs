@@ -16,7 +16,7 @@ export default function Home() {
             We build Enterprise AI agents that do the <em>actual work</em>.
           </h1>
           <p className="lede">
-            Most enterprise AI summarizes the work. We build agents that do it — wired into
+            Most enterprise AI summarizes the work. We build agents that do it, wired into
             your systems of record, acting on live transactions, stopping where the judgment
             belongs to a person. Every deployment is designed around how your business
             already runs, because no two enterprises operate the same way and there&rsquo;s no
@@ -53,7 +53,7 @@ export default function Home() {
           <p className="intro">
             Plenty of tools will now summarize a report or draft an email about a problem. An
             agent goes and resolves it. Receivables makes the clearest illustration because
-            every business runs it — on the left, how it works in most companies today; on the
+            every business runs it, on the left, how it works in most companies today; on the
             right, the same sequence run by an agent. Both end in the same place, with a
             person releasing the money.
           </p>
@@ -66,7 +66,7 @@ export default function Home() {
           <h2>Work we&rsquo;ve shipped.</h2>
           <p className="intro">
             Six agents, each owning a workflow end to end. These are examples of what we
-            build, not a shelf you pick from — every one is rebuilt around how your business
+            build, not a shelf you pick from, every one is rebuilt around how your business
             actually operates.
           </p>
           <AgentGrid />
@@ -90,7 +90,7 @@ export default function Home() {
           <p className="intro">
             A via ferrata is a fixed steel line bolted into rock so that people who
             aren&rsquo;t technical climbers can cross terrain they otherwise couldn&rsquo;t.
-            Same principle. We install the line and stay on it with you — and your team ends
+            Same principle. We install the line and stay on it with you, and your team ends
             up able to walk the route without us.
           </p>
           <div className="steps">
@@ -115,7 +115,7 @@ export default function Home() {
         <div className="wrap">
           <h2>Operators, not an agency.</h2>
           <p className="intro">
-            We&rsquo;ve done this from the inside — running the technology organization
+            We&rsquo;ve done this from the inside, running the technology organization
             through exactly this kind of transformation, with a P&amp;L attached and a board
             asking about the number. Everything below came out of operating, not advising.
           </p>

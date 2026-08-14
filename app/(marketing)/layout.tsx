@@ -9,8 +9,8 @@ import { site } from "@/content/site";
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "Ferrata Labs — Enterprise AI agents that do the actual work",
-    template: "%s — Ferrata Labs",
+    default: "Ferrata Labs. Enterprise AI agents that do the actual work",
+    template: "%s. Ferrata Labs",
   },
   description:
     "Ferrata Labs designs, builds and runs AI agents that do the actual work inside enterprise operations. Built to your business, not off a shelf.",

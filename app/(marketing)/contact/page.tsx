@@ -27,7 +27,7 @@ export default function Contact() {
           <div className="prose">
             <h3 style={{ marginTop: 0 }}>What you&rsquo;ll leave with</h3>
             <p>
-              An honest read on whether that workflow is a good agent candidate — some
+              An honest read on whether that workflow is a good agent candidate, some
               aren&rsquo;t, and the ones that aren&rsquo;t usually have a data or process
               problem underneath that no model will fix.
             </p>

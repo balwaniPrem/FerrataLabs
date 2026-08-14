@@ -17,7 +17,7 @@ export default function OrchestrationPage() {
         <h1>Orchestration</h1>
         <p>
           {engines.integration} moves data in and out. {engines.durable} holds one durable
-          workflow per account, with individual invoices as line-state inside it — which is
+          workflow per account, with individual invoices as line-state inside it, which is
           what lets {workspace.name} chase an account once rather than chase six invoices
           separately.
         </p>

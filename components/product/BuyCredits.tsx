@@ -60,12 +60,12 @@ export default function BuyCredits() {
       </div>
 
       <button type="button" className="btn" onClick={() => setAck(true)}>
-        Add {creditsAdded.toLocaleString("en-US")} credits — ${total}
+        Add {creditsAdded.toLocaleString("en-US")} credits, ${total}
       </button>
 
       {ack && (
         <p className="buy-ack" role="status">
-          Nothing was charged. This build has no payment processing — the purchase flow is
+          Nothing was charged. This build has no payment processing, the purchase flow is
           illustrative.
         </p>
       )}

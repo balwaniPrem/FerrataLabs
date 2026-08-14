@@ -34,12 +34,12 @@ function LiveRow({ r }: { r: LiveRun }) {
       <span className={`ic${billing ? "" : " zero"}`}>{glyph[r.kind]}</span>
       <span>
         <span className="acct">{r.account}</span>
-        <span className="det"> — {r.detail}</span>
+        <span className="det"> · {r.detail}</span>
       </span>
       <span className="phase">{phaseLabel[r.phase]}</span>
-      <span className="dur">{billing ? mmss(r.elapsed) : "—"}</span>
+      <span className="dur">{billing ? mmss(r.elapsed) : ", "}</span>
       <span className={`cr${billing ? "" : " zero"}`}>
-        {billing ? `${r.credits} cr` : "—"}
+        {billing ? `${r.credits} cr` : ", "}
       </span>
     </li>
   );
@@ -53,11 +53,11 @@ function CompletedRow({ a }: { a: Activity }) {
       <span className={`ic${a.credits === 0 ? " zero" : ""}`}>{glyph[a.kind]}</span>
       <span>
         <span className="acct">{a.account}</span>
-        <span className="det"> — {a.detail}</span>
+        <span className="det"> · {a.detail}</span>
         {mins > 0 && <span className="saved">{mins} min of manual work avoided</span>}
       </span>
       <span className={`cr${a.credits === 0 ? " zero" : ""}`}>
-        {a.credits === 0 ? "—" : `${a.credits} cr`}
+        {a.credits === 0 ? ", " : `${a.credits} cr`}
       </span>
     </li>
   );
@@ -85,7 +85,7 @@ export default function LiveActivity() {
 
       <div className="live-hd">
         <span className="lbl">Live now</span>
-        {reduced && <span className="note">paused — reduced motion</span>}
+        {reduced && <span className="note">paused, reduced motion</span>}
       </div>
 
       {/* Narrow live region: announces the set of running instances, not every tick. */}

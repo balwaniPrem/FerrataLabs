@@ -99,7 +99,7 @@ export default function PledgeDashboard() {
             </table>
             <p className="tfoot">
               <b>Days open</b> is measured against this customer&rsquo;s learned pattern, not
-              your terms — {patternRules.note}
+              your terms. {patternRules.note}
             </p>
           </section>
 
@@ -192,7 +192,7 @@ export default function PledgeDashboard() {
 
       <p className="app-foot">
         <span>{pledge.domain}</span>
-        <span>Unlisted — not linked from ferratalabs.ai</span>
+        <span>Unlisted, not linked from ferratalabs.ai</span>
         <span>All figures illustrative</span>
       </p>
     </>

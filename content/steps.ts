@@ -25,7 +25,7 @@ export const steps: Step[] = [
     short:
       "We map workflows, not org charts. You get a ranked list of candidate workflows with a defensible number attached to each, whether or not you go further with us.",
     body: [
-      "We map workflows, not org charts. Transaction volumes, exception rates, where people are re-keying between systems, what the errors cost when they escape. In parallel we audit what you already have — cloud posture, data residency obligations, what your security team will and won't allow.",
+      "We map workflows, not org charts. Transaction volumes, exception rates, where people are re-keying between systems, what the errors cost when they escape. In parallel we audit what you already have, cloud posture, data residency obligations, what your security team will and won't allow.",
       "The output is a ranked list with a defensible number against each line. You keep it whether or not you continue with us, because a ranking you can't take to your board isn't worth the two weeks.",
     ],
     duration: "2 weeks",
@@ -41,10 +41,10 @@ export const steps: Step[] = [
     no: "02",
     title: "Anchor the platform",
     short:
-      "We stand up the platform in your environment — frontier models, open-weight, or both, depending on what your data residency and cost profile demand.",
+      "We stand up the platform in your environment, frontier models, open-weight, or both, depending on what your data residency and cost profile demand.",
     body: [
       "The foundational step, and the one most firms skip. We stand up model access and routing, serving for open-weight models where cost or residency demands it, retrieval across your documents and systems of record, evaluation harnesses, and the logging that makes any of it defensible.",
-      "It runs in your environment and it belongs to you. This is the difference between buying agents and owning the capability to run them — and it is why the fourth step is possible at all.",
+      "It runs in your environment and it belongs to you. This is the difference between buying agents and owning the capability to run them, and it is why the fourth step is possible at all.",
     ],
     duration: "3 weeks",
     durationLong: "3 weeks · the asset you keep",
@@ -64,7 +64,7 @@ export const steps: Step[] = [
       "One agent, one workflow, in production against real transactions with a human approval gate on every action.",
     body: [
       "One agent, one workflow, in production against real transactions with a human approval gate on every action that matters. You watch it work on your own numbers before committing to a second.",
-      "It's configured to your rules — your pricing logic, your approval thresholds, your escalation paths. This is where the Agent Development Lifecycle runs, and where you see what disciplined agent engineering actually looks like from the inside.",
+      "It's configured to your rules, your pricing logic, your approval thresholds, your escalation paths. This is where the Agent Development Lifecycle runs, and where you see what disciplined agent engineering actually looks like from the inside.",
     ],
     duration: "Under 90 days",
     durationLong: "Under 90 days from start",
@@ -81,7 +81,7 @@ export const steps: Step[] = [
     short:
       "Add agents as trust builds. When you want it in-house, we install the POD operating model with runbooks and evaluation harnesses documented.",
     body: [
-      "Add agents as trust builds. When you want it in-house we install the POD operating model — one lead, five engineers, one QA per unit — with runbooks and evaluation harnesses documented.",
+      "Add agents as trust builds. When you want it in-house we install the POD operating model, one lead, five engineers, one QA per unit, with runbooks and evaluation harnesses documented.",
       "Your engineers build the next agents themselves, on infrastructure designed from day one to be handed over. You should never need us to change a prompt.",
     ],
     duration: "Ongoing",

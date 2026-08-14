@@ -8,7 +8,7 @@ export const site = {
   email: "hello@ferratalabs.ai",
   url: "https://ferratalabs.ai",
   blurb:
-    "Enterprise AI agents that do the actual work — built around how your business already runs.",
+    "Enterprise AI agents that do the actual work, built around how your business already runs.",
 };
 
 /** §8 — every one of these is a claim that must survive a second-meeting probe. */

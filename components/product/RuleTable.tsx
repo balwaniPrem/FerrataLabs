@@ -44,7 +44,7 @@ export default function RuleTable() {
           <b>{enabled}</b> / {rules.length} rules enabled
         </span>
         <span className="locked-note">
-          {rules.filter((r) => r.locked).length} locked — approval, compliance, metering and
+          {rules.filter((r) => r.locked).length} locked, approval, compliance, metering and
           audit cannot be disabled
         </span>
         <input
@@ -94,7 +94,7 @@ export default function RuleTable() {
                           onClick={() => toggle(r)}
                           disabled={r.locked}
                           aria-pressed={!isOff}
-                          aria-label={`${r.name} — ${isOff ? "disabled" : "enabled"}${
+                          aria-label={`${r.name}, ${isOff ? "disabled" : "enabled"}${
                             r.locked ? ", locked" : ""
                           }`}
                         >

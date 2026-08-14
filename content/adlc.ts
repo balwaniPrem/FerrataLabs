@@ -16,7 +16,7 @@ export const adlcIntro = {
   eyebrow: "ADLC",
   heading: "Agent development is a discipline now. We run it like one.",
   intro:
-    "Software got reliable when teams stopped treating each build as a one-off and adopted a lifecycle around it. Agents are at the same point, and most of what goes wrong in enterprise AI is not the model — it is shipping without a lifecycle. Ours has eight phases, and every agent we put into production goes through all of them.",
+    "Software got reliable when teams stopped treating each build as a one-off and adopted a lifecycle around it. Agents are at the same point, and most of what goes wrong in enterprise AI is not the model, it is shipping without a lifecycle. Ours has eight phases, and every agent we put into production goes through all of them.",
   closer:
     "The harnesses, runbooks and gates that come out of this are documented and handed to your team in step 04. The lifecycle is the transferable part; the agents are just what it produces.",
 };
@@ -30,7 +30,7 @@ export const adlc: Phase[] = [
   {
     n: "02",
     title: "Ground",
-    body: "Wire the agent to real systems of record and real documents. No demo data — grounding failures surface here or in production.",
+    body: "Wire the agent to real systems of record and real documents. No demo data, grounding failures surface here or in production.",
   },
   {
     n: "03",
@@ -45,7 +45,7 @@ export const adlc: Phase[] = [
   {
     n: "05",
     title: "Gate",
-    body: "Human approval on every consequential action, plus the rollback path — both defined before go-live rather than after an incident.",
+    body: "Human approval on every consequential action, plus the rollback path, both defined before go-live rather than after an incident.",
   },
   {
     n: "06",

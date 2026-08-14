@@ -19,7 +19,7 @@ export default function Work() {
           <p>
             These are examples, not a catalogue. They show the shape of what an agent can own
             end to end, and where we draw the line between machine and person. What we build
-            for you is designed around your processes — including the ones you have every
+            for you is designed around your processes, including the ones you have every
             reason to keep to yourself.
           </p>
         </div>
@@ -39,7 +39,7 @@ export default function Work() {
           <p className="intro">
             Plenty of tools will now summarize a report or draft an email about a problem. An
             agent goes and resolves it. Receivables makes the clearest illustration because
-            every business runs it — both columns end in the same place, with a person
+            every business runs it, both columns end in the same place, with a person
             releasing the money.
           </p>
           <Worlds />

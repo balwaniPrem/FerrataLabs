@@ -128,7 +128,7 @@ export function FigLive() {
       <text x="568" y="82" style={{ ...small, fontSize: 10 }} fill={INK} textAnchor="middle">Posted to</text>
       <text x="568" y="95" style={{ ...small, fontSize: 10 }} fill={INK} textAnchor="middle">the ERP</text>
 
-      {/* override path — the improvement signal */}
+      {/* override path, the improvement signal */}
       <path d="M404 120 L404 150 L228 150 L228 114" fill="none" stroke={MIST} strokeDasharray="3 3" />
       <path d="M224 120 L228 114 L232 120" fill="none" stroke={MIST} />
       <text x="316" y="164" style={{ ...small, fontSize: 9 }} fill={MIST} textAnchor="middle">Overrides return as training signal</text>

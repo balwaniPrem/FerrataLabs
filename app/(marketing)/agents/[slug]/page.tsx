@@ -17,9 +17,9 @@ export async function generateMetadata({
   const agent = agentBySlug(slug);
   if (!agent) return {};
   return {
-    title: `${agent.name} — ${agent.role}`,
+    title: `${agent.name}, ${agent.role}`,
     description: agent.summary,
-    openGraph: { title: `${agent.name} — ${agent.role}`, description: agent.summary },
+    openGraph: { title: `${agent.name}, ${agent.role}`, description: agent.summary },
   };
 }
 

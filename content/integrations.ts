@@ -45,5 +45,5 @@ export const integrationsCopy = {
   eyebrow: "Systems of record",
   heading: "SAP first, because that's where the work is.",
   intro:
-    "Our deepest work is against SAP HANA — reading the ledger live, transforming it, and writing back through the same controls your team already uses. Two of our recent deployments started there. Everything else on this list connects too, and the agents don't care which of them holds the data.",
+    "Our deepest work is against SAP HANA, reading the ledger live, transforming it, and writing back through the same controls your team already uses. Two of our recent deployments started there. Everything else on this list connects too, and the agents don't care which of them holds the data.",
 };

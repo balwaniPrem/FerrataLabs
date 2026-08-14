@@ -20,7 +20,7 @@ export const pledge = {
   domain: "pledge.ferratalabs.ai",
   tagline: "Receivables followed to settlement.",
   lede:
-    "Pledge connects to your ERP and runs the entire follow-up cycle — email and voice, sequenced by rule. A promise to pay suppresses both channels until the promised date. If the money doesn't arrive, follow-up resumes the next morning.",
+    "Pledge connects to your ERP and runs the entire follow-up cycle, email and voice, sequenced by rule. A promise to pay suppresses both channels until the promised date. If the money doesn't arrive, follow-up resumes the next morning.",
 };
 
 /** The tenant. Fixed rather than switchable — this reads as a real deployment. */
@@ -51,7 +51,7 @@ export const metering = {
     "Partial increments round up to the next 15 seconds.",
     "Connected calls bill a one-increment minimum.",
     "Voicemail drops bill on message duration, same rate as a call.",
-    "Bounced email bills as a send — the work was performed.",
+    "Bounced email bills as a send, the work was performed.",
     "A call that rings out with no voicemail left bills nothing.",
   ],
 };
@@ -78,7 +78,7 @@ export const valueModel = {
   minutesPerCall: 20,
   minutesPerNoAnswer: 3,
   loadedHourlyUsd: 40,
-  excluded: "Bounced email is excluded — it creates work rather than saving it.",
+  excluded: "Bounced email is excluded, it creates work rather than saving it.",
 };
 
 export function minutesSaved(kind: Activity["kind"], outcome?: Activity["outcome"]) {
@@ -131,13 +131,13 @@ export const patternRules = {
 };
 
 export const queue: QueueRow[] = [
-  { account: "Kessler Industrial", balance: 284_100, invoices: 6, daysBeyond: 47, daysOpen: 77, typicalPayDay: 55, recovery: 71, next: "Call — 2:15pm", state: "sequencing" },
+  { account: "Kessler Industrial", balance: 284_100, invoices: 6, daysBeyond: 47, daysOpen: 77, typicalPayDay: 55, recovery: 71, next: "Call, 2:15pm", state: "sequencing" },
   { account: "Brightwater Foods", balance: 196_450, invoices: 3, daysBeyond: 62, daysOpen: 92, typicalPayDay: 45, recovery: 38, next: "Follow-up resumes", state: "broken" },
   { account: "Antral Logistics", balance: 154_900, invoices: 2, daysBeyond: 21, daysOpen: 51, typicalPayDay: 60, recovery: 88, next: "Holding to 14 Aug", state: "promised" },
-  { account: "Verdon Manufacturing", balance: 121_300, invoices: 9, daysBeyond: 34, daysOpen: 64, typicalPayDay: 40, recovery: 64, next: "Email — 9:00am", state: "sequencing" },
-  { account: "Halloway & Pike", balance: 98_700, invoices: 4, daysBeyond: 88, daysOpen: 118, typicalPayDay: 35, recovery: 22, next: "Suppressed — dispute", state: "disputed" },
+  { account: "Verdon Manufacturing", balance: 121_300, invoices: 9, daysBeyond: 34, daysOpen: 64, typicalPayDay: 40, recovery: 64, next: "Email, 9:00am", state: "sequencing" },
+  { account: "Halloway & Pike", balance: 98_700, invoices: 4, daysBeyond: 88, daysOpen: 118, typicalPayDay: 35, recovery: 22, next: "Suppressed, dispute", state: "disputed" },
   { account: "Corrin Supply Co.", balance: 76_240, invoices: 1, daysBeyond: 12, daysOpen: 42, typicalPayDay: 45, recovery: 92, next: "Holding to 11 Aug", state: "promised" },
-  { account: "Maddox Freight", balance: 61_880, invoices: 5, daysBeyond: 55, daysOpen: 85, typicalPayDay: 60, recovery: 44, next: "Call — 4:40pm", state: "sequencing" },
+  { account: "Maddox Freight", balance: 61_880, invoices: 5, daysBeyond: 55, daysOpen: 85, typicalPayDay: 60, recovery: 44, next: "Call, 4:40pm", state: "sequencing" },
   { account: "Ellsworth Group", balance: 43_010, invoices: 2, daysBeyond: 9, daysOpen: 39, typicalPayDay: null, recovery: 79, next: "Fix contact email", state: "bounced" },
 ];
 
@@ -181,15 +181,15 @@ export type Activity = {
 
 /** Completed today. The live zone is generated client-side — see LiveActivity. */
 export const completed: Activity[] = [
-  { time: "09:04", account: "Verdon Manufacturing", kind: "email", detail: "Sequence 2 of 4 — reminder with statement attached", credits: 20, outcome: "sent" },
+  { time: "09:04", account: "Verdon Manufacturing", kind: "email", detail: "Sequence 2 of 4, reminder with statement attached", credits: 20, outcome: "sent" },
   { time: "09:31", account: "Maddox Freight", kind: "call", detail: "Rang out, no voicemail left", credits: 0, outcome: "no-answer" },
-  { time: "09:58", account: "Threshold Devices", kind: "call", detail: "Voicemail left, 24s — callback requested", credits: callCredits(24), outcome: "voicemail" },
-  { time: "10:12", account: "Kessler Industrial", kind: "call", detail: "Connected 3m 20s — AP confirmed invoice in approval", credits: callCredits(200), outcome: "connected" },
-  { time: "10:48", account: "Corrin Supply Co.", kind: "promise", detail: "Promise captured — $76,240 by 11 Aug. Both channels suppressed.", credits: 0 },
-  { time: "11:20", account: "Halloway & Pike", kind: "suppressed", detail: "Sequence halted — dispute flag raised in ERP", credits: 0 },
-  { time: "12:02", account: "Brightwater Foods", kind: "call", detail: "Connected 1m 05s — promise date passed, follow-up resumed", credits: callCredits(65), outcome: "connected" },
-  { time: "13:15", account: "Ellsworth Group", kind: "email", detail: "Hard bounce — address invalid, flagged for correction", credits: 20, outcome: "bounced" },
-  { time: "14:07", account: "Lindqvist Bros.", kind: "payment", detail: "Remittance matched — $88,500 cleared, promise kept", credits: 0 },
+  { time: "09:58", account: "Threshold Devices", kind: "call", detail: "Voicemail left, 24s, callback requested", credits: callCredits(24), outcome: "voicemail" },
+  { time: "10:12", account: "Kessler Industrial", kind: "call", detail: "Connected 3m 20s. AP confirmed invoice in approval", credits: callCredits(200), outcome: "connected" },
+  { time: "10:48", account: "Corrin Supply Co.", kind: "promise", detail: "Promise captured, $76,240 by 11 Aug. Both channels suppressed.", credits: 0 },
+  { time: "11:20", account: "Halloway & Pike", kind: "suppressed", detail: "Sequence halted, dispute flag raised in ERP", credits: 0 },
+  { time: "12:02", account: "Brightwater Foods", kind: "call", detail: "Connected 1m 05s, promise date passed, follow-up resumed", credits: callCredits(65), outcome: "connected" },
+  { time: "13:15", account: "Ellsworth Group", kind: "email", detail: "Hard bounce, address invalid, flagged for correction", credits: 20, outcome: "bounced" },
+  { time: "14:07", account: "Lindqvist Bros.", kind: "payment", detail: "Remittance matched, $88,500 cleared, promise kept", credits: 0 },
 ];
 
 /* ------------------------------------------------------------------- credits */

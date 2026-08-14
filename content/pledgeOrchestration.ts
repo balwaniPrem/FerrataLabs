@@ -49,7 +49,7 @@ export const workflows: Workflow[] = [
   { account: "Corrin Supply Co.", openLines: 1, state: "paused", note: "Promise held to 11 Aug" },
   { account: "Maddox Freight", openLines: 5, state: "active", note: "Step 2 of 5 · voicemail left" },
   { account: "Ellsworth Group", openLines: 2, state: "partly-paused", note: "Address invalid · awaiting correction" },
-  { account: "Lindqvist Bros.", openLines: 0, state: "idle", note: "Settled — no open lines" },
+  { account: "Lindqvist Bros.", openLines: 0, state: "idle", note: "Settled, no open lines" },
 ];
 
 export const workflowStateLabel: Record<Workflow["state"], string> = {

@@ -13,7 +13,7 @@ export default function ContactForm() {
     return (
       <div className="card">
         <div className="form-ok">
-          <h4>Got it — thank you.</h4>
+          <h4>Got it, thank you.</h4>
           <p>
             We&rsquo;ll come back to you within one business day to find a time. If
             it&rsquo;s urgent, email <a href={`mailto:${site.email}`}>{site.email}</a> and
@@ -94,7 +94,7 @@ export default function ContactForm() {
           )}
         </div>
 
-        {/* honeypot — hidden from people, irresistible to bots */}
+        {/* honeypot, hidden from people, irresistible to bots */}
         <div className="hp" aria-hidden="true">
           <label htmlFor="company_website">Company website</label>
           <input

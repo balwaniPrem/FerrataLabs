@@ -16,7 +16,7 @@ export default function About() {
           <p className="eyebrow">Who we are</p>
           <h1>Operators, not an agency.</h1>
           <p>
-            We&rsquo;ve done this from the inside — running the technology organization
+            We&rsquo;ve done this from the inside, running the technology organization
             through exactly this kind of transformation, with a P&amp;L attached and a board
             asking about the number. Everything here came out of operating, not advising.
           </p>
@@ -30,7 +30,7 @@ export default function About() {
           <div className="prose">
             <h3>Why the name</h3>
             <p>
-              A <em>via ferrata</em> is a fixed steel line bolted into rock — cable, rungs and
+              A <em>via ferrata</em> is a fixed steel line bolted into rock, cable, rungs and
               bridges anchored into a face so that people who aren&rsquo;t technical climbers
               can cross terrain they otherwise couldn&rsquo;t. They were built through the
               Dolomites so ordinary soldiers could move through mountains that had previously
@@ -53,7 +53,7 @@ export default function About() {
               We price against outcomes rather than duration, because we&rsquo;ve been on the
               other side of a statement of work that rewarded elapsed time. The assessment
               output is yours whether or not you continue. And the engagement is designed to
-              end — step four exists so your team can build the next agents without us.
+              end, step four exists so your team can build the next agents without us.
             </p>
 
             <h3>The POD operating model</h3>

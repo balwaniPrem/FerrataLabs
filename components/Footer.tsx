@@ -22,7 +22,7 @@ export default function Footer() {
               {agents.map((a) => (
                 <li key={a.slug}>
                   <Link href={`/agents/${a.slug}`}>
-                    {a.name} — {a.role}
+                    {a.name} · {a.role}
                   </Link>
                 </li>
               ))}
@@ -45,7 +45,7 @@ export default function Footer() {
                 <Link href="/work">The work</Link>
               </li>
               <li>
-                <Link href="/how-it-works">How it runs</Link>
+                <Link href="/how-it-works">How it works</Link>
               </li>
               <li>
                 <Link href="/about">Who we are</Link>

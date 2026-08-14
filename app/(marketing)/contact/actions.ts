@@ -64,7 +64,7 @@ async function deliver(payload: { name: string; email: string; phone: string }) 
   const from = process.env.CONTACT_FROM;
 
   const text = [
-    "New discovery call request — ferratalabs.ai",
+    "New discovery call request, ferratalabs.ai",
     "",
     `Name:  ${payload.name}`,
     `Email: ${payload.email}`,
@@ -85,7 +85,7 @@ async function deliver(payload: { name: string; email: string; phone: string }) 
         from,
         to: [to],
         reply_to: payload.email,
-        subject: `Discovery call request — ${payload.name}`,
+        subject: `Discovery call request, ${payload.name}`,
         text,
       }),
     });
@@ -108,7 +108,7 @@ async function deliver(payload: { name: string; email: string; phone: string }) 
     JSON.stringify({ ...payload, at: new Date().toISOString() }) + "\n",
     "utf8",
   );
-  console.warn(`[contact] RESEND_API_KEY unset — submission written to ${file}`);
+  console.warn(`[contact] RESEND_API_KEY unset, submission written to ${file}`);
 }
 
 export async function submitContact(

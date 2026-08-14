@@ -92,7 +92,7 @@ export const industries: Industry[] = [
     tags: ["VC", "PE", "Fund ops"],
     menuLine: "Fund administration, capital calls and portfolio reporting",
     lede:
-      "Small operating teams carrying a disproportionate administrative load across funds, vehicles and portfolio companies — where the constraint is people, not systems.",
+      "Small operating teams carrying a disproportionate administrative load across funds, vehicles and portfolio companies, where the constraint is people, not systems.",
     pains: [
       "Capital calls and distributions assembled per LP by hand",
       "Portfolio reporting collated from inconsistent company submissions",

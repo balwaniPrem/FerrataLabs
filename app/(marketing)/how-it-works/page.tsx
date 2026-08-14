@@ -6,9 +6,9 @@ import { adlc, adlcIntro, adlcCompare } from "@/content/adlc";
 import { stepFigures } from "@/components/StepFigures";
 
 export const metadata: Metadata = {
-  title: "How it runs",
+  title: "How it works",
   description:
-    "The Ferrata Labs engagement model: assess, anchor the platform, first agent live, expand and hand over — run on a disciplined Agent Development Lifecycle.",
+    "The Ferrata Labs engagement model: assess, anchor the platform, first agent live, expand and hand over, all run on a disciplined Agent Development Lifecycle.",
 };
 
 export default function HowItWorks() {
@@ -16,12 +16,12 @@ export default function HowItWorks() {
     <>
       <header className="phead">
         <div className="wrap">
-          <p className="eyebrow">How it runs</p>
+          <p className="eyebrow">How it works</p>
           <h1>Unlock your organizational intelligence.</h1>
           <p>
             A via ferrata is a fixed steel line bolted into rock so that people who
             aren&rsquo;t technical climbers can cross terrain they otherwise couldn&rsquo;t.
-            The line goes in before anyone climbs. Same order of operations here — foundation
+            The line goes in before anyone climbs. Same order of operations here, foundation
             first, agents second, your team third.
           </p>
         </div>

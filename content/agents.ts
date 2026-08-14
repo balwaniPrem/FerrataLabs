@@ -52,7 +52,7 @@ export const agents: Agent[] = [
       {
         title: "Reads the ledger before anyone is awake",
         body:
-          "Pulls open receivables, payables and the bank position directly from SAP HANA, NetSuite or Dynamics — not an export, a live read against the tables. Aging buckets are recomputed rather than trusted.",
+          "Pulls open receivables, payables and the bank position directly from SAP HANA, NetSuite or Dynamics. Not an export: a live read against the tables. Aging buckets are recomputed rather than trusted.",
       },
       {
         title: "Scores every open account",
@@ -62,7 +62,7 @@ export const agents: Agent[] = [
       {
         title: "Writes the cash position in prose",
         body:
-          "A short daily note: what came in, what did not, what changed, and what it means for the week. Written, not charted — a controller reads a paragraph faster than they read a dashboard.",
+          "A short daily note: what came in, what did not, what changed, and what it means for the week. Written, not charted, because a controller reads a paragraph faster than they read a dashboard.",
       },
       {
         title: "Drafts the chase, in order",
@@ -99,7 +99,7 @@ export const agents: Agent[] = [
       "Coding proposed from history, not guessed",
     ],
     lede:
-      "Clark takes a vendor invoice in whatever shape it arrived and turns it into a posted, matched, correctly coded payable — or an exception with a reason attached.",
+      "Clark takes a vendor invoice in whatever shape it arrived and turns it into a posted, matched, correctly coded payable, or an exception with a reason attached.",
     runbook: [
       {
         title: "Takes the invoice however it comes",
@@ -114,7 +114,7 @@ export const agents: Agent[] = [
       {
         title: "Runs the three-way match",
         body:
-          "Invoice against purchase order against goods receipt, with your tolerance rules — not generic ones. Quantity and price variances inside tolerance pass; outside tolerance they become a specific exception naming the line and the delta.",
+          "Invoice against purchase order against goods receipt, with your tolerance rules, not generic ones. Quantity and price variances inside tolerance pass; outside tolerance they become a specific exception naming the line and the delta.",
       },
       {
         title: "Proposes the coding",
@@ -151,17 +151,17 @@ export const agents: Agent[] = [
       "Break aging, so nothing sits unexplained",
     ],
     lede:
-      "Tally does the reconciliation every day so that close is a review rather than an excavation. The number that matters is not how fast it reconciles — it is how few breaks are still unexplained on day one of close.",
+      "Tally does the reconciliation every day so that close is a review rather than an excavation. The number that matters is not how fast it reconciles, it is how few breaks are still unexplained on day one of close.",
     runbook: [
       {
         title: "Reconciles daily, not monthly",
         body:
-          "Sub-ledger to GL, bank to cash, intercompany to intercompany — matched line by line every day. A break found on the day it happens is a five-minute question to someone who still remembers. The same break found at close is an investigation.",
+          "Sub-ledger to GL, bank to cash, intercompany to intercompany, matched line by line every day. A break found on the day it happens is a five-minute question to someone who still remembers. The same break found at close is an investigation.",
       },
       {
         title: "Matches on substance, not just reference",
         body:
-          "Exact reference matches are the easy half. Tally also matches on amount-and-date proximity, partial settlements against one invoice, and payments that arrived netted across several — the cases that normally get manually unpicked.",
+          "Exact reference matches are the easy half. Tally also matches on amount-and-date proximity, partial settlements against one invoice, and payments that arrived netted across several, the cases that normally get manually unpicked.",
       },
       {
         title: "Ages every break",
@@ -208,7 +208,7 @@ export const agents: Agent[] = [
       {
         title: "Issues the RFQ to everyone at once",
         body:
-          "The same specification goes to every qualified vendor simultaneously, in whichever channel that vendor actually answers — email for some, SMS for others, a phone call for the ones who never read either.",
+          "The same specification goes to every qualified vendor simultaneously, in whichever channel that vendor actually answers: email for some, SMS for others, and a phone call for the ones who never read either.",
       },
       {
         title: "Chases the non-responders",
@@ -223,7 +223,7 @@ export const agents: Agent[] = [
       {
         title: "Recommends the award, with the math",
         body:
-          "A ranked recommendation showing landed cost, lead time, terms and past performance — and showing the arithmetic, so the buyer can disagree with a number rather than a conclusion.",
+          "A ranked recommendation showing landed cost, lead time, terms and past performance, with the arithmetic shown, so the buyer can disagree with a number rather than a conclusion.",
       },
       {
         title: "Holds the price after the handshake",
@@ -255,12 +255,12 @@ export const agents: Agent[] = [
       "Acknowledgement sent the same hour",
     ],
     lede:
-      "Swift removes the queue between a customer sending a purchase order and that order existing in your system. The work is not hard, it is just constant — which is exactly why it backs up.",
+      "Swift removes the queue between a customer sending a purchase order and that order existing in your system. The work is not hard, it is just constant, which is exactly why it backs up.",
     runbook: [
       {
         title: "Reads the customer's PO as sent",
         body:
-          "Every customer has their own PO layout, and none of them are yours. Swift reads the document as it arrives — PDF, portal download, email body — and extracts lines, quantities, dates and ship-to without a template per customer.",
+          "Every customer has their own PO layout, and none of them are yours. Swift reads the document as it arrives, whether that is a PDF, a portal download or an email body, and extracts lines, quantities, dates and ship-to without a template per customer.",
       },
       {
         title: "Validates against your own rules",
@@ -275,7 +275,7 @@ export const agents: Agent[] = [
       {
         title: "Escalates only real decisions",
         body:
-          "A price that does not match the contract, a date that cannot be met, a customer over their credit limit — these go to a person, with the conflict stated and a proposed resolution. Everything else just becomes an order.",
+          "A price that does not match the contract, a date that cannot be met, a customer over their credit limit: these go to a person, with the conflict stated and a proposed resolution. Everything else just becomes an order.",
       },
       {
         title: "Acknowledges to the customer",
@@ -291,7 +291,7 @@ export const agents: Agent[] = [
       "Intake accuracy and cycle-time reporting",
     ],
     gate:
-      "Swift creates orders inside your rules. Anything outside them — off-contract pricing, credit holds, unmeetable dates — stops and waits for a person.",
+      "Swift creates orders inside your rules. Anything outside them stops and waits for a person: off-contract pricing, credit holds, unmeetable dates.",
   },
   {
     slug: "quill",
@@ -322,7 +322,7 @@ export const agents: Agent[] = [
       {
         title: "Prices it against your rules",
         body:
-          "Contracted rates where the customer has them, volume breaks, regional differences, and the margin floors your business actually enforces. Not a suggested price — your price.",
+          "Contracted rates where the customer has them, volume breaks, regional differences, and the margin floors your business actually enforces. Not a suggested price, your price.",
       },
       {
         title: "Drafts the quote where the rep works",
@@ -353,7 +353,7 @@ export const agentBySlug = (slug: string) => agents.find((a) => a.slug === slug)
 export const personalization = {
   heading: "Your agents are built around your organization.",
   body:
-    "The way you price, route, approve and escalate is years of accumulated judgment, and it's a real advantage. It belongs to you and it stays with you — we're not asking you to hand over your playbook or fit yourself into someone else's template. We start from how your business already works, encode that logic into agents built for your environment, and leave you with an operation that runs faster with exactly the things that make you good at it still intact.",
+    "The way you price, route, approve and escalate is years of accumulated judgment, and it's a real advantage. It belongs to you and it stays with you, we're not asking you to hand over your playbook or fit yourself into someone else's template. We start from how your business already works, encode that logic into agents built for your environment, and leave you with an operation that runs faster with exactly the things that make you good at it still intact.",
 };
 
 /** §7 — non-negotiable, appears wherever agent capability is claimed. */

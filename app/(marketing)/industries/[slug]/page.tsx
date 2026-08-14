@@ -16,7 +16,7 @@ export async function generateMetadata({
   const { slug } = await params;
   const industry = industryBySlug(slug);
   if (!industry) return {};
-  const title = `${industry.name} — enterprise AI agents`;
+  const title = `${industry.name}, enterprise AI agents`;
   return {
     title: industry.name,
     description: industry.lede,
@@ -51,7 +51,7 @@ export default async function IndustryPage({
             <div>
               <h2>What actually hurts here.</h2>
               <p className="intro">
-                Every assessment starts by measuring these rather than assuming them — but
+                Every assessment starts by measuring these rather than assuming them, but
                 these are the workflows that rank highest in {industry.name.toLowerCase()}{" "}
                 more often than not.
               </p>
@@ -78,7 +78,7 @@ export default async function IndustryPage({
               <div className="panel">
                 <p className="h">Typical first agent</p>
                 <ul>
-                  <li>{applied[0]?.name} — {applied[0]?.role}</li>
+                  <li>{applied[0]?.name} · {applied[0]?.role}</li>
                 </ul>
               </div>
             </aside>
