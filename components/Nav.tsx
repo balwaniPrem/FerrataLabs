@@ -21,6 +21,12 @@ function Caret() {
   );
 }
 
+/**
+ * Floating chrome rather than a header bar. Two pills sit over one continuous
+ * scrolling surface: the brand on the left, everything else on the right with the
+ * CTA inside the same pill. The page scrolls beneath them, which is why the hero
+ * and page headers carry extra top padding to clear it.
+ */
 export default function Nav() {
   const pathname = usePathname();
   const [openMega, setOpenMega] = useState(false);
@@ -29,9 +35,7 @@ export default function Nav() {
   const trigger = useRef<HTMLButtonElement>(null);
   /**
    * Tracks how the menu was opened. Without this, hovering the trigger opens the
-   * menu and the click that follows immediately toggles it shut — the classic
-   * mega-menu annoyance. A click on a hover-opened menu takes ownership instead
-   * of closing it; only a click on a click-opened menu closes.
+   * menu and the click that follows immediately toggles it shut.
    */
   const openedBy = useRef<"hover" | "click" | null>(null);
 
@@ -56,16 +60,12 @@ export default function Nav() {
     setOpenMega(true);
   }, [openMega, close]);
 
-  // Navigating closes whatever is open. Done on the links themselves rather than in
-  // an effect on pathname — the effect form re-renders after paint and trips
-  // react-hooks/set-state-in-effect.
   const closeAll = useCallback(() => {
     openedBy.current = null;
     setOpenMega(false);
     setOpenDrawer(false);
   }, []);
 
-  // Escape closes the mega-menu and returns focus to its trigger.
   useEffect(() => {
     if (!openMega) return;
     const onKey = (e: KeyboardEvent) => {
@@ -94,16 +94,16 @@ export default function Nav() {
     pathname.startsWith("/agents") || pathname.startsWith("/industries");
 
   return (
-    <nav className="nav">
+    <nav className="nav" aria-label="Main">
       <div className="nav-in">
-        <Link href="/" className="mark">
+        <Link href="/" className="nav-brand" onClick={closeAll}>
           <Mark size={20} />
-          Ferrata Labs
+          <span>Ferrata Labs</span>
         </Link>
 
-        <div className="nav-links">
+        <div className="nav-pill">
           <div
-            className="mega-wrap hide-sm"
+            className="mega-wrap"
             ref={megaWrap}
             data-open={openMega}
             onMouseEnter={openByHover}
@@ -112,7 +112,7 @@ export default function Nav() {
             <button
               ref={trigger}
               type="button"
-              className="mega-caret"
+              className="nav-item mega-caret"
               aria-expanded={openMega}
               aria-haspopup="true"
               data-active={inSolutions}
@@ -134,7 +134,7 @@ export default function Nav() {
                       onClick={closeAll}
                     >
                       <span className="t">
-                        {a.role} — {a.name}
+                        {a.role} · {a.name}
                       </span>
                       <span className="d">{a.menuLine}</span>
                     </Link>
@@ -162,31 +162,31 @@ export default function Nav() {
             <Link
               key={p.href}
               href={p.href}
-              className="hide-sm"
+              className="nav-item"
               aria-current={pathname === p.href ? "page" : undefined}
             >
               {p.label}
             </Link>
           ))}
 
-          <button
-            type="button"
-            className="nav-toggle"
-            aria-expanded={openDrawer}
-            aria-controls="mobile-drawer"
-            onClick={() => setOpenDrawer((v) => !v)}
-          >
-            {openDrawer ? "Close" : "Menu"}
-          </button>
-
           <Link
             href="/contact"
-            className="btn"
+            className="nav-cta"
             aria-current={pathname === "/contact" ? "page" : undefined}
           >
             Book a discovery call
           </Link>
         </div>
+
+        <button
+          type="button"
+          className="nav-toggle"
+          aria-expanded={openDrawer}
+          aria-controls="mobile-drawer"
+          onClick={() => setOpenDrawer((v) => !v)}
+        >
+          {openDrawer ? "Close" : "Menu"}
+        </button>
       </div>
 
       {openDrawer && (
@@ -196,10 +196,13 @@ export default function Nav() {
               {p.label}
             </Link>
           ))}
+          <Link href="/contact" onClick={closeAll}>
+            Book a discovery call
+          </Link>
           <p className="grp">By function</p>
           {agents.map((a) => (
             <Link key={a.slug} href={`/agents/${a.slug}`} onClick={closeAll}>
-              {a.role} — {a.name}
+              {a.role} · {a.name}
             </Link>
           ))}
           <p className="grp">By industry</p>

@@ -127,16 +127,17 @@ two, colour appears only as muted status pastels, and only where it carries mean
 
 ### Non-negotiable visual rules
 
-- **Radius: sharp everywhere, with exactly one documented exception.**
-  Every surface — cards, buttons, inputs, panels, containers — is radius 0. Sharp corners
-  are the identity, and they are what keep the site from looking like every other
-  AI-generated SaaS page.
+- **Radius: chrome is pill, content is sharp.** This is the documented rule the shape lock
+  requires, and it is followed everywhere.
+  - **Sharp (radius 0):** every content surface. Cards, sections, panels, inputs, tables,
+    and the in-page buttons including the hero CTAs. Sharp corners are the identity and are
+    what keep the page from looking like every other AI-generated SaaS site.
+  - **Pill (`--radius-badge`):** floating chrome and small status objects only. The nav
+    brand pill, the nav pill, nav items, the nav CTA, the mobile toggle, plus `.eyebrow`,
+    `.state`, `.chip`, `.offpat` and `.fam-key`.
 
-  **The single exception: tags and status badges are full-pill** (`--radius-badge`). That
-  covers `.eyebrow`, `.state`, `.chip`, `.offpat` and `.fam-key`, and nothing else. The
-  shape lock permits a mixed system only when the rule is written down and applied
-  everywhere, which is what this token is for. A new rounded element that is not a badge
-  is a bug.
+  The distinction is that chrome floats *over* the page and reads as a separate layer;
+  content sits *in* it. A rounded element that is neither chrome nor a badge is a bug.
 - **Hairline grids.** Card groups are 1px gaps over a `--line` background, not floating
   boxes with shadows.
 - **No shadows, no gradients, no glassmorphism** beyond the nav's subtle blur.
