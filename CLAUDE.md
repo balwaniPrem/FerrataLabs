@@ -93,7 +93,7 @@ steel-blue accent is retired — there is no blue anywhere in the system.
 --line:#E8E6E1;  --line-2:#F1EFEB;
 --surface:#FFFFFF; --canvas:#F7F6F3;
 --accent:#111111; --accent-lit:#333333; --accent-wash:#F1EFEB; --accent-line:#D8D5CF;
---accent-2:#A34A32;  /* iron oxide — eyebrow labels only */
+--accent-2:#A34A32; --accent-2-wash:#FBF3F0; --accent-2-line:#E6CFC7;  /* eyebrow chip only */
 
 /* the only colour in the system, semantic status only */
 --pos-bg:#EDF3EC; --pos-line:#CFE0CD; --pos-ink:#346538;
@@ -109,6 +109,10 @@ element: the eyebrow label.** Rust is what iron does, so it belongs to a company
 the iron way, and it is warm enough to sit inside the existing warm-grey family without
 mixing temperatures. It measures 5.86:1 on white. Two instances per page at most, since
 eyebrows are already capped at `ceil(sections / 3)`.
+
+The eyebrow renders as a **sharp-cornered bordered chip** — iron-oxide text on a faint wash
+with a hairline border. Not a pill: a rounded chip on an all-sharp page breaks the shape
+lock, which both this section and the design-taste pre-flight treat as a hard rule.
 
 **Do not extend it.** Not to links, not to buttons, not to borders, not to status. A second
 accent without a written boundary becomes a primary accent within a month. Beyond these
