@@ -93,7 +93,7 @@ steel-blue accent is retired — there is no blue anywhere in the system.
 --line:#E8E6E1;  --line-2:#F1EFEB;
 --surface:#FFFFFF; --canvas:#F7F6F3;
 --accent:#111111; --accent-lit:#333333; --accent-wash:#F1EFEB; --accent-line:#D8D5CF;
---accent-2:#A34A32; --accent-2-wash:#FBF3F0; --accent-2-line:#E6CFC7;  /* eyebrow chip only */
+--accent-2:#A34A32; --accent-2-wash:#FBF2ED; --accent-2-line:#E6C4B3;  /* eyebrow badge only */
 
 /* the only colour in the system, semantic status only */
 --pos-bg:#EDF3EC; --pos-line:#CFE0CD; --pos-ink:#346538;
@@ -110,8 +110,17 @@ the iron way, and it is warm enough to sit inside the existing warm-grey family 
 mixing temperatures. It measures 5.86:1 on white. Two instances per page at most, since
 eyebrows are already capped at `ceil(sections / 3)`.
 
-The eyebrow renders as a **pill badge** — iron-oxide text on a faint wash with a hairline
-border. See the radius rule below.
+The eyebrow renders as the **status pill** used across agentic-dev sites: a filled
+iron-oxide dot, then the label in **body type, sentence case, 15px**, on a faint iron wash
+with a visible iron border.
+
+Two proportions matter and are easy to get wrong:
+- **The dot is large relative to the text** (10px against 15px). Undersized, it reads as a
+  stray mark rather than a status indicator.
+- **The label sits in `--slate`, not `--ink`.** The dot is the only strong mark in the
+  badge; a near-black label competes with it and makes the pill look heavy.
+
+See the radius rule below.
 
 **Do not extend it.** Not to links, not to buttons, not to borders, not to status. A second
 accent without a written boundary becomes a primary accent within a month. Beyond these
