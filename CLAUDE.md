@@ -93,7 +93,7 @@ steel-blue accent is retired — there is no blue anywhere in the system.
 --line:#E8E6E1;  --line-2:#F1EFEB;
 --surface:#FFFFFF; --canvas:#F7F6F3;
 --accent:#111111; --accent-lit:#333333; --accent-wash:#F1EFEB; --accent-line:#D8D5CF;
---accent-2:#A34A32; --accent-2-wash:#FBF3F0; --accent-2-line:#E6CFC7;  /* eyebrow chip only */
+--accent-2:#A34A32; --accent-2-wash:#FBF1EC; --accent-2-line:#E4BFAE;  /* eyebrow badge only */
 
 /* the only colour in the system, semantic status only */
 --pos-bg:#EDF3EC; --pos-line:#CFE0CD; --pos-ink:#346538;
@@ -110,8 +110,11 @@ the iron way, and it is warm enough to sit inside the existing warm-grey family 
 mixing temperatures. It measures 5.86:1 on white. Two instances per page at most, since
 eyebrows are already capped at `ceil(sections / 3)`.
 
-The eyebrow renders as a **pill badge** — iron-oxide text on a faint wash with a hairline
-border. See the radius rule below.
+The eyebrow renders as a **pill badge**: a filled iron-oxide dot, then the label in **body
+type, sentence case**, on a faint iron wash with a visible iron border. The colour is
+carried by the dot and the border; the label itself stays in ink so it reads as a label
+rather than as decoration. Not uppercase mono — that treatment reads as ornament at this
+size. See the radius rule below.
 
 **Do not extend it.** Not to links, not to buttons, not to borders, not to status. A second
 accent without a written boundary becomes a primary accent within a month. Beyond these
