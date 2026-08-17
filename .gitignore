@@ -46,3 +46,6 @@ next-env.d.ts
 # third-party skills — reinstall with: npx skills add Leonxlnx/taste-skill
 .agents/
 .claude/skills/
+
+# generated export for the WordPress root, regenerate with npm run export:wp
+wordpress-upload/
