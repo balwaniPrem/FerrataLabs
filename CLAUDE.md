@@ -288,6 +288,7 @@ These are written into the site. Confirm each is defensible under a second-meeti
 | Integration logos on the marquee | Every logo shown must be a real, working connection. Neutral "connects with" framing only — no implied partnership or certification. SAP polices its marks. |
 | FAQ: "we don't train on your data" | Is this the actual policy? It's now written down. |
 | FAQ: "you're not locked in" | Ditto. |
+| Anything in `/llms-full.txt` | It is generated from `content/`, so every claim there is a claim on the site. Answer engines quote it verbatim and without the surrounding page, so a sentence that needs context to be defensible should not be in `content/` in the first place. |
 | Console numbers (412 invoices, Kessler PO, $2.3M) | Illustrative. Be ready to say so. |
 | Assess figure ($418k people, $96k software, $514k total) | Illustrative, and labelled as such in the figure. Do not quote as a benchmark or a typical result. The point of the diagram is the *method* — function, workflows, split cost — not the numbers. |
 
@@ -325,6 +326,10 @@ Next.js 16 (App Router) + TypeScript + Tailwind v4. Node installed via Homebrew.
 - `prefers-reduced-motion` respected: kills the rail animation, the marquee, smooth scroll.
 - Skip-to-content link, `aria-current="page"` on nav, semantic landmarks. AA contrast.
 - Metadata per route: title, description, OG tags. Sitemap and robots.txt.
+- **`/llms.txt` and `/llms-full.txt`** for answer engines, generated from `content/` by
+  route handlers so they cannot drift from the pages. The short form is a map; the long
+  form carries the full engagement, agents, industries and FAQ. Both deliberately exclude
+  the unlisted consoles.
 - Client JS limited to the rail, the mega-menu, and form validation.
 - `legacy-static/` holds the original hand-written HTML/CSS as a parity reference. Delete
   once the port is signed off.
