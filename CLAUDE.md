@@ -368,6 +368,27 @@ It will never tell someone we received their details when nothing was sent.
 
 ## 11. Working agreement
 
+### Branch and PR flow
+
+Work lands through pull requests, not direct commits to `main`.
+
+- **One branch per change.** `feat/`, `fix/`, `design/`, `chore/`, `content/` prefixes.
+  If a change needs two sentences to describe, it is probably two branches.
+- **`main` stays deployable.** Never push to it directly.
+- **The PR body states what changed, why, and what was actually verified** — build, lint,
+  the routes exercised, the screenshots taken. "Should work" is not verification.
+- **I do not merge my own PRs.** Opening one is where my judgment stops and yours starts.
+  Merge is always yours to call, and so is closing one unmerged.
+- **Design changes especially belong in a PR.** The review cycles on the eyebrow badge and
+  the nav redesign would have been "close the PR" rather than "revert the commit", which is
+  cheaper and leaves a cleaner history.
+- Delete the branch after merge.
+
+Tooling: `gh` is not installed; the GitHub REST API and `git fetch origin pull/N/head`
+cover the same ground.
+
+
+
 When the brief is ambiguous, **ask rather than infer**. The failure mode in this project has
 been making a larger change than the one requested — deleting when asked to deprioritise,
 preserving-and-promoting when asked to cut, adding structure that wasn't requested. **Change
