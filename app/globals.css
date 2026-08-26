@@ -579,22 +579,34 @@ h4 {
 .cycle {
   display: grid;
   justify-items: start;
-  color: var(--accent-2);
 }
+
+/* Typed-in highlight. The word is a solid oxide block revealed left to right, held,
+   then wiped back the way it came, which reads as typing and backspacing.
+   clip-path does the reveal rather than a width animation, because width in ch units
+   is wrong for a proportional face and a percentage width has nothing to resolve
+   against. steps() is what makes it read as typed rather than as a swipe.
+   White on oxide measures 5.86:1, so it passes AA at display size. */
 .cycle > span {
   grid-area: 1 / 1;
-  opacity: 0;
-  animation: cycle 18s linear infinite;
-  animation-delay: calc(var(--i) * 3s);
+  background: var(--accent-2);
+  color: #fff;
+  padding: 0 0.16em 0.06em;
   white-space: nowrap;
+  clip-path: inset(0 100% 0 0);
+  animation: type-cycle 21s steps(18, end) infinite;
+  animation-delay: calc(var(--i) * 3.5s);
 }
-@keyframes cycle {
-  0%, 13% { opacity: 1; }
-  17%, 100% { opacity: 0; }
+@keyframes type-cycle {
+  0%    { clip-path: inset(0 100% 0 0); }
+  6%    { clip-path: inset(0 0 0 0); }
+  13%   { clip-path: inset(0 0 0 0); }
+  16.6% { clip-path: inset(0 100% 0 0); }
+  100%  { clip-path: inset(0 100% 0 0); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .cycle > span { animation: none; opacity: 0; }
-  .cycle > span:first-child { opacity: 1; }
+  .cycle > span { animation: none; clip-path: none; }
+  .cycle > span:not(:first-child) { display: none; }
 }
 
 .hero {
