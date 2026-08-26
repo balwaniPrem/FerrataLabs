@@ -3,12 +3,10 @@ import Cta from "@/components/Cta";
 import AgentGrid from "@/components/AgentGrid";
 import Marquee from "@/components/Marquee";
 import HeroArc from "@/components/HeroArc";
-import ConsolePreview from "@/components/ConsolePreview";
 import { solutionIcons } from "@/components/SolutionIcons";
 import { Proof, Personalization, ApprovalGate } from "@/components/Blocks";
 import { steps } from "@/content/steps";
 import { integrationsCopy } from "@/content/integrations";
-import { agentBySlug } from "@/content/agents";
 import {
   hero,
   layers,
@@ -32,8 +30,6 @@ function FoldClose({ text }: { text: string }) {
 }
 
 export default function Home() {
-  const sterling = agentBySlug("sterling");
-
   return (
     <>
       <header className="hero hero-split">
@@ -138,11 +134,6 @@ export default function Home() {
           <h2>{shipped.heading}</h2>
           <p className="intro">{shipped.intro}</p>
           <AgentGrid />
-          {sterling?.console && (
-            <div className="shipped-console">
-              <ConsolePreview {...sterling.console} />
-            </div>
-          )}
           <Personalization />
           <ApprovalGate />
           <FoldClose text={shipped.fix} />

@@ -149,7 +149,7 @@ export const shipped = {
   heading: "Agents already doing the work.",
   intro:
     "Six agents built and running against real transactions. These are examples of what gets built, not a catalogue you pick from, and every one is rebuilt around how your business actually operates.",
-  fix: "Sterling's console below is the real thing, recorded. Every action it takes stops at a person before it reaches a customer.",
+  fix: "Every one of them stops at a person before it reaches a customer. Open any agent to see exactly where that line sits.",
 };
 
 /** Operators fold. */
