@@ -85,16 +85,23 @@ export default function Home() {
 
       <section className="sec tint">
         <div className="wrap">
-          <h2>{problem.heading}</h2>
+          <h2 className="problem-h">{problem.heading}</h2>
           <p className="intro">{problem.intro}</p>
-          <ul className="problems">
+          <ol className="problems">
             {problem.items.map((p) => (
               <li key={p.t}>
-                <h3>{p.t}</h3>
-                <p>{p.d}</p>
+                <span className="n" aria-hidden="true">{p.n}</span>
+                <div>
+                  <h3>{p.t}</h3>
+                  <p>{p.d}</p>
+                </div>
               </li>
             ))}
-          </ul>
+          </ol>
+          <p className="problem-closer">
+            {problem.closer}{" "}
+            <span className="hl">{problem.closerEmphasis}</span>
+          </p>
           <FoldClose text={problem.fix} />
         </div>
       </section>

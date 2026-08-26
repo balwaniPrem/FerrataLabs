@@ -62,34 +62,48 @@ export const layers = {
   fix: "Six agents already run on this model. Look at what they do before deciding whether it fits you.",
 };
 
-/** Third fold: the problem, stated as the reader's own history. */
+/**
+ * Third fold: the problem, told as the reader's own history.
+ *
+ * Rules for this section, learned from what makes it work: a number, a headline that
+ * ends in a full stop, then two or three SHORT sentences. Every item ends on a sting.
+ * No sentence runs long enough to need a comma splice. The closing line takes the
+ * blame off the reader and puts it on the thing we actually fix.
+ */
 export const problem = {
-  heading: "You already tried this.",
-  intro:
-    "Most of the mid-market has been buying AI for two years. Very little of it is doing work. The pattern is consistent enough to name.",
+  heading: "You bought AI. Nothing does the work.",
+  intro: "You have tried the obvious fixes. None of them touched the real problem.",
   items: [
     {
-      t: "You bought the tools",
-      d: "Licences for copilots and assistants, most of them now unused. Seats renew whether or not anyone logs in.",
+      n: "01",
+      t: "You bought the tools.",
+      d: "Licences for copilots and assistants. A few enthusiasts got faster. Everyone else kept re-keying invoices by hand. The seats renew whether or not anyone signs in.",
     },
     {
-      t: "You hired the engineers",
-      d: "Good people, now maintaining demos. The gap was never talent, it was that nothing connected to a system of record.",
+      n: "02",
+      t: "You hired the engineers.",
+      d: "Headcount went up. Throughput did not. They are good people maintaining demos, because nothing they built was ever allowed near a system of record.",
     },
     {
-      t: "You paid for frontier models",
-      d: "Real spend on tokens for pilots that never left the sandbox, because no one would let them touch a live transaction.",
+      n: "03",
+      t: "You paid for frontier models.",
+      d: "Real spend on tokens for pilots that never left the sandbox. Nobody would let a model touch a live transaction. So it never touched one.",
     },
     {
-      t: "Your best people are stuck on it",
-      d: "The engineers you can least afford to lose are debugging prompts instead of shipping product.",
+      n: "04",
+      t: "Your best people are stuck on it.",
+      d: "The engineers you can least afford to lose are debugging prompts and rewriting evaluation scripts. That is precisely the work this was meant to absorb.",
     },
     {
-      t: "Nobody has seen the value",
-      d: "No line on the P&L moved. The board asks about AI and the honest answer is still a roadmap.",
+      n: "05",
+      t: "Nobody has seen the value.",
+      d: "No line on the P&L moved. The board asks about AI and the honest answer is still a roadmap. Two years in, that answer is getting expensive.",
     },
   ],
-  fix: "None of that failed because the technology was wrong. It failed because nothing was ever wired to a system of record, and nothing had permission to act.",
+  closer: "The problem was never the model, and it was never your team.",
+  closerEmphasis:
+    "Nothing was wired to a system of record, and nothing had permission to act.",
+  fix: "That is the part we fix, and it is the only part that turns a pilot into a payable outcome.",
 };
 
 /** Fourth fold: the solution and the guarantee. */
