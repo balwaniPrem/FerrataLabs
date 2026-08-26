@@ -2807,20 +2807,43 @@ tr.is-off { opacity: 0.5; }
   color: var(--accent-2);
   margin-bottom: 14px;
 }
-.guarantee .g-body {
+/* One bold line, then the conditions in regular weight. A paragraph of bold
+   reads as shouting and nobody finishes it. */
+.guarantee .g-head {
   font-family: var(--display);
-  font-weight: 600;
-  font-size: clamp(19px, 2.2vw, 25px);
-  line-height: 1.32;
-  letter-spacing: -0.02em;
+  font-weight: 800;
+  font-size: clamp(22px, 2.6vw, 30px);
+  line-height: 1.2;
+  letter-spacing: -0.026em;
   color: var(--ink);
-  max-width: 46ch;
+  max-width: 24ch;
+}
+.guarantee .g-body {
+  margin-top: 16px;
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: var(--slate);
+  max-width: 58ch;
 }
 .guarantee .g-note {
-  margin-top: 14px;
-  font-size: 14px;
+  margin-top: 10px;
+  font-size: 13.5px;
   color: var(--steel);
   max-width: 62ch;
+}
+
+/* Icons lift the cards and give the headings a consistent baseline to sit on. */
+.solution-cards .l-icon {
+  display: block;
+  color: var(--accent-2);
+  margin-bottom: 18px;
+}
+.solution-cards h3 {
+  white-space: nowrap;
+  font-size: 20px;
+}
+@media (max-width: 1080px) {
+  .solution-cards h3 { white-space: normal; }
 }
 
 .fold-close {

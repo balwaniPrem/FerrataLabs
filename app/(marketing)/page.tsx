@@ -4,6 +4,7 @@ import AgentGrid from "@/components/AgentGrid";
 import Marquee from "@/components/Marquee";
 import HeroArc from "@/components/HeroArc";
 import ConsolePreview from "@/components/ConsolePreview";
+import { solutionIcons } from "@/components/SolutionIcons";
 import { Proof, Personalization, ApprovalGate } from "@/components/Blocks";
 import { steps } from "@/content/steps";
 import { integrationsCopy } from "@/content/integrations";
@@ -110,16 +111,21 @@ export default function Home() {
         <div className="wrap">
           <h2>{solution.heading}</h2>
           <p className="intro">{solution.intro}</p>
-          <div className="layers">
-            {solution.items.map((s) => (
-              <div className="layer" key={s.t}>
-                <h3>{s.t}</h3>
-                <p>{s.d}</p>
-              </div>
-            ))}
+          <div className="layers solution-cards">
+            {solution.items.map((s, i) => {
+              const Icon = solutionIcons[i];
+              return (
+                <div className="layer" key={s.t}>
+                  <span className="l-icon"><Icon /></span>
+                  <h3>{s.t}</h3>
+                  <p>{s.d}</p>
+                </div>
+              );
+            })}
           </div>
           <div className="guarantee">
             <p className="h">{solution.guarantee.label}</p>
+            <p className="g-head">{solution.guarantee.headline}</p>
             <p className="g-body">{solution.guarantee.body}</p>
             <p className="g-note">{solution.guarantee.note}</p>
           </div>

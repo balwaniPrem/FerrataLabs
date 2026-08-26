@@ -106,29 +106,40 @@ export const problem = {
   fix: "That is the part we fix, and it is the only part that turns a pilot into a payable outcome.",
 };
 
-/** Fourth fold: the solution and the guarantee. */
+/**
+ * Fourth fold: the solution and the commitment.
+ *
+ * Card headings are deliberately near-identical in length so the row stays even.
+ * A heading that wraps to two lines while its neighbours hold one breaks the grid,
+ * and no amount of spacing hides it. Keep them to roughly 22 characters.
+ *
+ * The commitment is short on purpose. One bold line does the work; the conditions
+ * follow in regular weight. A paragraph of bold reads as shouting and nobody
+ * finishes it.
+ */
 export const solution = {
   heading: "Execution made better, not rebuilt.",
   intro:
     "We do not re-platform your business. Your ERP stays where it is, your team stays who they are, and your processes keep the judgment that makes them work. What changes is how much of the execution a person has to do by hand.",
   items: [
     {
-      t: "We embed, we do not advise",
+      t: "Embedded, not advising",
       d: "Our engineers work inside your team, on your tickets, in your standups. You get people who ship, not a deck and a follow-up.",
     },
     {
-      t: "We learn how you actually operate",
-      d: "The pricing exception nobody documented, the customer who always gets a call first. That accumulated judgment is your advantage, and it stays yours.",
+      t: "Fluent in your process",
+      d: "The pricing exception nobody documented. The customer who always gets a call first. That accumulated judgment is your advantage, and it stays yours.",
     },
     {
-      t: "We hand it over on purpose",
-      d: "The platform runs in your environment. The runbooks are yours. Step four exists so your engineers build the next agent without us.",
+      t: "Built to be handed over",
+      d: "The platform runs in your environment and the runbooks are yours. Step four exists so your engineers build the next agent without us.",
     },
   ],
   guarantee: {
     label: "The commitment",
-    body: "We agree what we are measuring before we build anything, against a baseline taken in the assessment. If that number does not move, you do not pay for the work that was meant to move it.",
-    note: "Baseline, metric and threshold are written down in step one, so nobody is arguing about the definition at invoice time.",
+    headline: "If the number does not move, you do not pay.",
+    body: "We agree what we are measuring before anything is built, against a baseline taken during the assessment.",
+    note: "Metric, baseline and threshold are written down in step one, so nobody is arguing about the definition at invoice time.",
   },
   fix: "This is the same shape as a via ferrata. Someone bolts the line into the rock; everyone else crosses on their own feet.",
 };
