@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Cta from "@/components/Cta";
 import { Proof } from "@/components/Blocks";
 
@@ -27,6 +28,21 @@ export default function About() {
           <Proof />
 
           <div className="prose">
+            <h3>Why an operator, and not an adviser</h3>
+            <p>
+              Going from AI absent to AI native is not a technology problem. The models
+              work. What stops it is everything an operator recognises on sight: the
+              integration surface nobody scoped, the exception that turns out to be forty
+              per cent of volume, the controller who will not sign anything off until the
+              audit trail exists.
+            </p>
+            <p>
+              We have been on the inside of that, with a P&amp;L attached and a board asking
+              about the number. It is why the engagement opens with two weeks of measurement
+              rather than a workshop, and why the first agent goes live behind an approval
+              gate rather than a launch announcement.
+            </p>
+
             <h3>Why the name</h3>
             <p>
               A <em>via ferrata</em> is a fixed steel line bolted into rock, cable, rungs and
@@ -49,22 +65,29 @@ export default function About() {
               someone has to decide what to cut.
             </p>
             <p>
-              We price against outcomes rather than duration, because we&rsquo;ve been on the
-              other side of a statement of work that rewarded elapsed time. The assessment
-              output is yours whether or not you continue. And the engagement is designed to
-              end, step four exists so your team can build the next agents without us.
+              We price against outcomes rather than duration, because we have been on the
+              other side of a statement of work that rewarded elapsed time. That is why the
+              commitment is specific rather than a slogan: the metric and the baseline are
+              agreed during the assessment, and if the number does not move you do not pay
+              for the work that was meant to move it.
+            </p>
+            <p>
+              The assessment output is yours whether or not you continue. And the engagement
+              is designed to end. Step four exists so your team builds the next agent
+              without us.
             </p>
 
             <h3>The POD operating model</h3>
             <p>
-              The delivery structure we install is the one that produced the numbers above: a
-              self-contained unit of one lead, one product owner and two full-stack AI developers, owning a domain end
-              to end with its own runbooks and evaluation harness. It is deliberately small
-              enough to hold context and large enough to ship without waiting on anyone.
+              The delivery structure we install is the one that produced the numbers above.
+              It isn&rsquo;t a framework off a slide. It is what worked when the alternative
+              was hiring a hundred more people we did not have budget for, and it is the
+              thing we hand over at the end rather than the thing we keep.
             </p>
-            <p>
-              It isn&rsquo;t a framework off a slide. It&rsquo;s what worked when the
-              alternative was hiring a hundred more people we didn&rsquo;t have budget for.
+            <p className="more">
+              <Link href="/work">
+                How the team embeds, and what a POD is made of &rarr;
+              </Link>
             </p>
           </div>
         </div>
