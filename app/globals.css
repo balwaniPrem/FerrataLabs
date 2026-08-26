@@ -2916,3 +2916,78 @@ tr.is-off { opacity: 0.5; }
   font-size: 17px;
   color: var(--steel);
 }
+
+/* ---------- /work ---------- */
+.offering { list-style: none; margin-top: 48px; }
+.offering li {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 36px;
+  padding: 30px 0;
+  border-top: 1px solid var(--line);
+  align-items: start;
+}
+.offering li:last-child { border-bottom: 1px solid var(--line); }
+.offering .n {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(30px, 3.4vw, 44px);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  color: var(--line);
+}
+.offering li:hover .n { color: var(--accent-2); }
+.offering h3 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(18px, 2vw, 22px);
+  letter-spacing: -0.018em;
+  margin-bottom: 10px;
+}
+.offering p { font-size: 16px; color: var(--steel); line-height: 1.62; max-width: 62ch; }
+@media (max-width: 760px) {
+  .offering li { grid-template-columns: 1fr; gap: 10px; }
+  .offering .n { font-size: 28px; }
+}
+
+.pod {
+  margin-top: 40px;
+  border: 1px solid var(--ink);
+  background: var(--surface);
+  padding: 30px 32px 32px;
+}
+.pod .h {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  margin-bottom: 22px;
+}
+.pod-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.pod-row > div { background: var(--surface); padding: 22px 20px 24px; }
+.pod-row .n {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 34px;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+}
+.pod-row .r {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--steel);
+  margin: 10px 0 10px;
+}
+.pod-row .d { font-size: 14px; color: var(--steel); line-height: 1.55; }
+.pod-note { margin-top: 20px; font-size: 15px; color: var(--slate); max-width: 72ch; }
+@media (max-width: 760px) { .pod-row { grid-template-columns: 1fr; } }

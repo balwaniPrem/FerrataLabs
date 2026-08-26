@@ -203,8 +203,11 @@ Nav: **Solutions** (mega-menu) / The work / How it works / Who we are / Book a d
 ```
 /                     hero → difference is execution → 6 agents → integration marquee
                       → 4 steps (condensed) → metrics → CTA
-/work                 all 6 agents w/ detail bullets → personalization callout
-                      → approval-gate note → assisted vs agent-run comparison
+/work                 the deep version of the home argument, in this order:
+                      offering (one engagement, four stages) → how the team embeds,
+                      with the POD → the six agents as proof → assisted vs agent-run
+                      Agents come LAST. They are proof, not pitch; leading with them
+                      turns the page back into a product catalogue.
 /how-it-works         4 steps at full depth w/ deliverables panels → ADLC → 6-question FAQ
 /about                metrics → why the name → vs. a consultancy → POD model
 /contact              what you'll leave with → what to bring → who to bring → contact form
