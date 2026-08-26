@@ -572,6 +572,83 @@ h4 {
   .hero-fig { max-width: 560px; }
 }
 
+/* ---------- hero climb ----------
+   The cable draws downward and each rung goes live as the head reaches it.
+
+   Geometry is set in components/HeroClimb.tsx and the delays below are derived
+   from it, so they are not free numbers. The head travels RUN = 290 user units
+   (y 26 to y 316) across the draw phase, which is the first 62% of a 5.4s loop.
+   Rung centres sit at y 91 / 166 / 241 / 316, so a rung is reached at:
+
+     delay(i) = 0.62 x 5.4s x (centre(i) - 26) / 290
+
+   which comes out 0.750 / 1.617 / 2.482 / 3.348s. The rungs are evenly spaced,
+   so the gap is a constant 0.866s and only the first offset is its own number.
+   Move a rung and these stop matching the drawing. */
+.climb-live {
+  stroke-dashoffset: 290;
+  animation: climb-draw 5.4s linear infinite;
+}
+@keyframes climb-draw {
+  0%   { stroke-dashoffset: 290; opacity: 1; }
+  62%  { stroke-dashoffset: 0; opacity: 1; }
+  92%  { stroke-dashoffset: 0; opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
+}
+
+.climb-head {
+  animation: climb-head 5.4s linear infinite;
+}
+@keyframes climb-head {
+  0%   { transform: translateY(0); opacity: 0; }
+  4%   { opacity: 1; }
+  62%  { transform: translateY(290px); opacity: 1; }
+  68%  { transform: translateY(290px); opacity: 0; }
+  100% { transform: translateY(290px); opacity: 0; }
+}
+
+.climb-plate { fill: var(--surface); }
+.climb-node { fill: var(--surface); stroke: var(--steel); }
+
+.climb-stage .climb-plate,
+.climb-stage .climb-node,
+.climb-stage .climb-rung {
+  animation-duration: 5.4s;
+  animation-timing-function: steps(1, end);
+  animation-iteration-count: infinite;
+  animation-delay: calc(0.75s + var(--i) * 0.866s);
+}
+.climb-stage .climb-plate { animation-name: climb-plate; }
+.climb-stage .climb-node { animation-name: climb-node; }
+.climb-stage .climb-rung { animation-name: climb-rung; }
+
+/* Lit the moment the head arrives, held through the rest of the pass, then
+   dropped just before the next one starts so the sequence can play again. */
+@keyframes climb-plate {
+  0%, 88%   { fill: var(--canvas); }
+  89%, 100% { fill: var(--surface); }
+}
+@keyframes climb-node {
+  0%, 88%   { fill: var(--ink); stroke: var(--ink); }
+  89%, 100% { fill: var(--surface); stroke: var(--steel); }
+}
+@keyframes climb-rung {
+  0%, 88%   { stroke: var(--ink); }
+  89%, 100% { stroke: var(--line); }
+}
+
+/* Settled on the finished state: cable drawn, every rung live, no head. */
+@media (prefers-reduced-motion: reduce) {
+  .climb-live { stroke-dashoffset: 0; animation: none; }
+  .climb-head { display: none; }
+  .climb-stage .climb-plate,
+  .climb-stage .climb-node,
+  .climb-stage .climb-rung { animation: none; }
+  .climb-plate { fill: var(--canvas); }
+  .climb-node { fill: var(--ink); stroke: var(--ink); }
+  .climb-rung { stroke: var(--ink); }
+}
+
 /* Cycling vertical. CSS only: no JS, and it holds on the first word when the
    viewer prefers reduced motion. */
 /* Block-level grid so the vertical always takes its own line. Inline, the widest

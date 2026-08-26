@@ -29,6 +29,8 @@ export const hero = {
 export const arc = {
   from: "AI absent",
   to: "AI native",
+  /** Sits on the dashed run below the last rung, where the fixed line ends. */
+  endNote: "Yours to run",
   stages: [
     { k: "01", t: "Absent", d: "Tools bought. Nothing in production." },
     { k: "02", t: "Grounded", d: "Wired to your systems of record." },

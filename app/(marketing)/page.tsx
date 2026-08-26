@@ -2,7 +2,7 @@ import Link from "next/link";
 import Cta from "@/components/Cta";
 import AgentGrid from "@/components/AgentGrid";
 import Marquee from "@/components/Marquee";
-import HeroArc from "@/components/HeroArc";
+import HeroClimb from "@/components/HeroClimb";
 import { solutionIcons } from "@/components/SolutionIcons";
 import { Proof, Personalization, ApprovalGate } from "@/components/Blocks";
 import { steps } from "@/content/steps";
@@ -58,7 +58,7 @@ export default function Home() {
             </div>
           </div>
           <div className="hero-fig">
-            <HeroArc />
+            <HeroClimb />
           </div>
         </div>
       </header>

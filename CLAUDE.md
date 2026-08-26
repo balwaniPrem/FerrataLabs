@@ -478,7 +478,9 @@ it belongs in §8.
 
 ### Motion
 
-The marketing site has exactly one moving element (the rail). The product adds a live
+The marketing site keeps motion to three elements, all above or beside the fold and all
+CSS-only: the rail, the typed vertical in the hero headline, and the hero climb graphic.
+Nothing below the hero moves. The product adds a live
 activity feed: values change in place, no fades or slides. Driven by `lib/pledgeSim.ts` —
 **seeded and deterministic**, never random, because a demo that differs on every reload is
 unusable in a sales call and `Math.random()` would desync hydration. Under
