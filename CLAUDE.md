@@ -368,6 +368,40 @@ It will never tell someone we received their details when nothing was sent.
 
 ## 11. Working agreement
 
+### Two repos, one direction
+
+There are two repositories and they are not copies of each other.
+
+| | |
+|---|---|
+| `~/Documents/Projects/FerrataLabs` | **This repo.** Next.js. Source of truth for design, copy, content and the generated `llms.txt`. Where work happens. |
+| `~/Documents/Projects/FerrataLabs-WordPress` | The live site at ferratalabs.ai. A PHP theme mirroring the document root, plus push/pull scripts. |
+
+**Changes always flow one way: Next.js first, WordPress second.** Never edit the WordPress
+theme to try something out, and never edit the live site through wp-admin as a shortcut.
+Either makes the live site the source of truth for design, which it is not, and the next
+`pull.sh` silently overwrites the work.
+
+The promotion sequence:
+
+1. **Branch here**, build the change, verify it (build, lint, render the pages).
+2. **Open a PR.** It goes no further until you have merged it.
+3. **Port to the theme** in the WordPress repo, under
+   `site/wp-content/themes/ferrata-labs/`, or a regenerated export for `llms.txt`.
+4. **Push and verify live** with `./scripts/push.sh <path>`, then confirm over HTTP that
+   the change is actually serving.
+5. **Commit in the WordPress repo**, recording what was deployed.
+
+**Branches and PRs are for this repo only.** The WordPress repo mirrors production, so it
+takes straight commits; a branch there would describe a state the server is not in.
+
+**The two will legitimately diverge**, and that is not drift to be fixed:
+- The unlisted consoles (`/pledge`, `/sterling`) are Next-only routes.
+- `llms.txt` is *generated* here and *exported* there. Never hand-edit the WordPress copy.
+- Yoast settings, plugins and WordPress pages exist only on the server. Yoast writes
+  `robots.txt`; do not overwrite it.
+
+
 When the brief is ambiguous, **ask rather than infer**. The failure mode in this project has
 been making a larger change than the one requested — deleting when asked to deprioritise,
 preserving-and-promoting when asked to cut, adding structure that wasn't requested. **Change
