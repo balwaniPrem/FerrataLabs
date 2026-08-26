@@ -13,9 +13,17 @@ hand-edit). This file governs everything else and takes precedence on brand, cop
 A US-market B2B consultancy that builds and runs enterprise AI agents — software that
 performs operational work end to end rather than summarising it.
 
-**One-liner (headline, verbatim):**
+**One-liner (headline):**
 
-> We build Enterprise AI agents that do the actual work.
+> AI transformation for [vertical]. Across people, product and process.
+
+The positioning sits one level above the agents. Ferrata sells **AI transformation**;
+the six agents are the *proof that real work has shipped*, not the pitch itself. The
+spine of the argument is **AI absent → AI native**, and every section on the home page
+should sit somewhere on that arc.
+
+The previous one-liner, "We build Enterprise AI agents that do the actual work", was
+narrower and read as generic capability. It is retired.
 
 **Ideal customer:** $20M+ revenue enterprises running SAP, NetSuite or Dynamics. Buyers
 are CFO, Controller, VP Finance, CIO/VP IT. Mid-market — deliberately *not* Fortune 50,
@@ -109,9 +117,14 @@ Never mix warm and cool greys. **Black is the primary accent**, used for CTAs, t
 **Iron oxide (`--accent-2`, `#A34A32`) is the second accent, and it is rationed to one
 element: the eyebrow label.** Rust is what iron does, so it belongs to a company named for
 the iron way, and it is warm enough to sit inside the existing warm-grey family without
-mixing temperatures. It measures 5.86:1 on white. Permitted in exactly two places: the eyebrow badge, and a
-single `.hl` span inside a page headline. Nothing else, and **one `.hl` per page** — a
-second would mean neither is emphasised.
+mixing temperatures. It measures 5.86:1 on white. **One highlighted phrase per section, never more than one
+per heading, never on body copy.** Permitted on: the eyebrow badge, the cycling vertical
+in the hero, a `.hl` span in a heading, and small mono labels that number or name a thing
+(`Layer 01`, stage numbers, the guarantee label).
+
+The rule is deliberately per-section rather than per-page, because the page is now long
+enough that one accent across nine folds would disappear. It is still bounded: if a
+section has two highlights, one of them is wrong.
 
 Current usage: "AI agents" on `/`, "organizational intelligence" on `/how-it-works`. Both
 are the subject of the sentence, which is the test for what earns it.
