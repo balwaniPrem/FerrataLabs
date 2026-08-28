@@ -96,6 +96,7 @@ export default function Nav() {
   return (
     <nav className="nav" aria-label="Main">
       <div className="nav-in">
+        <div className="nav-shell">
         <Link href="/" className="nav-brand" onClick={closeAll}>
           <Mark size={20} />
           <span>Ferrata Labs</span>
@@ -176,6 +177,7 @@ export default function Nav() {
           >
             Book a discovery call
           </Link>
+        </div>
         </div>
 
         <button
