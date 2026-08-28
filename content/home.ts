@@ -48,20 +48,20 @@ export const layers = {
     {
       n: "Layer 01",
       t: "People",
-      d: "Your engineers learn to build and run agents themselves. We install the POD structure that does it, then step back. You should never need us to change a prompt.",
+      d: "We deploy the POD operating model into your team, working on your systems and your rules to unlock the organizational intelligence you already have. Your people learn the framework while it is being built. By the end they are building the next agent on it themselves.",
     },
     {
       n: "Layer 02",
       t: "Product",
-      d: "Agents wired into the systems you already run, acting on live transactions. Nothing is re-platformed and nobody is asked to work somewhere new.",
+      d: "Agents wired into the systems you already run, acting on live transactions. Nothing is re-platformed: the agents are infused into the products your team already works in. The approvals they stop at happen on the platform we stand up with you.",
     },
     {
       n: "Layer 03",
       t: "Process",
-      d: "The rules your business actually follows, encoded and governed: approval thresholds, escalation paths, what an agent may never do.",
+      d: "Agentic workflow that runs on the rules your business already follows: your approval thresholds, your escalation paths, your guardrails. Encoded, audited and governed rather than reinvented, so the agents work on top of the framework you have. Each one is bounded by an explicit limit on what an agent may never do.",
     },
   ],
-  fix: "Six agents already run on this model. Look at what they do before deciding whether it fits you.",
+  fix: "Six agents already run on this model. Review one against your own process, or take it as the starting point for the agent you actually need.",
 };
 
 /**
