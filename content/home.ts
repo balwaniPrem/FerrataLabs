@@ -58,7 +58,7 @@ export const layers = {
     {
       n: "Layer 03",
       t: "Process",
-      d: "Agentic workflow that runs on the rules your business already follows: your approval thresholds, your escalation paths, your guardrails. Encoded, audited and governed rather than reinvented, so the agents work on top of the framework you have. Each one is bounded by an explicit limit on what an agent may never do.",
+      d: "Agentic workflow that runs on the rules your business already follows: your approval thresholds, your escalation paths, your guardrails. Encoded, audited and governed rather than reinvented, so the agents work on top of the framework you have.",
     },
   ],
   fix: "Six agents already run on this model. Review one against your own process, or take it as the starting point for the agent you actually need.",
