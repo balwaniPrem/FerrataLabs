@@ -10,7 +10,14 @@
 
 export const hero = {
   badge: "Enterprise AI deployment",
-  /** The word that cycles. Order matters: heaviest verticals first. */
+  /**
+   * The word that cycles. Order matters: heaviest verticals first.
+   *
+   * The count is load-bearing. The typed cycle in globals.css gives each word a
+   * 3.5s slot and the loop is sized to fit exactly this many, so adding or
+   * removing one without changing the animation duration makes two words type
+   * over each other. See .cycle there.
+   */
   verticals: [
     "Manufacturing",
     "Financial Services",
@@ -18,8 +25,10 @@ export const hero = {
     "Construction",
     "Distribution",
     "Private Capital",
+    "Supply Chain",
+    "Food & Beverage",
   ],
-  headline: "AI transformation for",
+  headline: "AI Transformation for",
   sub: "Across people, product and process. Engineers who embed with your team, ship into your systems of record, and train your people until running it belongs to you.",
   ctaPrimary: "Book a discovery call",
   ctaSecondary: "See the work",

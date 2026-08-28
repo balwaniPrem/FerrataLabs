@@ -560,7 +560,7 @@ h4 {
   align-items: center;
 }
 /* The split column is narrower than a full-width hero, so the display size comes
-   down to keep "AI transformation for" on one line. A stranded "for" above the
+   down to keep "AI Transformation for" on one line. A stranded "for" above the
    vertical is the failure mode here. */
 .hero.hero-split h1 {
   font-size: clamp(32px, 3.7vw, 50px);
@@ -671,15 +671,20 @@ h4 {
   padding: 0 0.16em 0.06em;
   white-space: nowrap;
   clip-path: inset(0 100% 0 0);
-  animation: type-cycle 21s steps(18, end) infinite;
+  animation: type-cycle 28s steps(18, end) infinite;
   animation-delay: calc(var(--i) * 3.5s);
 }
+/* The loop length is the word count times the 3.5s slot: eight verticals, so 28s.
+   Change hero.verticals and this has to change with it, or the last words type
+   over the first. The percentages below are that 3.5s slot expressed against the
+   loop: type in over 1.26s (4.5%), hold to 2.73s (9.75%), wipe out by 3.5s
+   (12.5%), then wait out the other seven slots. */
 @keyframes type-cycle {
-  0%    { clip-path: inset(0 100% 0 0); }
-  6%    { clip-path: inset(0 0 0 0); }
-  13%   { clip-path: inset(0 0 0 0); }
-  16.6% { clip-path: inset(0 100% 0 0); }
-  100%  { clip-path: inset(0 100% 0 0); }
+  0%     { clip-path: inset(0 100% 0 0); }
+  4.5%   { clip-path: inset(0 0 0 0); }
+  9.75%  { clip-path: inset(0 0 0 0); }
+  12.5%  { clip-path: inset(0 100% 0 0); }
+  100%   { clip-path: inset(0 100% 0 0); }
 }
 @media (prefers-reduced-motion: reduce) {
   .cycle > span { animation: none; clip-path: none; }

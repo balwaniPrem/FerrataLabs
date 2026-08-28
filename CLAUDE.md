@@ -15,7 +15,7 @@ performs operational work end to end rather than summarising it.
 
 **One-liner (headline):**
 
-> AI transformation for [vertical]. Across people, product and process.
+> AI Transformation for [vertical]. Across people, product and process.
 
 The positioning sits one level above the agents. Ferrata sells **AI transformation**;
 the six agents are the *proof that real work has shipped*, not the pitch itself. The
