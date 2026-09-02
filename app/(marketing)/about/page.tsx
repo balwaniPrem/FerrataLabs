@@ -6,7 +6,7 @@ import { Proof } from "@/components/Blocks";
 export const metadata: Metadata = {
   title: "Who we are",
   description:
-    "Ferrata Labs is run by operators who scaled a regulated B2B platform from $75M to $1.2B and put AI into production inside it.",
+    "Ferrata Labs is run by operators who scaled a regulated B2B platform from $75M to over $2.5B and put AI into production inside it.",
 };
 
 export default function About() {
