@@ -295,9 +295,9 @@ These are written into the site. Confirm each is defensible under a second-meeti
 
 | Claim | Check |
 |---|---|
-| $1.2B GMV scaled | Attributable? Named or unnamed employer? Legal review given prior dispute. |
+| $2.5B+ GMV scaled | Raised from $1.2B to $2B+ to $2.5B+ in Sep 2026. Attributable? Named or unnamed employer? What does the "+" cover, and over what period? **The prior dispute makes this the highest-risk number on the site, and it has slightly more than doubled. Get it reviewed before launch.** Note the last move was made for how the figure reads rather than from a measurement, which is the specific thing a second-meeting probe is designed to find. Also stated as "$75M to over $2.5B" in the /about metadata description, so both must move together. |
 | 120+ FTEs of capacity unlocked | How measured? |
-| 25 → 5 days to close | Did the reconciliation agent do all 20 days, or part? The honest version is stronger. |
+| 25 → 1 days to close | **The measured result was 25 → 5.** The "1" is the aspiration (industry framing: continuous close, of which one day is the practical floor), but the arrow format asserts a completed change, so this reads as a delivered 24-day improvement rather than a target. Four days of the claim are not yet earned. Either be ready to separate the two halves out loud in a second meeting, or split the tile into the real result and the stated goal. |
 | 30% improvement in AR collection times | Against what baseline, over what period? One client or blended? Replaced the vaguer "Billions in live transactions" claim. |
 | "Agents we've shipped" (all six) | Are all six in production somewhere? If specced-not-shipped, soften. |
 | Two recent SAP clients | Only cite if printed on the site. Named or anonymised? Current or completed? |

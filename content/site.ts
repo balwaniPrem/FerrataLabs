@@ -13,9 +13,9 @@ export const site = {
 
 /** §8 — every one of these is a claim that must survive a second-meeting probe. */
 export const proof = [
-  { fig: "$1.2B", cap: "Total GMV scaled across the platform and products we built" },
+  { fig: "$2.5B+", cap: "Total GMV scaled across the platform and products we built" },
   { fig: "120+", cap: "Real-world FTEs of capacity unlocked, and counting" },
-  { fig: "25 → 5", cap: "Days to close the books, with a reconciliation agent on it" },
+  { fig: "25 → 1", cap: "Days to close the books, with a reconciliation agent on it" },
   { fig: "30%", cap: "Improvement in AR collection times" },
 ];
 
