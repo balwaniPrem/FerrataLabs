@@ -1,7 +1,7 @@
 import { arc } from "@/content/home";
 
 /**
- * The hero graphic: the climb from AI absent to AI native, one stage at a time.
+ * The hero graphic: the climb from AI Absent to AI Native, one stage at a time.
  *
  * Replaces the earlier left-to-right arc, which had two axes fighting each other.
  * The cable ran rightward while the stages listed downward, so the graphic argued

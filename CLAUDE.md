@@ -19,7 +19,7 @@ performs operational work end to end rather than summarising it.
 
 The positioning sits one level above the agents. Ferrata sells **AI transformation**;
 the six agents are the *proof that real work has shipped*, not the pitch itself. The
-spine of the argument is **AI absent → AI native**, and every section on the home page
+spine of the argument is **AI Absent → AI Native**, and every section on the home page
 should sit somewhere on that arc.
 
 The previous one-liner, "We build Enterprise AI agents that do the actual work", was

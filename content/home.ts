@@ -5,7 +5,9 @@
  * product and process. The six agents are no longer the pitch — they are the proof
  * that real work has shipped. See §1 for why the one-liner changed.
  *
- * The spine is "AI absent to AI native". Every fold should sit somewhere on that arc.
+ * The spine is "AI Absent to AI Native". Every fold should sit somewhere on that arc.
+ * Both poles are title-cased because they are named states, matching the stage names
+ * in `arc` below. Keep them that way or the two ends of one sentence disagree.
  */
 
 export const hero = {
@@ -30,25 +32,37 @@ export const hero = {
   ],
   headline: "AI Transformation for",
   /**
-   * The lede has to land on the same word the graphic beside it ends on. Earlier
-   * versions described who we are (engineers who embed) while the climb described
-   * what happens to the business (absent to native), so the two halves of the fold
-   * argued different things. This one names the scope, who does it, and where it
-   * ends up, and nothing else.
+   * The lede has to land on the same word the graphic beside it ends on. The
+   * original version stopped at "running it belongs to you" while the climb ended
+   * on AI Native, so the two halves of the fold closed on different words. What
+   * fixed it was the ending, not the middle: naming the people who do the work is
+   * fine, provided the sentence still arrives where the graphic arrives.
+   *
+   * "leaving you AI Native" rather than "help your organization become AI Native".
+   * That is §1's differentiator stated rather than implied: the engagement is
+   * designed to end. "help become" hedged the one claim worth making plainly.
+   *
+   * "shipping" needs its object. Without "AI agents for knowledge work" the sentence
+   * says we ship something unnamed into the systems of record a CFO cares most
+   * about, which is the wrong thing to be vague about.
+   *
+   * Participles rather than finite verbs, which buys about 30 characters and holds
+   * the lede to three lines beside the graphic. Keep "systems of record" plural: it
+   * matches stage 02 on the climb and there is never only one.
    *
    * The enablement half of the pitch (your people end up building the next one) is
    * deliberately not here. It is the last rung of the graphic beside it and Layer 01
    * below, so the hero would be saying it three times in one fold.
    */
-  sub: "Transformation across people, product and process. Embedded teams that ship AI agents for knowledge work, and help your organization become AI native.",
+  sub: "Transformation across people, product and process. Embedded engineers shipping AI agents for knowledge work into your systems of record, leaving you AI Native.",
   ctaPrimary: "Book a discovery call",
   ctaSecondary: "See the work",
 };
 
 /** The arc, named. Used by the hero graphic and echoed by the engagement section. */
 export const arc = {
-  from: "AI absent",
-  to: "AI native",
+  from: "AI Absent",
+  to: "AI Native",
   /** Sits on the dashed run below the last rung, where the fixed line ends. */
   endNote: "Yours to run",
   stages: [
