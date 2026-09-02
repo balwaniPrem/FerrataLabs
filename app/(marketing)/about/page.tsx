@@ -30,7 +30,7 @@ export default function About() {
           <div className="prose">
             <h3>Why an operator, and not an adviser</h3>
             <p>
-              Going from AI absent to AI native is not a technology problem. The models
+              Going from AI Absent to AI Native is not a technology problem. The models
               work. What stops it is everything an operator recognises on sight: the
               integration surface nobody scoped, the exception that turns out to be forty
               per cent of volume, the controller who will not sign anything off until the
