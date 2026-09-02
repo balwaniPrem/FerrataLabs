@@ -29,7 +29,18 @@ export const hero = {
     "Food & Beverage",
   ],
   headline: "AI Transformation for",
-  sub: "Across people, product and process. Engineers who embed with your team, ship into your systems of record, and train your people until running it belongs to you.",
+  /**
+   * The lede has to land on the same word the graphic beside it ends on. Earlier
+   * versions described who we are (engineers who embed) while the climb described
+   * what happens to the business (absent to native), so the two halves of the fold
+   * argued different things. This one names the scope, who does it, and where it
+   * ends up, and nothing else.
+   *
+   * The enablement half of the pitch (your people end up building the next one) is
+   * deliberately not here. It is the last rung of the graphic beside it and Layer 01
+   * below, so the hero would be saying it three times in one fold.
+   */
+  sub: "Transformation across people, product and process. Embedded teams that ship AI agents for knowledge work, and help your organization become AI native.",
   ctaPrimary: "Book a discovery call",
   ctaSecondary: "See the work",
 };
