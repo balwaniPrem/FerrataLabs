@@ -7,10 +7,15 @@ import { agents } from "@/content/agents";
 import { industries } from "@/content/industries";
 import Mark from "./Mark";
 
+/**
+ * `prefix` means a post lights the Blog item too, matching ferrata_current_blog()
+ * in the theme, which lights it for the index, any post and any archive.
+ */
 const pages = [
   { href: "/work", label: "The work" },
   { href: "/how-it-works", label: "How it works" },
   { href: "/about", label: "Who we are" },
+  { href: "/blog", label: "Blog", prefix: true },
 ];
 
 function Caret() {
@@ -164,7 +169,11 @@ export default function Nav() {
               key={p.href}
               href={p.href}
               className="nav-item"
-              aria-current={pathname === p.href ? "page" : undefined}
+              aria-current={
+                (p.prefix ? pathname.startsWith(p.href) : pathname === p.href)
+                  ? "page"
+                  : undefined
+              }
             >
               {p.label}
             </Link>

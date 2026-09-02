@@ -3085,3 +3085,201 @@ tr.is-off { opacity: 0.5; }
 .pod-row .d { font-size: 14px; color: var(--steel); line-height: 1.55; }
 .pod-note { margin-top: 20px; font-size: 15px; color: var(--slate); max-width: 72ch; }
 @media (max-width: 760px) { .pod-row { grid-template-columns: 1fr; } }
+
+/* ---------- blog ----------
+ * Rendered by app/(marketing)/blog/ here and by home.php / single.php in the
+ * WordPress theme, from the same class names. This lives in globals.css rather
+ * than the theme so it flows into the generated assets/site.css and design stays
+ * single-source per §4. Do not add a second copy to theme.css.
+ *
+ * Structure is borrowed from .phead, .sec, .wrap and .prose; only what has no
+ * marketing equivalent is here. CLAUDE.md §14.
+ */
+
+/* Date and category line, above the title on a post and inside each row. */
+.post-meta {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--steel);
+  font-variant-numeric: tabular-nums;
+  margin: 0;
+}
+.post-meta a {
+  color: var(--steel);
+  text-decoration: none;
+}
+.post-meta a:hover {
+  color: var(--ink);
+}
+.post-meta .sep {
+  margin: 0 8px;
+}
+.phead .post-meta {
+  margin-top: 18px;
+}
+
+/* Rows are 1px gaps over --line, not floating cards. */
+.post-list {
+  margin-top: 44px;
+  display: grid;
+  gap: 1px;
+  background: var(--line);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.post-row {
+  background: var(--surface);
+  padding: 30px 0;
+}
+.post-row h2 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: clamp(21px, 2.4vw, 26px);
+  letter-spacing: -0.022em;
+  margin: 10px 0 8px;
+  text-wrap: balance;
+}
+.post-row h2 a {
+  color: var(--ink);
+  text-decoration: none;
+}
+.post-row h2 a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.post-excerpt {
+  max-width: 66ch;
+  font-size: 16.5px;
+  color: var(--slate);
+  margin: 0;
+  text-wrap: pretty;
+}
+
+/* Long-form body. .prose caps at 66ch and styles h3 and p; posts also carry
+ * headings, lists, quotes and code that the marketing pages never needed. */
+.post-body h2 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 25px;
+  letter-spacing: -0.022em;
+  margin: 44px 0 14px;
+}
+.post-body h4 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 17px;
+  margin: 28px 0 10px;
+}
+.post-body ul,
+.post-body ol {
+  margin: 0 0 18px 20px;
+  color: var(--slate);
+  font-size: 16.5px;
+}
+.post-body li {
+  margin-bottom: 7px;
+}
+.post-body a {
+  color: var(--ink);
+  text-underline-offset: 3px;
+}
+.post-body blockquote {
+  border-left: 2px solid var(--accent-line);
+  padding-left: 20px;
+  margin: 24px 0;
+  color: var(--steel);
+}
+.post-body code {
+  font-family: var(--mono);
+  font-size: 14px;
+  background: var(--accent-wash);
+  padding: 2px 5px;
+}
+.post-body pre {
+  background: var(--canvas);
+  border: 1px solid var(--line);
+  padding: 18px;
+  overflow-x: auto;
+  margin: 0 0 20px;
+}
+.post-body pre code {
+  background: none;
+  padding: 0;
+}
+.post-body img {
+  max-width: 100%;
+  height: auto;
+}
+.post-body figcaption {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--steel);
+  margin-top: 8px;
+}
+
+/* Previous / next, and the archive pager. Both are plain rules, not buttons. */
+.post-nav {
+  display: flex;
+  gap: 1px;
+  background: var(--line);
+  border-top: 1px solid var(--line);
+  margin-top: 56px;
+}
+.post-nav a {
+  background: var(--surface);
+  flex: 1;
+  padding: 22px 0;
+  text-decoration: none;
+  display: block;
+}
+.post-nav .k {
+  display: block;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--steel);
+  margin-bottom: 6px;
+}
+.post-nav .t {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--ink);
+}
+.post-nav a:hover .t {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.pagination {
+  margin-top: 40px;
+}
+.pagination .nav-links {
+  display: flex;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  width: fit-content;
+}
+.pagination .page-numbers {
+  background: var(--surface);
+  color: var(--steel);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  padding: 11px 16px;
+  text-decoration: none;
+  font-variant-numeric: tabular-nums;
+}
+.pagination .page-numbers:hover {
+  color: var(--ink);
+}
+.pagination .page-numbers.current {
+  background: var(--ink);
+  color: var(--surface);
+}
