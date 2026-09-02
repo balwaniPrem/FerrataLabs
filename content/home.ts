@@ -38,9 +38,14 @@ export const hero = {
    * fixed it was the ending, not the middle: naming the people who do the work is
    * fine, provided the sentence still arrives where the graphic arrives.
    *
-   * "leaving you AI Native" rather than "help your organization become AI Native".
-   * That is §1's differentiator stated rather than implied: the engagement is
-   * designed to end. "help become" hedged the one claim worth making plainly.
+   * "until you are AI Native" rather than "help your organization become" it. §1's
+   * differentiator stated rather than hedged: the engagement is designed to end, and
+   * "until" is the word that says so, because it puts a stop on the sentence.
+   *
+   * Not "leaving you AI Native", which was tried and is worse. "leaving you X" is
+   * idiomatically a setup for a loss (leaving you stranded, leaving you short), so
+   * it primes the reader for bad news and then delivers a benefit. It also stacked a
+   * second participle on "shipping" and the sentence trailed off instead of landing.
    *
    * "shipping" needs its object. Without "AI agents for knowledge work" the sentence
    * says we ship something unnamed into the systems of record a CFO cares most
@@ -54,7 +59,7 @@ export const hero = {
    * deliberately not here. It is the last rung of the graphic beside it and Layer 01
    * below, so the hero would be saying it three times in one fold.
    */
-  sub: "Transformation across people, product and process. Embedded engineers shipping AI agents for knowledge work into your systems of record, leaving you AI Native.",
+  sub: "Transformation across people, product and process. Embedded engineers shipping AI agents for knowledge work into your systems of record, until you are AI Native.",
   ctaPrimary: "Book a discovery call",
   ctaSecondary: "See the work",
 };
