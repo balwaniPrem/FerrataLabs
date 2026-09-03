@@ -30,21 +30,34 @@ export default async function Blog() {
         </div>
       </header>
 
-      <section className="sec">
+      {/* tint: the cards are --surface, so the section has to be --canvas or they
+          have nothing to sit on and the empty cells in a short row show as holes. */}
+      <section className="sec tint">
         <div className="wrap">
           {posts.length ? (
             <div className="post-list">
               {posts.map((p) => (
                 <article key={p.slug} className="post-row">
-                  {p.date && (
-                    <p className="post-meta">
-                      <time dateTime={p.date}>{formatDate(p.date)}</time>
-                    </p>
-                  )}
-                  <h2>
-                    <Link href={`/blog/${p.slug}`}>{p.title}</Link>
-                  </h2>
-                  {p.excerpt && <p className="post-excerpt">{p.excerpt}</p>}
+                  <Link href={`/blog/${p.slug}`} className="post-thumb" tabIndex={-1} aria-hidden="true">
+                    {/* Decorative: the title link beneath carries the accessible name.
+                        Plain <img> rather than next/image because the fallback is an
+                        SVG and WordPress serves these through its own pipeline. */}
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={p.image} alt="" loading="lazy" />
+                  </Link>
+                  <div className="post-card-body">
+                    {(p.date || p.categories.length > 0) && (
+                      <p className="post-meta">
+                        {p.date && <time dateTime={p.date}>{formatDate(p.date)}</time>}
+                        {p.date && p.categories.length > 0 && <span className="sep">·</span>}
+                        {p.categories.join(" · ")}
+                      </p>
+                    )}
+                    <h2>
+                      <Link href={`/blog/${p.slug}`}>{p.title}</Link>
+                    </h2>
+                    {p.excerpt && <p className="post-excerpt">{p.excerpt}</p>}
+                  </div>
                 </article>
               ))}
             </div>
