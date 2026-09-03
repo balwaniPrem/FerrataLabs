@@ -85,8 +85,8 @@ export default function About() {
               thing we hand over at the end rather than the thing we keep.
             </p>
             <p className="more">
-              <Link href="/work">
-                How the team embeds, and what a POD is made of &rarr;
+              <Link href="/embedded-ai-team">
+                How the team embeds, and how ownership transfers &rarr;
               </Link>
             </p>
           </div>

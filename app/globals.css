@@ -367,6 +367,10 @@ h4 {
   top: calc(100% + 18px);
   left: 50%;
   transform: translateX(-50%);
+  /* the 18px offset below is a visual gap, and it used to be a dead zone: the
+     pointer left .mega-wrap on the way down and mouseleave closed the panel
+     before it could be reached. ::before bridges it. It belongs to .mega, which
+     is a descendant of the wrapper, so crossing it keeps the pointer inside. */
   width: min(880px, calc(100vw - 40px));
   background: var(--surface);
   border: 1px solid var(--line);
@@ -375,6 +379,14 @@ h4 {
   gap: 1px;
   background-color: var(--line);
   z-index: 50;
+}
+.mega::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -18px;
+  height: 18px;
 }
 .mega-col {
   background: var(--surface);
@@ -3341,4 +3353,140 @@ tr.is-off { opacity: 0.5; }
 .pagination .page-numbers.current {
   background: var(--ink);
   color: var(--surface);
+}
+
+/* ---------- platform stack ----------
+ * Numbered rows rather than a three-up grid: five layers do not divide into
+ * thirds, and each one carries a paragraph plus a one-line consequence. The
+ * "keep" line is the point of the row, so it sits in mono at the end where a
+ * scanner lands. Hairline grid per §4, sharp, no shadow. */
+.plat-stack {
+  margin-top: 44px;
+  display: grid;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.plat-layer {
+  background: var(--surface);
+  display: grid;
+  grid-template-columns: 120px 1fr 260px;
+  gap: 28px;
+  padding: 30px 26px 32px;
+  align-items: start;
+}
+.sec.tint .plat-layer { background: var(--surface); }
+.plat-layer .n {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  margin: 4px 0 0;
+}
+.plat-body h3 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: -0.016em;
+  margin: 0 0 10px;
+}
+.plat-body p {
+  font-size: 15.5px;
+  color: var(--steel);
+  line-height: 1.6;
+  margin: 0;
+  max-width: 62ch;
+}
+.plat-keep {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  line-height: 1.6;
+  margin: 4px 0 0;
+  border-left: 1px solid var(--accent-line);
+  padding-left: 16px;
+}
+@media (max-width: 900px) {
+  .plat-layer {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .plat-keep {
+    border-left: 0;
+    border-top: 1px solid var(--accent-line);
+    padding: 12px 0 0;
+  }
+}
+
+/* ---------- handover stages ----------
+ * Four steps, read left to right, with the rule between them doing the work of
+ * an arrow. Reuses the numbering treatment from the engagement steps. */
+.handover {
+  margin-top: 44px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.hand-stage {
+  background: var(--surface);
+  padding: 26px 22px 28px;
+}
+.sec.tint .hand-stage { background: var(--surface); }
+.hand-stage .k {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: var(--accent-2);
+  margin: 0 0 14px;
+}
+.hand-stage h3 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 17px;
+  letter-spacing: -0.014em;
+  margin: 0 0 8px;
+}
+.hand-stage .d {
+  font-size: 14.5px;
+  color: var(--steel);
+  line-height: 1.55;
+  margin: 0;
+}
+@media (max-width: 900px) {
+  .handover { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .handover { grid-template-columns: 1fr; }
+}
+
+/* ---------- criteria list ----------
+ * Used where a section is a short list of conditions rather than a card group.
+ * Rules between rows rather than bullets: these are things that must all be
+ * true, and a bullet list reads as options. */
+.crit {
+  margin: 40px 0 22px;
+  max-width: 72ch;
+  border-top: 1px solid var(--line);
+}
+.crit li {
+  list-style: none;
+  border-bottom: 1px solid var(--line);
+  padding: 16px 0 16px 34px;
+  position: relative;
+  font-size: 16px;
+  color: var(--slate);
+}
+.crit li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 24px;
+  width: 18px;
+  height: 1px;
+  background: var(--accent-line);
 }
