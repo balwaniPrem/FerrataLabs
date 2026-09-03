@@ -5,7 +5,7 @@ import { getPosts, formatDate } from "@/lib/posts";
 export const metadata: Metadata = {
   title: "Blog",
   description:
-    "What we are learning putting AI agents into production inside real finance operations. Specific where we can be, and honest about what has not worked.",
+    "Playbooks and field notes from AI transformation work: what shipped, what stalled, and the numbers that explain the difference.",
 };
 
 /**
@@ -22,10 +22,10 @@ export default async function Blog() {
       <header className="phead">
         <div className="wrap">
           <p className="eyebrow">Writing</p>
-          <h1>Notes from the work.</h1>
+          <h1>Production, not pilots.</h1>
           <p>
-            What we are learning putting agents into production inside real finance
-            operations. Specific where we can be, and honest about what has not worked.
+            Playbooks and field notes from AI transformation work: what shipped, what
+            stalled, and the numbers that explain the difference.
           </p>
         </div>
       </header>
