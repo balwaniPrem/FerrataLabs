@@ -3,6 +3,9 @@ import { agents, approvalGate, personalization } from "@/content/agents";
 import { industries } from "@/content/industries";
 import { steps } from "@/content/steps";
 import { faq } from "@/content/faq";
+import { layers as platformLayers } from "@/content/platform";
+import { guardrails, blended } from "@/content/hitl";
+import { pod } from "@/content/embedded";
 import { adlc, adlcIntro } from "@/content/adlc";
 
 /**
@@ -38,6 +41,31 @@ ${approvalGate}
 
 This is not a caveat, it is the operating model. Agents begin behind a gate and earn their
 way out of one with evidence.
+
+The gate is a queue of drafted actions, not a confirmation dialog. The agent has already
+pulled the records, scored them, drafted the action and attached the evidence; what it has
+not done is send, post or pay. A dialog asks whether you are sure. A queue asks which of
+these forty is wrong, and only the second question is answerable at volume.
+
+Guardrails beneath the gate:
+
+${guardrails.items.map((g) => `- **${g.t}**: ${g.d}`).join("\n")}
+
+Operations end up blended rather than fully gated or fully autonomous. Categories that have
+proved themselves run end to end; exceptions stop at a person. ${blended.note}
+
+## The platform
+
+The client owns the platform. It is stood up inside their own environment during the Anchor
+stage and remains theirs whether or not they build another agent with Ferrata Labs.
+
+${platformLayers.map((l) => `- **${l.t}**: ${l.d}`).join("\n")}
+
+## The embedded team
+
+${pod.composition.map((c) => `- **${c.n} ${c.r}**: ${c.d}`).join("\n")}
+
+${pod.note}
 
 ## The engagement
 

@@ -115,6 +115,26 @@ export default function HowItWorks() {
               </details>
             ))}
           </div>
+
+          {/* FAQPage schema, built from the same array the list renders, so the
+              markup cannot describe answers the page does not show. Placed inside
+              <main> deliberately: export-theme.mjs extracts the inner HTML of
+              <main>, so this travels to the WordPress theme with the rest of the
+              part rather than needing a second implementation there. */}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                mainEntity: faq.map((f) => ({
+                  "@type": "Question",
+                  name: f.q,
+                  acceptedAnswer: { "@type": "Answer", text: f.a },
+                })),
+              }),
+            }}
+          />
         </div>
       </section>
 

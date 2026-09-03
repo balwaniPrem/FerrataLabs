@@ -29,6 +29,9 @@ A via ferrata is a fixed steel cable bolted into rock so that people who are not
 
 - [Home](${u("/")}): What Ferrata Labs builds and how agent-run work differs from assisted work.
 - [The work](${u("/work")}): The six agents, what each owns end to end, and where the human approval gate sits.
+- [Platform](${u("/platform")}): The five layers stood up inside the client's environment, and why the client owns them: model gateway, retrieval over systems of record, evaluation harnesses, audit logging, identity.
+- [Embedded AI team](${u("/embedded-ai-team")}): The POD operating model, one lead, one product owner and two full-stack AI developers, and the four stages by which ownership transfers.
+- [Human in the loop](${u("/human-in-the-loop-ai")}): How the approval gate works as a queue rather than a dialog, the guardrails beneath it, what earns an agent out of one, and the blended end state.
 - [How it works](${u("/how-it-works")}): The four-step engagement, the Agent Development Lifecycle, and the questions asked most often.
 - [Who we are](${u("/about")}): Operators rather than an agency, the origin of the name, and the POD operating model.
 - [Contact](${u("/contact")}): What a first call covers and what to bring.
