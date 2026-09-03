@@ -40,6 +40,13 @@ export default function Work() {
               </li>
             ))}
           </ol>
+          {/* The platform point above is the one buyers query. Give it somewhere
+              to go rather than leaving it as an assertion in a list. */}
+          <p className="more">
+            <Link href="/platform">
+              What the platform is made of, and why you own it &rarr;
+            </Link>
+          </p>
         </div>
       </section>
 
@@ -77,6 +84,11 @@ export default function Work() {
             </div>
             <p className="pod-note">{embedded.pod.note}</p>
           </div>
+
+          {/* This section stays a summary. The argument is made on the page. */}
+          <p className="more">
+            <Link href="/embedded-ai-team">{embedded.more} &rarr;</Link>
+          </p>
         </div>
       </section>
 

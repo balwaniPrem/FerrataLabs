@@ -60,7 +60,8 @@ export default function HowItWorks() {
         </div>
       </section>
 
-      <section className="sec tint">
+      {/* id so the Platform and How it works menus can deep-link to it */}
+      <section className="sec tint" id="adlc">
         <div className="wrap">
           <p className="eyebrow">{adlcIntro.eyebrow}</p>
           <h2>{adlcIntro.heading}</h2>

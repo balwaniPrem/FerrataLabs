@@ -197,8 +197,11 @@ awwwards-portfolio aesthetic and it is wrong for a firm selling agents to a CFO.
 
 ## 5. Site structure
 
-Nav: **Solutions** (mega-menu) / The work / How it works / Who we are / Book a discovery call
-(button). Active state = accent underline via `aria-current="page"`.
+Nav: **Solutions** / **Platform** / **How it works** (all mega-menus) / Who we are / Blog /
+Book a discovery call (button). Active state = accent underline via `aria-current="page"`.
+**"The work" is no longer top level.** It sits under How it works: side by side the two read
+as near-duplicates and between them ate two of five slots, and the engagement is the parent
+idea. The page is unchanged at `/work`.
 
 ```
 /                     hero → difference is execution → 6 agents → integration marquee
@@ -211,11 +214,39 @@ Nav: **Solutions** (mega-menu) / The work / How it works / Who we are / Book a d
 /how-it-works         4 steps at full depth w/ deliverables panels → ADLC → 6-question FAQ
 /about                metrics → why the name → vs. a consultancy → POD model
 /contact              what you'll leave with → what to bring → who to bring → contact form
+/platform             the layer the client owns: 5 layers → why owning it matters
+                      → when it is delivered. Named because the §3 wedge was
+                      invisible while the platform had no page.
+/embedded-ai-team     the POD, promoted: composition → how it operates → why the
+                      product owner is not optional → the 4-stage handover
+/human-in-the-loop-ai the approval gate argued rather than asserted: the gate as a
+                      queue → the guardrails underneath → what earns an agent out
+                      of one → the blended end state. Keyword slug, deliberately.
+/blog                 WordPress only in production; see §14
 /agents/[slug]        6 agent detail pages — explicit on how the agent does the work
 /industries/[slug]    6 industry pages — which agents apply in that vertical
 ```
 
 **Solutions mega-menu** is two-column: six agents by function, six industries by vertical.
+**Platform mega-menu** is two-column: the platform layers, then how it runs (embedded team,
+the engagement). **How it works mega-menu** is two-column: the engagement (`/how-it-works`,
+`/work`), then control (`/human-in-the-loop-ai`, ADLC). `/embedded-ai-team` sits under Platform rather than at the top level, so the
+nav gained one item rather than two.
+
+> **Two decisions recorded, Sep 2026, after a competitive read of wonderful.ai.**
+>
+> 1. **The platform gets a name and a page.** Their site names the platform layer and leaves
+>    the agents generic; ours did the opposite, six named agents over an unnamed foundation.
+>    Since §1 says the client *owns* that foundation and §3 says the wedge is foundation *and*
+>    agents from one vendor, the wedge could not be seen. `/platform` fixes that.
+> 2. **There is no "systems" pillar and there will not be one.** Their third pillar replaces
+>    core business software. That is a different and much larger business and it contradicts
+>    §1's "the engagement is designed to end". Two pillars here is deliberate, not an
+>    unfinished copy of somebody else's three.
+>
+> Take their naming discipline, a noun and one line per thing sold. Do **not** take their
+> information architecture: §5 already records that absorbing competitors' page structures
+> sprawled this site to nine sections and destroyed the argument.
 
 Section expansion from the original five pages to this structure was an explicit decision,
 not drift. Anything beyond what is listed here needs a new explicit decision — earlier

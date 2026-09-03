@@ -11,6 +11,8 @@
  * that produces pages nobody can fill.
  */
 
+import { pod, ways } from "./embedded";
+
 export const workPage = {
   title: "The work",
   headline: "What transformation actually looks like.",
@@ -43,34 +45,20 @@ export const offering = {
   ],
 };
 
-/** Section two: the embedded team. */
+/**
+ * Section two: the embedded team.
+ *
+ * pod and ways now live in content/embedded.ts and are re-exported here, so this
+ * section and /embedded-ai-team cannot drift. This page stays the summary; the
+ * argument is made on that page.
+ */
 export const embedded = {
   heading: "How the team embeds.",
   intro:
     "Not a statement of work executed at arm's length. Our engineers work inside your organisation on your systems, and the structure they leave behind is the one that produced the numbers on our about page.",
-  pod: {
-    label: "The POD",
-    composition: [
-      { n: "1", r: "Lead", d: "Owns the domain end to end and the relationship with your side." },
-      { n: "1", r: "Product owner", d: "Holds the business logic and decides what an agent may never do." },
-      { n: "2", r: "Full-stack AI developers", d: "Build, evaluate and ship the agents themselves." },
-    ],
-    note: "Deliberately small: it covers business delivery and product direction in one unit rather than staffing engineers and hoping ownership emerges. Small enough to hold context, large enough to ship without waiting on anyone.",
-  },
-  ways: [
-    {
-      t: "In your standups, on your tickets",
-      d: "Same board, same rituals, same definition of done. You see progress the way you see your own team's, not in a fortnightly status call.",
-    },
-    {
-      t: "Paired, not siloed",
-      d: "Your engineers sit with ours from the first sprint. The knowledge transfer is the work, not a document produced at the end of it.",
-    },
-    {
-      t: "The engagement is designed to end",
-      d: "Step four exists so you outgrow us. We would rather hand over than hold a retainer nobody can justify.",
-    },
-  ],
+  pod,
+  ways,
+  more: "How the team embeds, and how ownership transfers",
 };
 
 /** Section three intro: the agents, as proof. */
