@@ -48,6 +48,11 @@ export default async function Post({ params }: Params) {
 
       <section className="sec">
         <div className="wrap">
+          <figure className="post-hero">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={post.image} alt="" />
+          </figure>
+
           <div
             className="prose post-body"
             dangerouslySetInnerHTML={{ __html: post.html }}

@@ -3120,24 +3120,69 @@ tr.is-off { opacity: 0.5; }
   margin-top: 18px;
 }
 
-/* Rows are 1px gaps over --line, not floating cards. */
+/* Cards over a hairline grid: 1px gaps on a --line ground, sharp corners, no
+ * shadow. §4 contemplates exactly this shape for card groups, so the images do
+ * not drag the page toward a generic blog layout. */
+/* Cards float on the section ground with real space between them, rather than
+ * sitting in a hairline grid. The grid itself paints nothing: an unfilled cell
+ * in a short row has to be indistinguishable from the page, or a row holding
+ * one post announces that it holds one post.
+ *
+ * This is the one place the §4 hairline-grid idiom is deliberately not used.
+ * That idiom needs a filled rectangle of cells to read as a grid, and a blog
+ * never has a guaranteed multiple of three. Separation comes from the card
+ * being --surface on a --canvas section instead. Still no shadow, still sharp.
+ *
+ * Three across is the cap. Wider than that and the cards get small enough that
+ * the title wraps to three lines. */
 .post-list {
   margin-top: 44px;
   display: grid;
-  gap: 1px;
-  background: var(--line);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  align-items: start;
+}
+@media (max-width: 1040px) {
+  .post-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 26px;
+  }
+}
+@media (max-width: 700px) {
+  .post-list {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
 }
 .post-row {
   background: var(--surface);
-  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+}
+/* Fixed ratio so a mixed set of images cannot make the rows ragged. */
+.post-thumb {
+  display: block;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--canvas);
+}
+.post-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.post-card-body {
+  padding: 24px 24px 28px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 .post-row h2 {
   font-family: var(--display);
   font-weight: 700;
-  font-size: clamp(21px, 2.4vw, 26px);
-  letter-spacing: -0.022em;
+  font-size: 20px;
+  letter-spacing: -0.02em;
   margin: 10px 0 8px;
   text-wrap: balance;
 }
@@ -3150,11 +3195,25 @@ tr.is-off { opacity: 0.5; }
   text-underline-offset: 3px;
 }
 .post-excerpt {
-  max-width: 66ch;
-  font-size: 16.5px;
+  font-size: 15.5px;
   color: var(--slate);
   margin: 0;
+  line-height: 1.55;
   text-wrap: pretty;
+}
+
+/* Post header image. Full column width above the body, same ratio as the card
+ * so a post is recognisable from its own summary. */
+/* No frame. The image runs to its own edges; a border reads as a picture
+ * mount and cheapens it. */
+.post-hero {
+  margin: 0 0 40px;
+  background: var(--canvas);
+}
+.post-hero img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* Long-form body. .prose caps at 66ch and styles h3 and p; posts also carry

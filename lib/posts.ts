@@ -19,6 +19,9 @@ import { marked } from "marked";
 
 const DIR = path.join(process.cwd(), "content/posts");
 
+/** Posts with no header image of their own fall back to the drawn one. */
+export const DEFAULT_POST_IMAGE = "/media/post-default.svg";
+
 export type Post = {
   slug: string;
   title: string;
@@ -26,6 +29,8 @@ export type Post = {
   /** ISO, or empty when the file has no date. */
   date: string;
   categories: string[];
+  /** Header image, already defaulted. Never empty. */
+  image: string;
   html: string;
 };
 
@@ -74,6 +79,7 @@ export async function getPosts(): Promise<Post[]> {
           excerpt: str(meta.excerpt),
           date: str(meta.date),
           categories: Array.isArray(cats) ? cats : cats ? [cats] : [],
+          image: str(meta.image) || DEFAULT_POST_IMAGE,
           html: (await marked.parse(body)).trim(),
         };
       })

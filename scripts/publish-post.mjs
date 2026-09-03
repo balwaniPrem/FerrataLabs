@@ -82,7 +82,12 @@ async function loadCreds() {
     if (!line.trim() || line.trimStart().startsWith("#")) continue;
     const at = line.indexOf("=");
     if (at === -1) continue;
-    creds[line.slice(0, at).trim()] = line.slice(at + 1).trim();
+    // Quotes are optional but recommended: an Application Password contains
+    // spaces, and an unquoted value breaks anything that sources the file.
+    creds[line.slice(0, at).trim()] = line
+      .slice(at + 1)
+      .trim()
+      .replace(/^["']|["']$/g, "");
   }
   for (const k of ["WP_URL", "WP_USER", "WP_APP_PASS"]) {
     if (!creds[k] || creds[k].startsWith("REPLACE_WITH")) {
