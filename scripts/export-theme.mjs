@@ -34,6 +34,9 @@ const ROUTES = {
   "/how-it-works": "how-it-works",
   "/about": "about",
   "/contact": "contact",
+  "/platform": "platform",
+  "/embedded-ai-team": "embedded-ai-team",
+  "/human-in-the-loop-ai": "human-in-the-loop-ai",
 };
 for (const s of ["sterling", "clark", "tally", "chandler", "swift", "quill"]) {
   ROUTES[`/agents/${s}`] = `agents-${s}`;
