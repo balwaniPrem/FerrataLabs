@@ -1519,7 +1519,8 @@ a.agent:hover {
   color: var(--steel);
   margin-bottom: 7px;
 }
-.field input {
+.field input,
+.field textarea {
   width: 100%;
   font-family: var(--body);
   font-size: 15px;
@@ -1529,16 +1530,31 @@ a.agent:hover {
   padding: 11px 13px;
   transition: border-color 0.16s ease;
 }
-.field input:hover {
+.field input:hover,
+.field textarea:hover {
   border-color: var(--mist);
 }
-.field input:focus {
+.field input:focus,
+.field textarea:focus {
   outline: none;
   border-color: var(--accent);
   box-shadow: inset 0 0 0 1px var(--accent);
 }
-.field input[aria-invalid="true"] {
+.field input[aria-invalid="true"],
+.field textarea[aria-invalid="true"] {
   border-color: var(--neg-ink);
+}
+/* Notes box. Vertical resize only: horizontal would let it escape the card. */
+.field textarea {
+  min-height: 108px;
+  resize: vertical;
+  line-height: 1.55;
+  display: block;
+}
+.field .hint {
+  font-size: 12.5px;
+  color: var(--steel);
+  margin: 0 0 7px;
 }
 .field .err {
   font-size: 12.5px;
@@ -3489,4 +3505,90 @@ tr.is-off { opacity: 0.5; }
   width: 18px;
   height: 1px;
   background: var(--accent-line);
+}
+
+/* ---------- phone with country ----------
+ * One bordered group holding a country select, a static dial code and the
+ * number, so it reads as a single control rather than three. Sharp corners and
+ * hairline border like every other input; the flags are the only colour, and
+ * they are the emoji the OS already ships rather than an image set.
+ *
+ * The dial code is static text because the only two countries offered share
+ * +1. Printing it twice, once per option and once in the field, would be noise.
+ */
+.phone-group {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  transition: border-color 0.16s ease;
+}
+.phone-group:hover {
+  border-color: var(--mist);
+}
+.phone-group:focus-within {
+  border-color: var(--accent);
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+.phone-group[data-invalid="true"] {
+  border-color: var(--neg-ink);
+}
+.phone-group select {
+  font-family: var(--body);
+  font-size: 15px;
+  color: var(--ink);
+  background: var(--canvas);
+  border: 0;
+  border-right: 1px solid var(--line);
+  padding: 11px 10px;
+  cursor: pointer;
+  appearance: none;
+  /* room for the caret drawn below */
+  padding-right: 30px;
+}
+.phone-group select:focus {
+  outline: none;
+}
+.phone-sel {
+  position: relative;
+  display: flex;
+}
+/* caret, drawn rather than imported: every icon set ships round joins, §4 */
+.phone-sel::after {
+  content: "";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  width: 7px;
+  height: 7px;
+  margin-top: -5px;
+  border-right: 1.4px solid var(--steel);
+  border-bottom: 1.4px solid var(--steel);
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+.phone-code {
+  display: flex;
+  align-items: center;
+  padding: 0 4px 0 12px;
+  font-family: var(--body);
+  font-size: 15px;
+  color: var(--steel);
+  font-variant-numeric: tabular-nums;
+}
+.phone-group input {
+  flex: 1;
+  border: 0;
+  padding: 11px 13px 11px 6px;
+  font-family: var(--body);
+  font-size: 15px;
+  color: var(--ink);
+  background: transparent;
+  min-width: 0;
+}
+.phone-group input:hover,
+.phone-group input:focus {
+  border: 0;
+  outline: none;
+  box-shadow: none;
 }

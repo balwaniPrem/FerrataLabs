@@ -7,8 +7,17 @@ import { site } from "@/content/site";
 export type FormState = {
   ok: boolean;
   error?: string;
-  fieldErrors?: Partial<Record<"name" | "email" | "phone", string>>;
-  values?: { name: string; email: string; phone: string };
+  fieldErrors?: Partial<Record<"name" | "email" | "company" | "phone", string>>;
+  values?: {
+    name: string;
+    email: string;
+    company: string;
+    phone: string;
+    /** "US" or "CA". Both dial +1; the value records which market. */
+    phoneCountry: string;
+    /** Optional. Never validated beyond a length cap. */
+    notes: string;
+  };
 };
 
 /**
@@ -38,7 +47,11 @@ const FREE_DOMAINS = new Set([
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
-function validate(name: string, email: string, phone: string) {
+/** Notes are not validated: they are optional and already length-capped by the caller. */
+/** North America only, which is deliberate: it states the market on the form. */
+const DIAL_COUNTRIES = new Set(["US", "CA"]);
+
+function validate(name: string, email: string, company: string, phone: string) {
   const fieldErrors: FormState["fieldErrors"] = {};
 
   if (name.length < 2) fieldErrors.name = "Please enter your full name.";
@@ -50,15 +63,27 @@ function validate(name: string, email: string, phone: string) {
     fieldErrors.email = "Please use your work email address.";
   }
 
-  const digits = phone.replace(/[^\d]/g, "");
-  if (digits.length < 7 || digits.length > 15) {
-    fieldErrors.phone = "Please enter a phone number we can reach you on.";
+  if (company.length < 2) fieldErrors.company = "Please enter your company name.";
+  else if (company.length > 160) fieldErrors.company = "That company name is too long.";
+
+  // US and Canada are 10 digits nationally. A leading 1 is tolerated because
+  // people paste it, and stripped before the number is stored.
+  const digits = phone.replace(/[^\d]/g, "").replace(/^1(?=\d{10}$)/, "");
+  if (digits.length !== 10) {
+    fieldErrors.phone = "Please enter a 10 digit US or Canadian number.";
   }
 
   return fieldErrors;
 }
 
-async function deliver(payload: { name: string; email: string; phone: string }) {
+async function deliver(payload: {
+  name: string;
+  email: string;
+  company: string;
+  phone: string;
+  phoneCountry: string;
+  notes: string;
+}) {
   const key = process.env.RESEND_API_KEY;
   const to = process.env.CONTACT_TO ?? site.email;
   const from = process.env.CONTACT_FROM;
@@ -66,9 +91,11 @@ async function deliver(payload: { name: string; email: string; phone: string }) 
   const text = [
     "New discovery call request, ferratalabs.ai",
     "",
-    `Name:  ${payload.name}`,
-    `Email: ${payload.email}`,
-    `Phone: ${payload.phone}`,
+    `Name:    ${payload.name}`,
+    `Company: ${payload.company}`,
+    `Email:   ${payload.email}`,
+    `Phone:   +1 ${payload.phone} (${payload.phoneCountry})`,
+    ...(payload.notes ? ["", "Notes:", payload.notes] : []),
   ].join("\n");
 
   if (key && from) {
@@ -85,7 +112,7 @@ async function deliver(payload: { name: string; email: string; phone: string }) 
         from,
         to: [to],
         reply_to: payload.email,
-        subject: `Discovery call request, ${payload.name}`,
+  subject: `Discovery call request, ${payload.name}, ${payload.company}`,
         text,
       }),
     });
@@ -122,10 +149,14 @@ export async function submitContact(
 
   const name = ((formData.get("name") as string) ?? "").trim();
   const email = ((formData.get("email") as string) ?? "").trim();
+  const company = ((formData.get("company") as string) ?? "").trim();
   const phone = ((formData.get("phone") as string) ?? "").trim();
-  const values = { name, email, phone };
+  const rawCountry = ((formData.get("phone_country") as string) ?? "US").trim().toUpperCase();
+  const phoneCountry = DIAL_COUNTRIES.has(rawCountry) ? rawCountry : "US";
+  const notes = ((formData.get("notes") as string) ?? "").trim().slice(0, 4000);
+  const values = { name, email, company, phone, phoneCountry, notes };
 
-  const fieldErrors = validate(name, email, phone);
+  const fieldErrors = validate(name, email, company, phone);
   if (Object.keys(fieldErrors).length > 0) {
     return { ok: false, fieldErrors, values };
   }
