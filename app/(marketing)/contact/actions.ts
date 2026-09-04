@@ -88,14 +88,23 @@ async function deliver(payload: {
   const to = process.env.CONTACT_TO ?? site.email;
   const from = process.env.CONTACT_FROM;
 
+  // Every field the WordPress Leads list shows, so the email is a complete
+  // record rather than a prompt to go and look one up. Kept in step with
+  // inc/contact-handler.php in the theme, which is what actually runs in
+  // production; this path exists for local and any future Next deployment.
   const text = [
-    "New discovery call request, ferratalabs.ai",
+    "New discovery call request",
+    `${site.url}/contact`,
     "",
-    `Name:    ${payload.name}`,
-    `Company: ${payload.company}`,
-    `Email:   ${payload.email}`,
-    `Phone:   +1 ${payload.phone} (${payload.phoneCountry})`,
-    ...(payload.notes ? ["", "Notes:", payload.notes] : []),
+    `Name:     ${payload.name}`,
+    `Company:  ${payload.company}`,
+    `Email:    ${payload.email}`,
+    `Phone:    +1 ${payload.phone} (${payload.phoneCountry})`,
+    "Status:   New",
+    `Received: ${new Date().toISOString()}`,
+    "",
+    "Notes:",
+    payload.notes || "(none given)",
   ].join("\n");
 
   if (key && from) {
