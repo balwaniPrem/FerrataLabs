@@ -1,15 +1,12 @@
 import type { Metadata } from "next";
+import { seoFor } from "@/content/seo";
 import Cta from "@/components/Cta";
 import { steps } from "@/content/steps";
 import { faq } from "@/content/faq";
 import { adlc, adlcIntro, adlcCompare } from "@/content/adlc";
 import { stepFigures } from "@/components/StepFigures";
 
-export const metadata: Metadata = {
-  title: "How it works",
-  description:
-    "The Ferrata Labs engagement model: assess, anchor the platform, first agent live, expand and hand over, all run on a disciplined Agent Development Lifecycle.",
-};
+export const metadata: Metadata = seoFor("/how-it-works");
 
 export default function HowItWorks() {
   return (

@@ -1,13 +1,10 @@
 import type { Metadata } from "next";
+import { seoFor } from "@/content/seo";
 import Link from "next/link";
 import Cta from "@/components/Cta";
 import { hitlPage, gate, guardrails, earning, blended } from "@/content/hitl";
 
-export const metadata: Metadata = {
-  title: "Human in the loop",
-  description:
-    "How human-in-the-loop AI works in production: approval gates as a queue rather than a dialog, the guardrails underneath, what earns an agent out of a gate, and the blended end state where exceptions stop at a person.",
-};
+export const metadata: Metadata = seoFor("/human-in-the-loop-ai");
 
 /**
  * §7's approval gate, argued rather than asserted. See content/hitl.ts for why

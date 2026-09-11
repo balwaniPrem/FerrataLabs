@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { seoFor } from "@/content/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Cta from "@/components/Cta";
@@ -17,6 +18,10 @@ export async function generateMetadata({
   const { slug } = await params;
   const agent = agentBySlug(slug);
   if (!agent) return {};
+  // Search metadata is written per agent against a focus keyword; content/seo.ts
+  // carries it. The agent's own summary is the fallback for a slug with none.
+  const s = seoFor(`/agents/${slug}`);
+  if (s.title) return s;
   return {
     title: `${agent.name}, ${agent.role}`,
     description: agent.summary,

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { seoFor } from "@/content/seo";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Cta from "@/components/Cta";
@@ -16,6 +17,8 @@ export async function generateMetadata({
   const { slug } = await params;
   const industry = industryBySlug(slug);
   if (!industry) return {};
+  const s = seoFor(`/industries/${slug}`);
+  if (s.title) return s;
   const title = `${industry.name}, enterprise AI agents`;
   return {
     title: industry.name,

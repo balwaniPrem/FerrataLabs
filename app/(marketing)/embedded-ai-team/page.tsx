@@ -1,13 +1,10 @@
 import type { Metadata } from "next";
+import { seoFor } from "@/content/seo";
 import Link from "next/link";
 import Cta from "@/components/Cta";
 import { embeddedPage, pod, ways, whySmall, handover } from "@/content/embedded";
 
-export const metadata: Metadata = {
-  title: "Embedded AI team",
-  description:
-    "An embedded AI team inside your organization: one lead, one product owner and two full-stack AI developers, working on your systems and structured so ownership transfers rather than being promised.",
-};
+export const metadata: Metadata = seoFor("/embedded-ai-team");
 
 /**
  * The POD, promoted out of two paragraphs on /work. Reached from the Platform

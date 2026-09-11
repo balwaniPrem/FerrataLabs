@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
+import { seoFor } from "@/content/seo";
 import Link from "next/link";
 import { getPosts, formatDate } from "@/lib/posts";
 
-export const metadata: Metadata = {
-  title: "Blog",
-  description:
-    "Playbooks and field notes from AI transformation work: what shipped, what stalled, and the numbers that explain the difference.",
-};
+export const metadata: Metadata = seoFor("/blog");
 
 /**
  * Local preview of the blog index. WordPress serves the real one from
