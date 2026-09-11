@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { seoFor } from "@/content/seo";
 import Link from "next/link";
 import Cta from "@/components/Cta";
 import AgentGrid from "@/components/AgentGrid";
@@ -6,11 +7,7 @@ import { Worlds, Personalization, ApprovalGate } from "@/components/Blocks";
 import { solutionIcons } from "@/components/SolutionIcons";
 import { workPage, offering, embedded, agentsIntro } from "@/content/work";
 
-export const metadata: Metadata = {
-  title: "The work",
-  description:
-    "What an AI transformation with Ferrata Labs actually involves: the engagement, how the team embeds, and the six agents already running against real transactions.",
-};
+export const metadata: Metadata = seoFor("/work");
 
 export default function Work() {
   return (

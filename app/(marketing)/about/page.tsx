@@ -1,13 +1,10 @@
 import type { Metadata } from "next";
+import { seoFor } from "@/content/seo";
 import Link from "next/link";
 import Cta from "@/components/Cta";
 import { Proof } from "@/components/Blocks";
 
-export const metadata: Metadata = {
-  title: "Who we are",
-  description:
-    "Ferrata Labs is run by operators who scaled a regulated B2B platform from $75M to over $2.5B and put AI into production inside it.",
-};
+export const metadata: Metadata = seoFor("/about");
 
 export default function About() {
   return (

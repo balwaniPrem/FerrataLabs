@@ -5,15 +5,24 @@ import Rail from "@/components/Rail";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import { site } from "@/content/site";
+import { seo } from "@/content/seo";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
+  /*
+   * Default and description come from content/seo.ts, which mirrors what Rank
+   * Math serves on the live site. The old values here were the retired
+   * one-liner, §1, and were still being sent to link previews.
+   *
+   * The template still applies to any page that sets a bare string title. Pages
+   * carrying imported search metadata use `absolute`, because those titles are
+   * already complete and the suffix would push them past displayed length.
+   */
   title: {
-    default: "Ferrata Labs. Enterprise AI agents that do the actual work",
+    default: seo["/"].title,
     template: "%s. Ferrata Labs",
   },
-  description:
-    "Ferrata Labs designs, builds and runs AI agents that do the actual work inside enterprise operations. Built to your business, not off a shelf.",
+  description: seo["/"].description,
   openGraph: {
     type: "website",
     siteName: site.name,

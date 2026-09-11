@@ -1,13 +1,10 @@
 import type { Metadata } from "next";
+import { seoFor } from "@/content/seo";
 import Link from "next/link";
 import Cta from "@/components/Cta";
 import { platformPage, layers, ownership, delivery } from "@/content/platform";
 
-export const metadata: Metadata = {
-  title: "Platform",
-  description:
-    "The enterprise AI platform Ferrata Labs stands up inside your environment: model gateway, retrieval over SAP, NetSuite or Dynamics, evaluation harnesses, audit logging and identity. You own it.",
-};
+export const metadata: Metadata = seoFor("/platform");
 
 /**
  * The platform layer, named and given a page. See content/platform.ts for why

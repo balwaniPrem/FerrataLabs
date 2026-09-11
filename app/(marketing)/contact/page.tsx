@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
+import { seoFor } from "@/content/seo";
 import ContactForm from "./ContactForm";
 
-export const metadata: Metadata = {
-  title: "Book a discovery call",
-  description:
-    "Thirty minutes, no deck. Bring one workflow and we'll pressure-test whether an agent is the right answer.",
-};
+export const metadata: Metadata = seoFor("/contact");
 
 export default function Contact() {
   return (
