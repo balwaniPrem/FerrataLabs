@@ -35,7 +35,7 @@ export const industries: Industry[] = [
       "Evidence for audit assembled by hand, after the fact",
       "Fee and premium billing checked against schedules manually",
     ],
-    agents: ["tally", "sterling", "clark"],
+    agents: ["account-reconciliation-automation-tally", "ar-automation-software-sterling", "accounts-payable-automation-clark"],
     systems: ["SAP HANA", "Dynamics 365", "Custodian feeds", "Sub-ledgers"],
   },
   {
@@ -51,7 +51,7 @@ export const industries: Industry[] = [
       "Credit notes and short deliveries reconciled by hand",
       "Multi-site ordering with no single view of spend",
     ],
-    agents: ["clark", "chandler", "swift"],
+    agents: ["accounts-payable-automation-clark", "purchase-order-automation-chandler", "sales-order-automation-swift"],
     systems: ["NetSuite", "SAP HANA", "Supplier portals", "Email"],
   },
   {
@@ -67,7 +67,7 @@ export const industries: Industry[] = [
       "Retentions tracked across projects and release dates missed",
       "Variations agreed on site and billed months later, if at all",
     ],
-    agents: ["chandler", "clark", "sterling"],
+    agents: ["purchase-order-automation-chandler", "accounts-payable-automation-clark", "ar-automation-software-sterling"],
     systems: ["SAP HANA", "Dynamics 365", "Email", "SMS"],
   },
   {
@@ -83,7 +83,7 @@ export const industries: Industry[] = [
       "Supplier price increases absorbed before anyone notices",
       "Order acknowledgements sent days after receipt",
     ],
-    agents: ["swift", "clark", "chandler"],
+    agents: ["sales-order-automation-swift", "accounts-payable-automation-clark", "purchase-order-automation-chandler"],
     systems: ["SAP HANA", "Dynamics 365", "NetSuite", "Customer portals"],
   },
   {
@@ -99,7 +99,7 @@ export const industries: Industry[] = [
       "Management fee calculations checked manually each quarter",
       "Intercompany and inter-fund positions reconciled at period end",
     ],
-    agents: ["tally", "sterling", "quill"],
+    agents: ["account-reconciliation-automation-tally", "ar-automation-software-sterling", "ai-quoting-agent-quill"],
     systems: ["NetSuite", "Fund administration platforms", "Email"],
   },
   {
@@ -115,7 +115,7 @@ export const industries: Industry[] = [
       "Rate schedules that change more often than they are checked",
       "Customer bookings arriving in every format imaginable",
     ],
-    agents: ["clark", "chandler", "swift"],
+    agents: ["accounts-payable-automation-clark", "purchase-order-automation-chandler", "sales-order-automation-swift"],
     systems: ["SAP HANA", "NetSuite", "Carrier portals", "EDI"],
   },
 ];

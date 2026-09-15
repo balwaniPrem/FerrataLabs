@@ -44,7 +44,10 @@ export default function AgentRail() {
     getNavSnapshot,
     getServerNavSnapshot,
   );
-  const others = agents.filter((a) => a.slug !== "sterling");
+  // Keyed on the name rather than the slug: the slug carries the page's target
+  // keyword and moves when that changes, and a filter that quietly stops
+  // matching would list Sterling twice rather than fail.
+  const others = agents.filter((a) => a.name !== "Sterling");
 
   return (
     <nav className="rail-nav agent-rail" aria-label="Agents">
