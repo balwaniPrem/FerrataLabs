@@ -39,7 +39,9 @@ const ROUTES = {
   "/human-in-the-loop-ai": "human-in-the-loop-ai",
   "/thank-you": "thank-you",
 };
-for (const s of ["sterling", "clark", "tally", "chandler", "swift", "quill"]) {
+for (const s of ["ar-automation-software-sterling", "accounts-payable-automation-clark",
+  "account-reconciliation-automation-tally", "purchase-order-automation-chandler",
+  "sales-order-automation-swift", "ai-quoting-agent-quill"]) {
   ROUTES[`/agents/${s}`] = `agents-${s}`;
 }
 for (const s of ["financial-services", "food-and-beverage", "construction",
