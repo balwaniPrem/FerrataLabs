@@ -83,6 +83,18 @@ export const seo: Record<string, SeoEntry> = {
       "Playbooks and field notes from AI transformation work in production: what shipped, what stalled, and what separated the two. From Ferrata Labs.",
     keyword: "Enterprise AI playbook",
   },
+  "/agents": {
+    title: "AI Agents for Finance: What Each One Actually Does",
+    description:
+      "Six AI agents for finance operations, in plain terms: what each one accomplishes, where it stops for a person, and how every one is built around your rules.",
+    keyword: "ai agents for finance",
+  },
+  "/ai-transformation": {
+    title: "Enterprise AI Transformation: AI Absent to AI Native",
+    description:
+      "What enterprise AI transformation takes past the pilot: the arc from AI absent to AI native, why most stall in the middle, and what earns trust at each step.",
+    keyword: "enterprise ai transformation",
+  },
   "/agents/ar-automation-software-sterling": {
     title: "AR Automation Software: AI Collections Agent for B2B Teams",
     description:

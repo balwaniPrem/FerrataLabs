@@ -19,6 +19,9 @@ export default function Footer() {
           <div>
             <h4>Agents</h4>
             <ul>
+              <li>
+                <Link href="/agents">All agents</Link>
+              </li>
               {agents.map((a) => (
                 <li key={a.slug}>
                   <Link href={`/agents/${a.slug}`}>
@@ -46,6 +49,11 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/how-it-works">How it works</Link>
+              </li>
+              {/* Footer only, by decision. A keyword target that does not earn a
+                  nav slot, per CLAUDE.md §5 on the top level already being full. */}
+              <li>
+                <Link href="/ai-transformation">Enterprise AI transformation</Link>
               </li>
               <li>
                 <Link href="/about">Who we are</Link>

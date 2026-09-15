@@ -194,6 +194,12 @@ export default function Nav() {
               <>
                 <div className="mega-col">
                   <p className="mega-h">By function</p>
+                  {/* Sits above the six the way "Platform overview" sits above the
+                      platform links, so the roster has a parent to land on. */}
+                  <Link href="/agents" className="mega-item" onClick={closeAll}>
+                    <span className="t">All agents</span>
+                    <span className="d">What each one accomplishes, in a sentence</span>
+                  </Link>
                   {agents.map((a) => (
                     <Link
                       key={a.slug}

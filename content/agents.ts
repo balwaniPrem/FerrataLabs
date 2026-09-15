@@ -18,6 +18,12 @@ export type Agent = {
   menuLine: string;
   /** Short summary used on card grids. */
   summary: string;
+  /**
+   * The single thing that changes for the business, in plain language. This is
+   * what /agents leads with, so it is deliberately qualitative: no figures, so
+   * nothing here becomes a §8 claim that has to survive a second-meeting probe.
+   */
+  outcome: string;
   /** Tight, function-targeted bullets (CLAUDE.md item 2). */
   bullets: string[];
   /** Detail page: the opening statement of what this agent owns. */
@@ -51,6 +57,8 @@ export const agents: Agent[] = [
     menuLine: "Cash position, collections and receivables risk",
     summary:
       "Reads receivables and payables from the ERP, narrates the cash position daily, and drafts collection sequences ranked by recovery odds.",
+    outcome:
+      "Cash comes in sooner, because the right accounts get chased in the right order every morning rather than whenever someone finds the time.",
     bullets: [
       "Daily cash position, written not charted",
       "Collections ranked by recovery odds",
@@ -112,6 +120,8 @@ export const agents: Agent[] = [
     menuLine: "Invoice capture, matching and posting into the ERP",
     summary:
       "Extracts vendor invoices from any format and posts the payable straight into SAP or NetSuite, with duplicate detection before anything is released.",
+    outcome:
+      "Vendor invoices stop piling up. They arrive, get matched and are posted the same day, with duplicates caught before anyone can pay one twice.",
     bullets: [
       "Any format: PDF, scan, portal or email body",
       "Duplicate and near-duplicate detection",
@@ -164,6 +174,8 @@ export const agents: Agent[] = [
     menuLine: "Sub-ledger to GL, continuously rather than at close",
     summary:
       "Balances sub-ledgers to the GL line by line and hands back a clean exception list instead of a spreadsheet nobody wants to open.",
+    outcome:
+      "The close stops being a scramble. Breaks surface on the day they happen rather than in the week you are trying to sign the numbers off.",
     bullets: [
       "Runs continuously, not at month-end",
       "Variance commentary drafted for review",
@@ -216,6 +228,8 @@ export const agents: Agent[] = [
     menuLine: "RFQ to PO, negotiation and price compliance",
     summary:
       "Runs RFQ to PO with multi-vendor negotiation across email, SMS and voice, then holds suppliers to the pricing schedule they agreed to.",
+    outcome:
+      "You stop paying above the price you agreed. Every quote is compared on the same terms, and suppliers are held to the schedule they signed.",
     bullets: [
       "Multi-vendor RFQ across channels",
       "Contract terms extracted and monitored",
@@ -268,6 +282,8 @@ export const agents: Agent[] = [
     menuLine: "Customer POs into clean sales orders",
     summary:
       "Turns inbound customer purchase order PDFs into clean sales orders in minutes rather than days, flagging only what genuinely needs a decision.",
+    outcome:
+      "Customer orders stop waiting to be typed up. A purchase order that lands overnight is a sales order by morning, with only real exceptions held back.",
     bullets: [
       "PO document to sales order in minutes",
       "Pricing and terms validated on intake",
@@ -320,6 +336,8 @@ export const agents: Agent[] = [
     menuLine: "Inbound enquiries priced and drafted in the CRM",
     summary:
       "Reads every inbound enquiry, prices it against your rules, and drafts the quote in your CRM so a rep is editing rather than starting cold.",
+    outcome:
+      "No enquiry goes cold while somebody builds a quote. Every one is priced against your rules and waiting in the CRM for a rep to check and send.",
     bullets: [
       "Every enquiry read, none dropped",
       "Priced against your own rule set",
