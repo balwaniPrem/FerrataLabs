@@ -38,6 +38,8 @@ const ROUTES = {
   "/embedded-ai-team": "embedded-ai-team",
   "/human-in-the-loop-ai": "human-in-the-loop-ai",
   "/thank-you": "thank-you",
+  "/agents": "agents",
+  "/ai-transformation": "ai-transformation",
 };
 for (const s of ["ar-automation-software-sterling", "accounts-payable-automation-clark",
   "account-reconciliation-automation-tally", "purchase-order-automation-chandler",
