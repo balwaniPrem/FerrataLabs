@@ -449,6 +449,38 @@ takes straight commits; a branch there would describe a state the server is not 
 - **The blog is WordPress-only.** There is no `/blog` route in this app, and the nav
   item lives in the theme's `header.php` rather than in `components/Nav.tsx`. See §14.
 
+### Search metadata
+
+**Titles and descriptions are authored here and pushed to Rank Math.** Decided Sep 2026,
+after a comparison found twenty-one pages whose search metadata existed only in the
+WordPress database and had never been in this repo.
+
+| | |
+|---|---|
+| **Source of truth** | `content/seo.ts`, keyed by route, focus keyword recorded beside each entry |
+| **Renders it live** | Rank Math, which wins over the theme and always will |
+| **Gets it there** | `node scripts/push-seo.mjs` |
+
+Rank Math keeps ownership of what is *rendered*: `ferrata_head_extras()` stands down when
+Rank Math emits a description, so the theme's `inc/meta.json` is only a fallback for routes
+Rank Math has nothing for. Do not try to win that fight from the theme.
+
+**Every copy change is an SEO decision.** A heading, a lede or a page title that moves
+without its `content/seo.ts` entry moving leaves the repo and the live site disagreeing,
+which is exactly the state this arrangement exists to prevent.
+
+```
+node scripts/push-seo.mjs --dry-run   # diff against live, change nothing
+node scripts/push-seo.mjs             # write the differences to Rank Math
+```
+
+The script is a diff-then-write: it reads what Rank Math currently has, prints the
+differences, and only sends entries that actually changed. `--dry-run` is how a metadata
+change gets reviewed before it ships, in the same spirit as a draft post.
+
+Credentials come from `~/Documents/Projects/ferratalabs.wp`, the same file
+`publish-post.mjs` uses.
+
 > ⚠️ **The SEO plugin is Rank Math, not Yoast.** Earlier notes here and in the WordPress
 > README said Yoast; that is wrong and it sends you to the wrong plugin when a title or
 > description needs fixing. Two leftovers to know about: `robots.txt` on the server is a

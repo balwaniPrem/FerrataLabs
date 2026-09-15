@@ -83,37 +83,37 @@ export const seo: Record<string, SeoEntry> = {
       "Playbooks and field notes from AI transformation work in production: what shipped, what stalled, and what separated the two. From Ferrata Labs.",
     keyword: "enterprise AI playbooks",
   },
-  "/agents/sterling": {
+  "/agents/ar-automation-software-sterling": {
     title: "AR Automation Software: AI Collections Agent for B2B Teams",
     description:
       "AR automation software that reads receivables from your ERP, ranks open accounts by recovery odds and drafts the collection sequence for approval.",
     keyword: "AR automation software",
   },
-  "/agents/clark": {
+  "/agents/accounts-payable-automation-clark": {
     title: "SAP Accounts Payable Automation with an AI AP Agent | Clark",
     description:
       "SAP accounts payable automation that extracts vendor invoices from any format, posts the payable into SAP, and stops at a person before release.",
     keyword: "SAP accounts payable automation",
   },
-  "/agents/tally": {
+  "/agents/account-reconciliation-automation-tally": {
     title: "Account Reconciliation Automation with an AI Agent | Tally",
     description:
       "Reconciliation automation that balances sub-ledgers to the GL line by line and hands back a clean exception list instead of another spreadsheet.",
     keyword: "account reconciliation automation",
   },
-  "/agents/chandler": {
+  "/agents/purchase-order-automation-chandler": {
     title: "Purchase Order Automation: AI Procurement Agent, RFQ to PO",
     description:
       "Purchase order automation from RFQ to PO: multi-vendor negotiation across email, SMS and voice, then suppliers held to the schedule they agreed.",
     keyword: "purchase order automation",
   },
-  "/agents/swift": {
+  "/agents/sales-order-automation-swift": {
     title: "Sales Order Automation: Customer PO to Sales Order in Minutes",
     description:
       "Sales order automation that turns inbound customer purchase order PDFs into clean sales orders in minutes, flagging only what needs a decision.",
     keyword: "sales order automation",
   },
-  "/agents/quill": {
+  "/agents/ai-quoting-agent-quill": {
     title: "AI Quoting Agent: Draft Quotes Inside Your CRM Automatically",
     description:
       "An AI quoting agent that reads every inbound enquiry, prices it against your rules and drafts the quote in your CRM for a rep to edit and send.",
