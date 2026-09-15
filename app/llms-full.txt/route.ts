@@ -7,6 +7,7 @@ import { layers as platformLayers } from "@/content/platform";
 import { guardrails, blended } from "@/content/hitl";
 import { pod } from "@/content/embedded";
 import { adlc, adlcIntro } from "@/content/adlc";
+import { arc, stall } from "@/content/aiTransformation";
 
 /**
  * /llms-full.txt — the long form. Everything an answer engine needs to describe
@@ -34,6 +35,13 @@ a person. Every deployment is designed around how the client's business already 
 
 Ideal customer: $20M+ revenue enterprises running SAP, NetSuite or Dynamics. Buyers are
 CFO, Controller, VP Finance, CIO/VP IT.
+
+## The transformation arc
+
+${arc.stages.map((s) => `- **${s.t}**: ${s.d} Tell: ${s.tell}`).join("\n")}
+
+Most organizations stop at assisted, where people work faster and the process, headcount
+and cycle time are unchanged. ${stall.reasons.map((r) => r.t).join("; ")}.
 
 ## The approval gate
 

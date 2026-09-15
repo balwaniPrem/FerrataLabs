@@ -223,11 +223,18 @@ idea. The page is unchanged at `/work`.
                       queue → the guardrails underneath → what earns an agent out
                       of one → the blended end state. Keyword slug, deliberately.
 /blog                 WordPress only in production; see §14
+/agents               the roster in plain terms: what an agent is → the six led by
+                      outcome → where they stop → none of this is a template.
+                      Was a 301 to /work; now a page. See the decision below.
+/ai-transformation    AI absent → AI native in five stages → why most stop at
+                      assisted → what earns stage four. Footer-only, by decision.
 /agents/[slug]        6 agent detail pages — explicit on how the agent does the work
 /industries/[slug]    6 industry pages — which agents apply in that vertical
 ```
 
-**Solutions mega-menu** is two-column: six agents by function, six industries by vertical.
+**Solutions mega-menu** is two-column: six agents by function under an "All agents" parent
+(`/agents`, mirroring how "Platform overview" sits above the platform links), six industries
+by vertical.
 **Platform mega-menu** is two-column: the platform layers, then how it runs (embedded team,
 the engagement). **How it works mega-menu** is two-column: the engagement (`/how-it-works`,
 `/work`), then control (`/human-in-the-loop-ai`, ADLC). `/embedded-ai-team` sits under Platform rather than at the top level, so the
@@ -247,6 +254,31 @@ nav gained one item rather than two.
 > Take their naming discipline, a noun and one line per thing sold. Do **not** take their
 > information architecture: §5 already records that absorbing competitors' page structures
 > sprawled this site to nine sections and destroyed the argument.
+
+> **Two decisions recorded, Sep 2026, on adding `/agents` and `/ai-transformation`.**
+>
+> 1. **`/agents` stops being a redirect and becomes a page.** It was a 301 to `/work`, so a
+>    reader who did not already know what an agent is had nowhere to find out: the six were
+>    reachable only as six detail pages or as a grid inside an argument about something else.
+>    The page is **not** a fourth copy of that grid, and the difference is load-bearing.
+>    Home shows the six at a glance, `/work` argues them as proof that real work shipped,
+>    the detail pages carry the mechanism, and `/agents` answers what each one accomplishes
+>    in one sentence. That is why `Agent.outcome` exists as a field: it is written for this
+>    page and used nowhere else. If `/agents` ever renders bullets, it has become the home
+>    grid and one of the two should go. §6's framing rule and §7's approval gate both apply
+>    here in full, since the page is six agent claims end to end.
+> 2. **`/ai-transformation` is a keyword target that has to earn its keep as an argument.**
+>    It owns §1's AI Absent → AI Native arc, which the positioning rests on and which no page
+>    carried at depth. It is reachable **from the footer only**: the top level is full, and a
+>    sitewide footer link passes internal equity without spending a nav slot. The boundary
+>    that keeps it honest is that it must not restate the four steps. `/how-it-works` owns
+>    the commercial sequence a CFO buys; this sits one level above at what has to become true
+>    inside the business, and links out rather than repeating. **Five stages, deliberately not
+>    four.** If a later pass finds four stages here that look like assess, anchor, first agent,
+>    expand, the page has collapsed into `/how-it-works` and should be cut.
+>
+> Both are additions to a structure §5 says should not grow casually, so both are recorded
+> here rather than just appearing on the map.
 
 Section expansion from the original five pages to this structure was an explicit decision,
 not drift. Anything beyond what is listed here needs a new explicit decision — earlier

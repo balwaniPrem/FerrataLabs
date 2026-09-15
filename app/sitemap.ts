@@ -4,7 +4,15 @@ import { agents } from "@/content/agents";
 import { industries } from "@/content/industries";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/work", "/how-it-works", "/about", "/contact"];
+  const staticRoutes = [
+    "",
+    "/work",
+    "/how-it-works",
+    "/about",
+    "/contact",
+    "/agents",
+    "/ai-transformation",
+  ];
 
   return [
     ...staticRoutes.map((r) => ({
