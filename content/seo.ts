@@ -42,10 +42,10 @@ export const seo: Record<string, SeoEntry> = {
     keyword: "AI agents in production",
   },
   "/how-it-works": {
-    title: "How an Enterprise AI Agent Deployment Runs, Step by Step",
+    title: "AI Implementation Roadmap & Adoption Framework",
     description:
       "The Ferrata Labs engagement, step by step: assess, anchor the platform, first agent live, expand and hand over, on a disciplined agent lifecycle.",
-    keyword: "AI agent deployment process",
+    keyword: "AI Implementation Roadmap",
   },
   "/about": {
     title: "The Operators Behind Ferrata Labs | Enterprise AI Team",
@@ -72,7 +72,7 @@ export const seo: Record<string, SeoEntry> = {
     keyword: "embedded AI team",
   },
   "/human-in-the-loop-ai": {
-    title: "Human-in-the-Loop AI: How Approval Gates Work in Production",
+    title: "Human in the Loop AI & Guardrails | Ferrata Labs",
     description:
       "How human-in-the-loop AI works in production: approval gates as a queue, the guardrails beneath them, and what earns an agent its way out of one.",
     keyword: "human in the loop AI",
@@ -81,7 +81,7 @@ export const seo: Record<string, SeoEntry> = {
     title: "Enterprise AI Playbooks and Field Notes | Ferrata Labs",
     description:
       "Playbooks and field notes from AI transformation work in production: what shipped, what stalled, and what separated the two. From Ferrata Labs.",
-    keyword: "enterprise AI playbooks",
+    keyword: "Enterprise AI playbook",
   },
   "/agents/ar-automation-software-sterling": {
     title: "AR Automation Software: AI Collections Agent for B2B Teams",
