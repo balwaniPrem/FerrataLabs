@@ -45,7 +45,7 @@ export type Agent = {
 
 export const agents: Agent[] = [
   {
-    slug: "sterling",
+    slug: "ar-automation-software-sterling",
     name: "Sterling",
     role: "Working capital",
     menuLine: "Cash position, collections and receivables risk",
@@ -106,7 +106,7 @@ export const agents: Agent[] = [
     },
   },
   {
-    slug: "clark",
+    slug: "accounts-payable-automation-clark",
     name: "Clark",
     role: "Payables",
     menuLine: "Invoice capture, matching and posting into the ERP",
@@ -158,7 +158,7 @@ export const agents: Agent[] = [
       "Clark posts payables. It never releases payment. The payment run stays with a person, always.",
   },
   {
-    slug: "tally",
+    slug: "account-reconciliation-automation-tally",
     name: "Tally",
     role: "Reconciliation",
     menuLine: "Sub-ledger to GL, continuously rather than at close",
@@ -210,7 +210,7 @@ export const agents: Agent[] = [
       "Tally proposes journals. It does not post them. Every entry that touches the GL is approved by a person first.",
   },
   {
-    slug: "chandler",
+    slug: "purchase-order-automation-chandler",
     name: "Chandler",
     role: "Procurement",
     menuLine: "RFQ to PO, negotiation and price compliance",
@@ -262,7 +262,7 @@ export const agents: Agent[] = [
       "Chandler negotiates and recommends. It does not commit spend. The award and the purchase order are released by a person.",
   },
   {
-    slug: "swift",
+    slug: "sales-order-automation-swift",
     name: "Swift",
     role: "Order management",
     menuLine: "Customer POs into clean sales orders",
@@ -314,7 +314,7 @@ export const agents: Agent[] = [
       "Swift creates orders inside your rules. Anything outside them stops and waits for a person: off-contract pricing, credit holds, unmeetable dates.",
   },
   {
-    slug: "quill",
+    slug: "ai-quoting-agent-quill",
     name: "Quill",
     role: "Quotes & CRM",
     menuLine: "Inbound enquiries priced and drafted in the CRM",
