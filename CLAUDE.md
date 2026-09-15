@@ -232,9 +232,10 @@ idea. The page is unchanged at `/work`.
 /industries/[slug]    6 industry pages — which agents apply in that vertical
 ```
 
-**Solutions mega-menu** is two-column: six agents by function under an "All agents" parent
-(`/agents`, mirroring how "Platform overview" sits above the platform links), six industries
-by vertical.
+**Solutions mega-menu** is two-column: six agents by function, six industries by vertical.
+`/agents` is deliberately **not** in it. The nav lists the six individually, so a parent above
+them adds a seventh item that says less than any of them; the page is reached instead from the
+cross-links that ask a reader to see the agents together, which used to point at `/work`.
 **Platform mega-menu** is two-column: the platform layers, then how it runs (embedded team,
 the engagement). **How it works mega-menu** is two-column: the engagement (`/how-it-works`,
 `/work`), then control (`/human-in-the-loop-ai`, ADLC). `/embedded-ai-team` sits under Platform rather than at the top level, so the
@@ -265,7 +266,8 @@ nav gained one item rather than two.
 >    the detail pages carry the mechanism, and `/agents` answers what each one accomplishes
 >    in one sentence. That is why `Agent.outcome` exists as a field: it is written for this
 >    page and used nowhere else. If `/agents` ever renders bullets, it has become the home
->    grid and one of the two should go. §6's framing rule and §7's approval gate both apply
+>    grid and one of the two should go. It is **not** in the nav: it is reached from the
+>    cross-links that ask a reader to see the agents together, which used to land on `/work`. §6's framing rule and §7's approval gate both apply
 >    here in full, since the page is six agent claims end to end.
 > 2. **`/ai-transformation` is a keyword target that has to earn its keep as an argument.**
 >    It owns §1's AI Absent → AI Native arc, which the positioning rests on and which no page
