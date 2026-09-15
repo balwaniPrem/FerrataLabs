@@ -118,7 +118,7 @@ export default async function AgentPage({ params }: PageProps<"/agents/[slug]">)
         <div className="wrap">
           <Personalization />
           <p className="more">
-            <Link href="/work">See all six agents &rarr;</Link>
+            <Link href="/agents">See all six agents &rarr;</Link>
           </p>
         </div>
       </section>
