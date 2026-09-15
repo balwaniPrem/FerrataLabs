@@ -292,6 +292,9 @@ export default function Nav() {
             </div>
           ))}
           <p className="grp">By function</p>
+          <Link href="/agents" onClick={closeAll}>
+            All agents
+          </Link>
           {agents.map((a) => (
             <Link key={a.slug} href={`/agents/${a.slug}`} onClick={closeAll}>
               {a.role} · {a.name}
